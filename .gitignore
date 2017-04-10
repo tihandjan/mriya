@@ -15,3 +15,8 @@
 
 # Ignore Byebug command history file.
 .byebug_history
+/spec/tmp
+/config/*.yml
+/public/system
+/public/uploads
+/public/*.gz
