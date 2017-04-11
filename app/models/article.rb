@@ -12,8 +12,8 @@
 
 class Article < ApplicationRecord
 
-    validates :title, presence: true
-    validates :body,  presence: true
+    validates :title, presence: true, length: {minimum: 10, maximum: 200}
+    validates :body,  presence: true, length: {minimum: 10, maximum: 10000}
     validates :image, presence: true
 
     mount_uploader :image, ArticleUploader
