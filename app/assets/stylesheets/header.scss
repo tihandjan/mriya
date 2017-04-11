@@ -1,0 +1,41 @@
+.main-nav {
+    padding-top: 0;
+    background-color: transparent;
+    .navbar-collapse {
+        border-bottom: 2px solid #e7e8e7;
+        .navbar-nav {
+            .nav-item {
+                font-size: 18px;
+                text-transform: uppercase;
+                border-right: 2px solid #e7e8e7;
+                transform: skewx(-20deg);
+                @media only screen and (max-width: 991px) {
+                    border-right: 0;
+                }
+                .nav-link {
+                    color: #005b9e;
+                    transform: skewx(20deg);
+                    padding: 0.1em 1em;
+                }
+                .dropdown-menu {
+                    transform: skewx(20deg);
+                    left: 18px;
+                    @media only screen and (max-width: 991px) {
+                        border: 0;
+                        background: transparent;
+                    }
+                }
+            }
+            .nav-item-locales {
+                font-size: 14px;
+                border-right: 0;
+                .nav-link {
+                    color: #aeaeae;
+                    padding-top: 7px;
+                    padding-right: 0;
+                    padding-left: 8px;
+                }
+            }
+        }
+    }
+}
