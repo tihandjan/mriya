@@ -1,9 +1,16 @@
 .main-nav {
     padding-top: 0;
     background-color: transparent;
+    padding-left: 0;
+    padding-right: 0;
     .navbar-collapse {
         border-bottom: 2px solid #e7e8e7;
+        padding-left: 20px;
+        padding-right: 20px;
         .navbar-nav {
+            @media only screen and (max-width: 991px) {
+                margin-top: 38px;
+            }
             .nav-item {
                 font-size: 18px;
                 text-transform: uppercase;
