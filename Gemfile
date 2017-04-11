@@ -23,6 +23,9 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'
 end
 
+# working with images
+gem 'carrierwave', '~> 1.0'
+
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'rspec-rails'
