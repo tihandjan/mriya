@@ -1,7 +1,8 @@
 section.main-section
     .row.main-row.hidden-md-down
         .col.logo-col
-            .sprite.sprite-logo-mriya
+            = link_to root_path
+                .sprite.sprite-logo-mriya
         .col.social-col
             ul
                 li
@@ -28,3 +29,6 @@ section.main-section
                 li.ufc
                     a href="#"
                         i.sprite.sprite-ufc
+    .row.top-article-wrapper
+        .col 
+            = image_tag 'sub_fon.png', class: 'sub-fon'
