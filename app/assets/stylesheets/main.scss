@@ -21,6 +21,7 @@ body {
 
 .main-section {
     .main-row {
+        margin-bottom: -35px;
         .logo-col {
             .sprite {
                 position: relative;
@@ -184,4 +185,9 @@ body {
         margin-right: 0;
         margin-left: 0;
     }
+}
+
+.yellow-divider {
+    background-color: #fecb00;
+    height: 16px;
 }
