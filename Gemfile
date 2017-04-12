@@ -33,6 +33,9 @@ gem 'rails_admin', '~> 1.1.1'
 # adapter for russian language
 gem 'russian', '~> 0.6.0'
 
+# handle video displaying
+gem 'youtube_rails'
+
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'rspec-rails'
