@@ -17,6 +17,7 @@
                 text-transform: uppercase;
                 border-right: 2px solid #e7e8e7;
                 transform: skewx(-20deg);
+                z-index: 10000;
                 @media only screen and (max-width: 991px) {
                     border-right: 0;
                 }
