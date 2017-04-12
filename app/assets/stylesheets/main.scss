@@ -61,6 +61,10 @@ body {
     .col {
         position: relative;
         overflow: hidden;
+        @media only screen and (max-width: 575px) {
+            padding-left: 0;
+            padding-right: 0;
+        }
         .sub-fon {
             width: 54%;
             position: relative;
@@ -74,6 +78,10 @@ body {
             z-index: 1;
             padding-left: 15px;
             padding-right: 15px;
+            @media only screen and (max-width: 575px) {
+                padding-left: 0;
+                padding-right: 0;
+            }
         }
         .caption {
             color: #FFF;
@@ -187,7 +195,8 @@ body {
     }
     .label {
         transform: skewx(20deg);
-        color: #005b9e;        
+        color: #005b9e;  
+        display: block;      
     }
 }
 
@@ -201,4 +210,18 @@ body {
 .yellow-divider {
     background-color: #fecb00;
     height: 16px;
+}
+
+.video-wrapper {
+    background-color: #005b9e;
+    padding: 30px;
+    margin-left: 0;
+    margin-right: 0;
+    .custom-col {
+        .image-wrapper {
+            img {
+                width: 100%;
+            }
+        }
+    }
 }

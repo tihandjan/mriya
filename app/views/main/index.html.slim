@@ -1,68 +1,21 @@
-section.main-section
-    .row.main-row.hidden-md-down
-        .col.logo-col
-            = link_to root_path
-                .sprite.sprite-logo-mriya
-        .col.social-col
-            ul
-                li
-                    a href="#"
-                        i.sprite.sprite-Search
-                li.reg
-                    a href="#"
-                        | Регистрация
-                li
-                    a href="#"
-                        i.sprite.sprite-youtube
-                li
-                    a href="#"
-                        i.sprite.sprite-ok
-                li
-                    a href="#"
-                        i.sprite.sprite-vk
-                li
-                    a href="#"
-                        i.sprite.sprite-fb
-                li
-                    a href="#"
-                        i.sprite.sprite-insta
-                li.ufc
-                    a href="#"
-                        i.sprite.sprite-ufc
-.teams-wrapper.col-12
-    .teams.clearfix
-        ul
-            li
-                = link_to 'U-7', root_path
-            li
-                = link_to 'U-8', root_path
-            li
-                = link_to 'U-9', root_path
-            li
-                = link_to 'U-10', root_path
-            li
-                = link_to 'U-11', root_path
-            li
-                = link_to 'U-12', root_path
-            li
-                = link_to 'U-13', root_path
-            li
-                = link_to 'U-14', root_path
-            li
-                = link_to 'U-15', root_path
-            li
-                = link_to 'U-16', root_path
-            li
-                = link_to 'U-17', root_path
-            li Команды                        
 .row.top-article-wrapper
     .col 
         = image_tag 'sub_fon.png', class: 'sub-fon'
-        = image_tag @articles.first.image.url, class: 'top-article-image'
+        = image_tag @articles.first.image.url, class: 'top-article-image', alt: @articles.first.title
         .caption
             .date = Russian::strftime(@articles.first.created_at, "%d %B %Y")
             h1.title = truncate(@articles.first.title, length: 70)
             a.btn.read-btn
                 span.label Читать
 .yellow-divider
-    
+.row.video-wrapper
+    .col-md-6.custom-col
+        h3.title
+        p.summary
+        a.btn.read-btn
+            span.label Видео
+    .col-md-6.custom-col
+        .image-wrapper
+            = image_tag 'https://dummyimage.com/600x400/000/fff', alt: ''
+            .play
+                i.fa.fa-play
