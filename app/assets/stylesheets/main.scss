@@ -58,8 +58,130 @@ body {
 
 .top-article-wrapper {
     .col {
+        position: relative;
+        overflow: hidden;
         .sub-fon {
             width: 54%;
+            position: relative;
+            z-index: 2;
         }
+        .top-article-image {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        .caption {
+            color: #FFF;
+            width: 57%;
+            position: absolute;
+            top: 17%;
+            left: 40px;
+            z-index: 3;
+            .date {
+                font-size: 16px;
+            }
+            .title {
+                font-size: 60px;
+                text-transform: uppercase;
+                margin-bottom: 50px;
+                @media only screen and (max-width:991px) {
+                    font-size: 32px;
+                }
+                @media only screen and (max-width:767px) {
+                    font-size: 18px;
+                }
+                @media only screen and (max-width: 550px) {
+                    margin-bottom: 15px;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+
+.teams-wrapper {
+    overflow: hidden;
+    padding-right: 0px;
+    margin-left: -15px;
+    .teams {
+        background-color: #e6e7e9;
+        float: right;
+        transform: skewX(-20deg);
+        padding: 2px 30px 2px 62px;
+        position: relative;
+        right: -5px;
+        @media only screen and (max-width: 991px) {
+            transform: none;
+            padding-left: 0;
+            padding-right: 20px;
+            float: none;
+            margin-left: 10px;
+            ul {
+                transform: none !important;
+                li {
+                    margin-left: 10px !important;
+                }
+            }
+        }
+        ul {
+            list-style: none;
+            padding-left: 0;
+            transform: skewX(20deg);
+            li {
+                float: right;
+                margin-left: 20px;
+                text-transform: uppercase;
+                @media only screen and (max-width: 550px) {
+                    margin-left: 4px !important;
+                    a {
+                        font-size: 15px !important;
+                    }
+                }
+                &:last-child {
+                    margin-right: 40px;
+                    color: #005b9e;
+                    position: relative;
+                    top: 3px;
+                    @media only screen and (max-width: 991px) {
+                        display: none;
+                    }
+                }
+                a {
+                    text-transform: uppercase;
+                    color: #005b9e;
+                    font-size: 18px;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+        }
+
+.read-btn {
+    transition: 200ms;
+    background-color: #fecb00;
+    font-size: 18px;
+    transform: skewx(-20deg);
+    text-transform: uppercase;
+    border-radius: 0;
+    padding: 2px 42px;
+    &:hover {
+        cursor: pointer;
+        background-color: yellow;
+    }
+    .label {
+        transform: skewx(20deg);
+        color: #005b9e;        
+    }
+}
+
+@media (max-width: 575px) {
+    .row {
+        margin-right: 0;
+        margin-left: 0;
     }
 }
