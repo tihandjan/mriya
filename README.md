@@ -34,11 +34,13 @@ cd mriya
 rvm use ruby-2.3.0
 ```
 * Heres where you install postgresql for your system
+```
 sudo apt-get update
 sudo apt-get install postgresql postgresql-contrib libpq-dev
 sudo -u postgres createuser -s pguser
 sudo -u postgres psql
 \password pguser
+```
 * Enter your desired password at the prompt, and confirm it.
 ```
 \q
@@ -53,4 +55,10 @@ vi config/database.yml
 rake db:create
 bundle install
 rake db:migrate
+```
+
+#TESTING
+* we are using Rspec/Capibara test frameworks. To run all tests type:
+```
+bundle exec rspec spec
 ```
