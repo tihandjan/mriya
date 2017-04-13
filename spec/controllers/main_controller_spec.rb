@@ -13,7 +13,7 @@ RSpec.describe MainController, type: :controller do
       get :index
 
       expect(assigns(:articles)).to match_array([articles])
-      # expect(assigns(:video)).to eq(video)     
+      expect(assigns(:video)).to eq(video)     
     end
   end
 
