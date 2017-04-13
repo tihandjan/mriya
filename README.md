@@ -17,8 +17,6 @@
 
 used guide http://railsapps.github.io/installing-rails.html
 
-This guide is for issues I had following the OSX Sierra guide http://railsapps.github.io/installrubyonrails-mac.html
-
 You can skip steps on this guide the essential is 
 
 * Follow the RVM installation
@@ -42,7 +40,7 @@ sudo -u postgres psql
 \password pguser
 ```
 * Enter your desired password at the prompt, and confirm it.
-* then quite
+* then do
 ```
 \q
 ```
@@ -53,8 +51,8 @@ host: localhost
 username: pguser
 password: pguser_password
 
-rake db:create
 bundle install
+rake db:create
 rake db:migrate
 ```
 
