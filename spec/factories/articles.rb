@@ -12,8 +12,8 @@
 
 FactoryGirl.define do
   factory :article do
-    title "MyString"
-    body "MyText"
-    image "MyString"
+    title "MyString MyString"
+    body "MyText MyText"
+    image { fixture_file_upload(Rails.root.join('spec', 'test_images', 'test.png'), 'image/png') }
   end
 end

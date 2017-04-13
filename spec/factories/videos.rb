@@ -12,8 +12,8 @@
 
 FactoryGirl.define do
   factory :video do
-    title "MyString"
-    summary "MyString"
+    title "MyString MyString"
+    summary "MyString MyString"
     video_url "MyString"
   end
 end
