@@ -10,12 +10,26 @@
 .yellow-divider
 .row.video-wrapper
     .col-md-6.custom-col
-        h3.title
-        p.summary
+        h3.title = truncate(@video.title, length: 70)
+        p.summary = truncate(@video.summary, length: 120)
         a.btn.read-btn
             span.label Видео
     .col-md-6.custom-col
         .image-wrapper
-            = image_tag YouTubeRails.extract_video_image("https://youtu.be/cD4TAgdS_Xw", 'high'), alt: ''
-            .play
-                i.fa.fa-play
+            = link_to root_path
+                = image_tag YouTubeRails.extract_video_image(@video.video_url, 'high'), alt: @video.title
+                .play
+                    = fa_icon "play"
+h2.last-news-header Последние новости
+section.row.body-row
+    .col-md-8.custom-col
+        .col
+            = link_to root_path
+                article.horizontal-card.row
+                    .col.image-wrapper
+                        = image_tag @articles[0].image.url(:thumb), alt: @articles[0].title
+                    .col.caption
+                        .date = Russian::strftime(@articles.first.created_at, "%d %B %Y")
+                        h3.title = truncate(@articles[0].title, length: 70)
+
+    .col-md-4

@@ -9,6 +9,13 @@ body {
     background-size: cover; 
 }
 
+a {
+    color: inherit;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
 .custom-container {
     background-color: #FFF;
     padding-left: 0;
@@ -90,6 +97,7 @@ body {
             top: 17%;
             left: 40px;
             z-index: 3;
+            padding-left: 15px;
             .date {
                 font-size: 16px;
             }
@@ -107,10 +115,18 @@ body {
                     font-size: 18px;
                 }
                 @media only screen and (max-width: 550px) {
-                    margin-bottom: 15px;
+                    margin-bottom: 4px;
                     font-size: 16px;
                 }
             }
+        }
+    }
+    .read-btn {
+        position: absolute;
+        bottom: -45px;
+        @media only screen and (max-width: 400px) {
+            bottom: -22px;
+            right: -80px;
         }
     }
 }
@@ -218,10 +234,95 @@ body {
     margin-left: 0;
     margin-right: 0;
     .custom-col {
+        color: #FFF;
+        position: relative;
         .image-wrapper {
+            position: relative;
             img {
                 width: 100%;
             }
+             @media only screen and (max-width:767px) {
+                margin-top: 15px;
+            }
+            .play {
+                position: absolute;
+                width: 55px;
+                height: 55px;
+                border-radius: 50%;
+                border: 4px solid #fecb00;
+                top: 40%;
+                left: 45%;
+                i {
+                    color: #fecb00;
+                    position: relative;
+                    left: 18px;
+                    top: 12px;
+                    font-size: 26px;
+                }
+            }
         }
+        .title {
+            margin-bottom: 15px;
+            font-size: 36px;
+            text-transform: uppercase;
+            @media only screen and (max-width:991px) {
+                font-size: 26px;
+            }
+            @media only screen and (max-width:767px) {
+                font-size: 18px;
+            }
+            @media only screen and (max-width: 550px) {
+                margin-bottom: 4px;
+                font-size: 16px;
+            }
+        }
+        .summary {
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+        .read-btn {
+            position: absolute;
+            left: 20px;
+            bottom: 0;
+        }
+    }
+}
+
+.last-news-header {
+    font-weight: bold;
+    font-size: 30px;
+    color: #a7a7a5;
+    text-transform: uppercase;
+    padding: 35px 15px;
+    margin-bottom: 0;
+}
+
+.body-row {
+    margin-left: 0;
+    margin-right: 0;
+    .custom-col {
+        padding-left: 0;
+    }
+}
+
+.horizontal-card {
+    .col {
+        img {
+            width: 100%;
+        }
+        .date {
+            font-size: 16px;
+        }
+        .title {
+            font-size: 32px;
+            color: #005b9e;
+            text-transform: uppercase;
+        }
+    }
+    .caption {
+        padding-left: 0;
+    }
+    .image-wrapper {
+        padding-left: 0;
     }
 }
