@@ -42,6 +42,7 @@ sudo -u postgres psql
 \password pguser
 ```
 * Enter your desired password at the prompt, and confirm it.
+* then quite
 ```
 \q
 ```
@@ -57,7 +58,7 @@ bundle install
 rake db:migrate
 ```
 
-#TESTING
+# TESTING
 * we are using Rspec/Capibara test frameworks. To run all tests type:
 ```
 bundle exec rspec spec
