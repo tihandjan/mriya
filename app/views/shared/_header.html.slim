@@ -4,7 +4,7 @@ nav.navbar.navbar-toggleable-md.navbar-light.bg-faded.main-nav
   #navbarNavDropdown.collapse.navbar-collapse
     ul.navbar-nav.ml-auto
       li.nav-item
-        a.nav-link[href="#"]
+        = link_to articles_path, class: 'nav-link'
           | Новости 
       li.nav-item.dropdown
         a#navbarDropdownMenuLink.nav-link[href="№" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"]
@@ -30,12 +30,10 @@ nav.navbar.navbar-toggleable-md.navbar-light.bg-faded.main-nav
         a#navbarDropdownMenuLink.nav-link[href="№" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"]
           |  Галерея 
         .dropdown-menu[aria-labelledby="navbarDropdownMenuLink"]
-          a.dropdown-item[href="#"]
-            | Action
-          a.dropdown-item[href="#"]
-            | Another action
-          a.dropdown-item[href="#"]
-            | Something else here
+          = link_to '#', class: 'dropdown-item'
+            | Фотоальбом
+          = link_to videos_path, class: 'dropdown-item'
+            | Видео
       li.nav-item
         a.nav-link[href="#"]
           | Общая Информация
