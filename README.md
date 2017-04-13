@@ -46,11 +46,11 @@ sudo -u postgres psql
 \q
 ```
 * Open your application's database configuration file
-vi config/database.yml
 ```
-  host: localhost
-  username: pguser
-  password: pguser_password
+vi config/database.yml
+host: localhost
+username: pguser
+password: pguser_password
 
 rake db:create
 bundle install
