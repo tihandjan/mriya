@@ -37,6 +37,9 @@ gem 'russian', '~> 0.6.0'
 # handle video displaying
 gem 'youtube_rails'
 
+# SEO
+gem 'friendly_id', '~> 5.1.0'
+
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'rspec-rails'

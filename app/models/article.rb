@@ -8,9 +8,19 @@
 #  image      :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  slug       :string
+#
+# Indexes
+#
+#  index_articles_on_slug  (slug) UNIQUE
 #
 
 class Article < ApplicationRecord
+    extend FriendlyId
+    friendly_id :title, use: [:slugged, :history, :finders]
+    def should_generate_new_friendly_id?
+        slug.blank? || title_changed?
+    end
 
     validates :title, presence: true, length: {minimum: 10, maximum: 200}
     validates :body,  presence: true, length: {minimum: 10, maximum: 10000}
