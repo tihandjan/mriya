@@ -40,5 +40,7 @@ $(document).on('turbolinks:load', function() {
         /*responsive code end*/
 
     };
-    jssor_1_slider_init();
+    if ($('#jssor_1').length > 0) {
+        jssor_1_slider_init();
+    }
 })
