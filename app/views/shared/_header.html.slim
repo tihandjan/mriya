@@ -83,26 +83,7 @@ section.main-section
 .teams-wrapper.col-12
     .teams.clearfix
         ul
-            li
-                = link_to 'U-7', root_path
-            li
-                = link_to 'U-8', root_path
-            li
-                = link_to 'U-9', root_path
-            li
-                = link_to 'U-10', root_path
-            li
-                = link_to 'U-11', root_path
-            li
-                = link_to 'U-12', root_path
-            li
-                = link_to 'U-13', root_path
-            li
-                = link_to 'U-14', root_path
-            li
-                = link_to 'U-15', root_path
-            li
-                = link_to 'U-16', root_path
-            li
-                = link_to 'U-17', root_path
+            - set_teams.each do |team|
+                li
+                    = link_to team.name, team_path(team)
             li Команды 

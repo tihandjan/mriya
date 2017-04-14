@@ -5,8 +5,8 @@ $(document).on('turbolinks:load', function() {
             $AutoPlay: 1,
             $AutoPlaySteps: 4,
             $SlideDuration: 160,
-            $SlideWidth: 200,
-            $SlideSpacing: 3,
+            $SlideWidth: 203,
+            $SlideSpacing: 0,
             $Cols: 4,
             $ArrowNavigatorOptions: {
             $Class: $JssorArrowNavigator$,

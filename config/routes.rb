@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   root 'main#index'
 
   resources :articles, only: [:index, :show]
-  resources :videos, only: [:index, :show]
+  resources :videos,   only: [:index, :show]
+  resources :teams,    only: [:show]
 end
