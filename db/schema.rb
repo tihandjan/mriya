@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170413183858) do
+ActiveRecord::Schema.define(version: 20170413213511) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,22 @@ ActiveRecord::Schema.define(version: 20170413183858) do
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
   end
 
+  create_table "players", force: :cascade do |t|
+    t.string   "name"
+    t.string   "surname"
+    t.date     "birthday"
+    t.integer  "team_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["team_id"], name: "index_players_on_team_id", using: :btree
+  end
+
+  create_table "teams", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "videos", force: :cascade do |t|
     t.string   "title"
     t.string   "summary"
@@ -47,4 +63,5 @@ ActiveRecord::Schema.define(version: 20170413183858) do
     t.index ["slug"], name: "index_videos_on_slug", unique: true, using: :btree
   end
 
+  add_foreign_key "players", "teams"
 end

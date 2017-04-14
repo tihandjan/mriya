@@ -18,9 +18,15 @@ Bundler.require(*Rails.groups)
 
 module Mriya
   class Application < Rails::Application
+
     config.generators do |g|
       g.template_engine :slim
     end
-    config.i18n.default_locale = :ru
+
+    config.i18n.default_locale = :en
+
+    config.time_zone = 'Moscow'
+    config.active_record.default_timezone = :local
+    
   end
 end
