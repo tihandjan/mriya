@@ -1,0 +1,96 @@
+                
+.history-wrapper
+    = image_tag 'history.png', alt: 'история создания футбольного клуба'
+    = link_to root_path, class: 'btn my-btn blue-btn'
+        span.label читать
+.history-wrapper
+    = image_tag 'tren.png', alt: 'расписание тренировок'
+    = link_to root_path, class: 'btn my-btn yellow-btn'
+        span.label читать
+    h4.schedule расписание тренировок
+.feedback.row.hidden-md-down
+    .col-md-5.first обратная связь
+    .col-md-6.second Обратная связь. Если у Вас есть вопросы, предложения или замечания напишите нам, заполнив форму 
+    .col-md-1.third
+        a href='#' data-toggle="modal" data-target="#exampleModal"
+            i.sprite.sprite-letter
+.blue-line.hidden-md-down
+.sponsor-title генеральный спонсор
+.sponsor-logo
+    i.sprite.sprite.sprite-logo-utc
+.grey-line
+
+section.footer.row
+    .col-md-3.custom-col 
+        span.footer-header команды
+        .clearfix
+            .team-col-first
+                ul 
+                    - set_teams.first(6).each do |team|
+                        li
+                            = link_to team.name, team_path(team)
+            .team-col-second
+                ul 
+                    - set_teams.last(5).each do |team|
+                        li
+                            = link_to team.name, team_path(team)
+    .col-md-3.custom-col 
+        span.footer-header общая информация
+        ul 
+            li
+                = link_to 'Новости', articles_path
+            li
+                = link_to 'Фото', '#'
+            li
+                = link_to 'Видео', videos_path
+    .col-md-3.custom-col
+        span.footer-header руководство
+        ul 
+            li
+                = link_to 'Директор академии', '#'
+            li
+                = link_to 'Достижения', '#'
+            li
+                = link_to 'История клуба', '#'
+    .col-md-3.custom-col
+        span.footer-header контакты
+        ul 
+            li Тел. и факс: +7 812 244-88-88
+            li Эл. почта: fcmriya@gmail.com
+            li
+                = link_to '#'
+                    i.sprite.sprite-fb
+                = link_to '#'
+                    i.sprite.sprite-vk
+                = link_to '#'
+                    i.sprite.sprite-ok
+                = link_to '#'
+                    i.sprite.sprite-youtube
+
+
+/ ********** modal ***********
+#exampleModal.modal.fade[tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"]
+  .modal-dialog[role="document"]
+    .modal-content
+      .modal-header
+        h5#exampleModalLabel.modal-title
+          | Обратная связь.
+        button.close[type="button" data-dismiss="modal" aria-label="Close"]
+          span[aria-hidden="true"]
+            | ×
+      .modal-body
+        form
+          .form-group
+            label.form-control-label[for="recipient-name"]
+              | Почта
+            input#recipient-name.form-control[type="text"]
+          .form-group
+            label.form-control-label[for="message-text"]
+              | Сообщение
+            textarea#message-text.form-control
+      .modal-footer
+        button.btn.btn-secondary[type="button" data-dismiss="modal"]
+          | Отмена
+        button.btn.btn-primary[type="button"]
+          | Отправить
+/ ********** modal end ***********

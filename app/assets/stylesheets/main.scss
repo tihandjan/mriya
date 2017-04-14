@@ -429,11 +429,11 @@ a {
         bottom: -16px;
         left: 35%;
         padding: 6px 112px;
-        @media only screen and (max-width: 767px) {
-            left: 24%;
-        }
         @media only screen and (max-width: 991px) {
             left: 31%;
+        }
+        @media only screen and (max-width: 767px) {
+            left: 24%;
         }
     }
     .schedule {
@@ -515,9 +515,36 @@ a {
     padding-left: 55px;
     padding-right: 55px;
     .custom-col {
-        text-transform: uppercase;
         color: #005b9e;
         font-size: 18px;
         text-align: center;
+        .footer-header {
+            text-transform: uppercase;
+        }
+        .clearfix {
+            max-width: 75px;
+            margin: 0 auto;
+            .team-col-first {
+                float: left;
+            }
+            .team-col-second {
+                float: right;
+            }
+        }
+        ul {
+            list-style: none;
+            padding-left: 0;
+            li {    
+                color: #3d3d3d;
+                font-size: 14px;
+                a {
+                    i {
+                        display: inline-block;
+                        margin-left: 8px;
+                        margin-top: 10px;
+                    }
+                }
+            }
+        }
     }
 }
