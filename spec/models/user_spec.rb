@@ -25,5 +25,14 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'admin method' do
+    it 'returns boolean if admin' do
+      user = FactoryGirl.create(:user)
+      admin = FactoryGirl.create(:user)
+      admin.add_role(:admin)
+
+      expect(user.admin?).to eq(false)
+      expect(admin.admin?).to eq(true)
+    end
+  end
 end
