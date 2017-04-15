@@ -6,4 +6,8 @@ module MainHelper
     def set_leagues
         League.all.order(id: :desc)
     end
+
+    def set_coaches
+        Coach.all
+    end
 end

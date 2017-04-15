@@ -16,4 +16,12 @@ RSpec.describe MainHelper, type: :helper do
             expect(set_leagues).to match_array(leagues)
         end
     end
+
+    describe 'set_coaches method' do
+        it 'returns coaches' do
+            coaches = FactoryGirl.create(:coach)
+
+            expect(set_coaches).to match_array(coaches)
+        end
+    end
 end

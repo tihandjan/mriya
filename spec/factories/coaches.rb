@@ -13,7 +13,7 @@
 FactoryGirl.define do
   factory :coach do
     name "MyString"
-    photo "MyString"
+    photo { fixture_file_upload(Rails.root.join('spec', 'test_images', 'test.png'), 'image/png') }
     coaching_groups "MyString"
   end
 end
