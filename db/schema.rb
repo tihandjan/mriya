@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170414020630) do
+ActiveRecord::Schema.define(version: 20170415144836) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,20 @@ ActiveRecord::Schema.define(version: 20170414020630) do
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
   end
 
+  create_table "league_teams", force: :cascade do |t|
+    t.string   "team_name"
+    t.integer  "league_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["league_id"], name: "index_league_teams_on_league_id", using: :btree
+  end
+
+  create_table "leagues", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "players", force: :cascade do |t|
     t.string   "name"
     t.string   "surname"
@@ -45,6 +59,15 @@ ActiveRecord::Schema.define(version: 20170414020630) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["team_id"], name: "index_players_on_team_id", using: :btree
+  end
+
+  create_table "tables", force: :cascade do |t|
+    t.integer  "points"
+    t.string   "team_name"
+    t.integer  "league_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["league_id"], name: "index_tables_on_league_id", using: :btree
   end
 
   create_table "teams", force: :cascade do |t|
@@ -65,5 +88,7 @@ ActiveRecord::Schema.define(version: 20170414020630) do
     t.index ["slug"], name: "index_videos_on_slug", unique: true, using: :btree
   end
 
+  add_foreign_key "league_teams", "leagues"
   add_foreign_key "players", "teams"
+  add_foreign_key "tables", "leagues"
 end

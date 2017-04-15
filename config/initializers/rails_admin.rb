@@ -38,4 +38,12 @@ RailsAdmin.config do |config|
     # history_index
     # history_show
   end
+
+  config.model Player do
+    list do
+      field :birthday do
+       date_format :short
+      end
+    end
+  end
 end

@@ -50,37 +50,8 @@ section.row.body-row
                     li
                         span.date = Russian::strftime(Time.current, "%d %B %Y")
                         span.name день рождение #{player.name} #{player.surname} 
-    section.col-lg-4.right-wrapper
-        .table-header-wrapper
-            i.sprite.sprite-L
-            h4.table-header перевенство украины
-            i.sprite.sprite-R
-        .sub-header первая лига U-17
-        table.table
-            thead
-                tr
-                    th
-                        | #
-                    th
-                        | команда
-                    th
-                        |о
-            tbody
-                tr
-                    td
-                        | 1
-                    td
-                        | барса
-                    td
-                        | 54
-                tr
-                    td
-                        | 1
-                    td
-                        | барса
-                    td
-                        | 54
-        = link_to 'подробная таблица', root_path, class: 'btn btn-outline-secondary table-btn'
+    section.col-lg-4
+        = render 'shared/fixtures'
 
 
 h4.last-news-header Тренерский состав

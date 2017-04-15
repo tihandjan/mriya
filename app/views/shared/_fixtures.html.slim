@@ -1,0 +1,26 @@
+.right-wrapper
+    .table-header-wrapper
+        i.sprite.sprite-L#back
+        h4.table-header перевенство украины
+        i.sprite.sprite-R#forward
+    - set_leagues.each_with_index do |league, i|
+        .sub-header class="table-#{i}" первая лига #{league.name}
+        table.table class="table-#{i}"
+            thead
+                tr
+                    th
+                        | #
+                    th
+                        | команда
+                    th
+                        |о
+            tbody
+                - league.tables.order(points: :desc).each_with_index do |table, index|
+                    tr
+                        td
+                            = index + 1
+                        td
+                            = table.team_name
+                        td
+                            = table.points
+    = link_to 'подробная таблица', root_path, class: 'btn btn-outline-secondary table-btn'
