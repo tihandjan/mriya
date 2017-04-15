@@ -22,7 +22,7 @@
                     = fa_icon "play"
 h2.last-news-header Последние новости
 section.row.body-row
-    .col-md-8.custom-col
+    section.col-lg-8.custom-col
         - unless @articles[1].blank?
             .col
                 = link_to article_path(@articles[1])
@@ -50,6 +50,38 @@ section.row.body-row
                     li
                         span.date = Russian::strftime(Time.current, "%d %B %Y")
                         span.name день рождение #{player.name} #{player.surname} 
-    .col-md-4
+    section.col-lg-4.right-wrapper
+        .table-header-wrapper
+            i.sprite.sprite-L
+            h4.table-header перевенство украины
+            i.sprite.sprite-R
+        .sub-header первая лига U-17
+        table.table
+            thead
+                tr
+                    th
+                        | #
+                    th
+                        | команда
+                    th
+                        |о
+            tbody
+                tr
+                    td
+                        | 1
+                    td
+                        | барса
+                    td
+                        | 54
+                tr
+                    td
+                        | 1
+                    td
+                        | барса
+                    td
+                        | 54
+        = link_to 'подробная таблица', root_path, class: 'btn btn-outline-secondary table-btn'
+
+
 h4.last-news-header Тренерский состав
 = render 'shared/slider' 
