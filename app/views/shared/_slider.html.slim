@@ -3,12 +3,12 @@
     div[style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"]
     div[style="position:absolute;display:block;background:image-url('images/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"]
   div[data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:809px;height:150px;overflow:hidden;"]
-    - Article.all.each do |article|
+    - set_coaches.each do |coach|
         div
-            img[data-u="image" src="https://dummyimage.com/290x215/000/fff"]
+            img[data-u="image" src="#{coach.photo.url}"]
         .caption
           .title тренер учебной
-          .title группы 2017
-          .name гречников юрий александрович
+          .title группы #{coach.coaching_groups}
+          .name = coach.name
   span.jssora03l[data-u="arrowleft" style="top:0px;left:8px;width:55px;height:55px;" data-autocenter="2"]
   span.jssora03r[data-u="arrowright" style="top:0px;right:8px;width:55px;height:55px;" data-autocenter="2"]
