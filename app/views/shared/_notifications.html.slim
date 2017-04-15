@@ -1,0 +1,11 @@
+- if notice
+  .alert.alert-success
+    a.close[data-dismiss="alert"]
+      | ×
+    i.fa.fa-check-circle[style="color: #3c763d; margin-right: 5px; "]
+    = notice
+- if alert
+  .alert.alert-danger
+    a.close[data-dismiss="alert"]
+      | ×
+    = alert

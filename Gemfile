@@ -40,6 +40,15 @@ gem 'youtube_rails'
 # SEO
 gem 'friendly_id', '~> 5.1.0'
 
+# authentication
+gem 'devise'
+gem 'cancancan'
+gem 'rolify'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-vkontakte'
+
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'rspec-rails'
