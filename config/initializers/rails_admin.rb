@@ -9,7 +9,14 @@ RailsAdmin.config do |config|
   # config.current_user_method(&:current_user)
 
   ## == Cancan ==
-  # config.authorize_with :cancan
+  config.authorize_with :cancan
+
+    config.authorize_with do
+      unless current_user.try(:admin?)
+        flash[:alert] = "You are not authorize to access this page!"
+        redirect_to main_app.root_path
+      end
+    end
 
   ## == Pundit ==
   # config.authorize_with :pundit
@@ -39,11 +46,4 @@ RailsAdmin.config do |config|
     # history_show
   end
 
-  config.model Player do
-    list do
-      field :birthday do
-       date_format :short
-      end
-    end
-  end
 end
