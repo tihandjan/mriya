@@ -1,4 +1,18 @@
 ru:
+  activerecord:
+    models:
+      article: Статьи
+      league: Лиги
+      league_team: Команды Лиги
+      player: Игроки
+      table: Таблицы
+      team: Команды Мрии
+      video: Видео
+    attributes:
+      table:
+        points: "Очки"
+        team_name: "Название команды"
+        league: "Лига"
   admin:
     js:
       true: 'True'
