@@ -85,14 +85,6 @@ section.main-section
                 li.ufc
                     a href="#"
                         i.sprite.sprite-ufc
-= render 'shared/notifications'
-.teams-wrapper.col-12
-    .teams.clearfix
-        ul
-            - set_teams.each do |team|
-                li
-                    = link_to team.name, team_path(team)
-            li Команды 
 - if current_user && current_user.admin?
   = link_to 'Admin', rails_admin_path, class: 'btn btn-primary admin-btn'
 

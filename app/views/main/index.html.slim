@@ -1,3 +1,10 @@
+.teams-wrapper.col-12
+    .teams.clearfix
+        ul
+            - set_teams.each do |team|
+                li
+                    = link_to team.name, team_path(team)
+            li Команды 
 .row.top-article-wrapper
     - if @articles.any?
         .col 
