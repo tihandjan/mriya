@@ -30,5 +30,9 @@ FactoryGirl.define do
   factory :user do
     email 
     password 'lollollol'
+
+    factory :admin do
+      after(:create) { |user| user.add_role(:admin) }
+    end
   end
 end
