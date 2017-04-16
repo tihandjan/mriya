@@ -48,3 +48,70 @@
         }
     }
 }
+
+.registration-modal {
+    .modal-dialog {
+        width: 320px;
+        .modal-content {
+            padding: 30px 30px 10px 30px;
+            border-radius: 0;
+            .header {
+                text-align: center;
+                text-transform: uppercase;
+                font-size: 14px;
+            }
+            .social-wrapper {
+                .btn {
+                    width: 100%;
+                    border-radius: 0;
+                    color: #FFF;
+                    font-size: 14px;
+                    margin: 8px 0;
+                    padding: 14px;
+                    font-size: 18px;
+                    position: relative;
+                    &:last-child {
+                        margin-bottom: 16px;
+                    }
+                    i {
+                        position: absolute;
+                        left: 18px;
+                        top: 17px;
+                    }
+                }
+                .vk-btn {
+                    background-color: #005b9e;
+                    &:hover {
+                        opacity: 0.8;
+                    }
+
+                }
+                .fb-btn {
+                    background-color: #304591;
+                    &:hover {
+                        opacity: 0.8;
+                    }
+                }
+                .google-btn {
+                    background-color: #ea4335;
+                    &:hover {
+                        opacity: 0.8;
+                    }
+                } 
+            }
+            .manual-wrapper {
+                .reg-btn {
+                    background-color: #fecb00;
+                    color: #005b9e;
+                    text-transform: uppercase;
+                    border-radius: 0;
+                    width: 45%;
+                    font-size: 14px;
+                    &:hover {
+                        opacity: 0.8;
+                    }
+                }
+            }
+        }
+    }
+}

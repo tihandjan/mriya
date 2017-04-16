@@ -60,7 +60,7 @@ section.main-section
                     a href="#"
                         i.sprite.sprite-Search
                 li.reg
-                    a href="#"
+                    a href='#' data-toggle="modal" data-target="#registrationModal"
                         | Регистрация
                 li
                     a href="#"
@@ -90,3 +90,23 @@ section.main-section
             li Команды 
 - if current_user && current_user.admin?
   = link_to 'Admin', rails_admin_path, class: 'btn btn-primary admin-btn'
+
+  / ********** modal ***********
+#registrationModal.modal.fade.registration-modal[tabindex="-1" role="dialog" aria-labelledby="registrationModalLabel" aria-hidden="true"]
+  .modal-dialog[role="document"]
+    .modal-content
+      .header Авторизуйтесь с помощью одной из соцсетей
+      .social-wrapper
+        = link_to '#', class: 'btn vk-btn'
+          i.fa.fa-vk
+          span ВКонтакте
+        = link_to '#', class: 'btn fb-btn'
+          i.fa.fa-facebook
+          span Facebook
+        = link_to '#', class: 'btn google-btn'
+          i.fa.fa-google-plus
+          span Google
+      .manual-wrapper.clearfix
+        = link_to 'Войти', new_user_session_path, class: 'btn reg-btn pull-left'
+        = link_to 'Регистрация', new_user_registration_path, class: 'btn reg-btn pull-right'
+/ ********** modal end ***********

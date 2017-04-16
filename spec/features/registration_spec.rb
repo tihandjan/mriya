@@ -1,5 +1,4 @@
 require 'rails_helper'
-include Warden::Test::Helpers
 
 feature 'user sign in' do
     scenario 'user can log in' do
@@ -29,11 +28,6 @@ feature 'user sign in' do
 end
 
 feature 'admin page' do
-    before(:each) do
-        @user = FactoryGirl.create(:user)
-        login @user
-    end
-
     scenario 'regular user can not visit admin page' do 
         visit rails_admin_path
 
@@ -42,6 +36,7 @@ feature 'admin page' do
     end
 
     scenario 'signed in user can not visit admin page' do 
+        user_sign_in
         visit rails_admin_path
 
         expect(current_path).to eq(root_path)
@@ -49,13 +44,9 @@ feature 'admin page' do
     end
 
     scenario 'signed in user with admin role can visit admin page' do 
-        @user.add_role(:admin)
+        admin_sign_in
         visit rails_admin_path
 
         expect(current_path).to eq(rails_admin_path)
     end
-end
-
-def login(user)
-    login_as user
 end
