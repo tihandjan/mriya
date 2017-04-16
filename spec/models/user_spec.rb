@@ -18,6 +18,7 @@
 #  provider               :string
 #  uid                    :string
 #  username               :string
+#  avatarc                :string
 #
 # Indexes
 #

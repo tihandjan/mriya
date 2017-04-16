@@ -271,4 +271,24 @@ Devise.setup do |config|
   # When using OmniAuth, Devise cannot automatically set OmniAuth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
+  config.omniauth :facebook, Rails.application.secrets.facebook_app_id, Rails.application.secrets.facebook_app_key
+  config.omniauth :vkontakte, Rails.application.secrets.vk_app_id, Rails.application.secrets.vk_app_key
+  
+  if Rails.env=="production"
+    CALLBACK_URL='http://fcmriya.org/users/auth/google_oauth2/callback'
+  else
+    CALLBACK_URL='http://localhost:3000/users/auth/google_oauth2/callback'
+  end
+  
+  config.omniauth :google_oauth2, Rails.application.secrets.google_app_id, Rails.application.secrets.google_app_key, {
+    :client_options => {:ssl => {:ca_file => 'C:\Ruby21\cacert.pem'}},
+    :provider_ignores_state => true,
+    :prompt => "select_account",
+    :redirect_uri => CALLBACK_URL,
+    setup: (lambda do |env|
+      request = Rack::Request.new(env)
+      env['omniauth.strategy'].options['token_params'] = {:redirect_uri => CALLBACK_URL}
+    end)
+    }
+
 end

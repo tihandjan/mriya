@@ -59,9 +59,14 @@ section.main-section
                 li
                     a href="#"
                         i.sprite.sprite-Search
-                li.reg
-                    a href='#' data-toggle="modal" data-target="#registrationModal"
-                        | Регистрация
+                - if user_signed_in?
+                  li.reg
+                      = link_to destroy_user_session_path, method: :delete
+                          | Выйти
+                - else
+                  li.reg
+                      a href='#' data-toggle="modal" data-target="#registrationModal"
+                          | Регистрация
                 li
                     a href="#"
                         i.sprite.sprite-youtube
@@ -97,13 +102,13 @@ section.main-section
     .modal-content
       .header Авторизуйтесь с помощью одной из соцсетей
       .social-wrapper
-        = link_to '#', class: 'btn vk-btn'
+        = link_to user_vkontakte_omniauth_authorize_path, class: 'btn vk-btn'
           i.fa.fa-vk
           span ВКонтакте
-        = link_to '#', class: 'btn fb-btn'
+        = link_to user_facebook_omniauth_authorize_path, class: 'btn fb-btn'
           i.fa.fa-facebook
           span Facebook
-        = link_to '#', class: 'btn google-btn'
+        = link_to user_google_oauth2_omniauth_authorize_path, class: 'btn google-btn'
           i.fa.fa-google-plus
           span Google
       .manual-wrapper.clearfix
