@@ -49,6 +49,9 @@ gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-vkontakte'
 
+# other
+gem 'social-share-button'
+
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'rspec-rails'

@@ -1,0 +1,113 @@
+.social-share-button {display: none;}
+.share-buttons {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    .social-btn {
+        display: block;
+        border: 1px solid #d8d8d8;
+        margin-bottom: 30px;
+        width: 50px;
+        height: 50px;
+        position: relative;
+        -webkit-transition: 0.5s;
+        -o-transition: 0.5s;
+        transition: 0.5s;
+        cursor: pointer;
+        &:hover {
+            background-color: #808080;
+            i {
+                color: #FFF;
+            }
+        }
+        i {
+            color: #808080;
+            font-size: 25px;
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            -webkit-transition: 0.5s;
+            -o-transition: 0.5s;
+            transition: 0.5s;
+        }
+        .fa-facebook {
+            left: 17px;
+        }
+        .fa-vk {
+            left: 10px;
+        }
+    }
+}
+
+.share-buttons-bottom {
+    padding: 0 0 0 30px;
+    font-size: 0;
+    margin-bottom: 30px;
+    margin-top: 25px;
+    .social-btn {
+        border: 1px solid #d8d8d8;
+        display: inline-block;
+        width: 120px;
+        height: 40px;
+        margin-left: -1px;
+        position: relative;
+        -webkit-transition: 0.5s;
+        -o-transition: 0.5s;
+        transition: 0.5s;
+        cursor: pointer;
+        &:hover {
+            background-color: #808080; 
+            i {
+                color: #FFF;
+            }
+        }
+        i {
+            color: #808080;
+            font-size: 20px;
+            position: absolute;
+            top: 10px;
+            left: 48px;
+            -webkit-transition: 0.5s;
+            -o-transition: 0.5s;
+            transition: 0.5s;
+        }
+        .fa-facebook {
+            left: 54px;
+        }
+    }
+}
+
+.show-wrapper {
+    .article-wrapper {
+        .date {
+            padding-left: 30px;
+        }
+        .title {
+            text-transform: uppercase;
+            color: #005b9e;
+            font-size: 36px;
+            padding-left: 30px;
+            margin-bottom: -12px;
+            @media only screen and (max-width: 991px) {
+                font-size: 22px;
+            }
+        }
+        .image-wrapper {
+            padding: 20px 92px 0 30px;
+            position: relative;
+            img {
+                width: 100%;
+            }
+        }
+        .body {
+            padding-left: 30px;
+            padding-top: 30px;
+            padding-right: 70px;
+        }
+    }
+}
+
+.comments {
+    padding-left: 30px;
+    padding-right: 15px;
+}
