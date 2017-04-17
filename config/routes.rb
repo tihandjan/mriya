@@ -10,7 +10,9 @@ Rails.application.routes.draw do
     get 'omniauth_callbacks/vkontakte'
   end
 
-  resources :articles, only: [:index, :show]
+  resources :articles, only: [:index, :show] do
+    get :more, on: :collection
+  end
   resources :videos,   only: [:index, :show]
   resources :teams,    only: [:show]
 end

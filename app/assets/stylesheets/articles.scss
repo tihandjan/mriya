@@ -1,3 +1,44 @@
-// Place all the styles related to the articles controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.index-image-wrapper {
+    margin-bottom: 25px;
+    img {
+        width: 100%;
+    }
+}
+
+.index-row {
+    .index-col {
+        padding-left: 14px;
+        padding-right: 14px;
+        .vertical-card {
+            .image-wrapper {
+                img {
+                    @media only screen and (max-width: 767px) {
+                        padding-left: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.wrapper-more-wrapper {
+    width: 100%;
+    margin-top: 25px;
+    .more-wrapper {
+        text-align: center;
+    }
+}
+
+.btn-more {
+    text-transform: uppercase;
+    background-color: #fecb00;
+    color: #005b9e;
+    font-size: 14px;
+    border-radius: 0;
+    padding: 4px 15px;
+    margin: 0 auto;
+    transition: 300ms;
+    &:hover {
+        opacity: 0.7;
+    }
+}
