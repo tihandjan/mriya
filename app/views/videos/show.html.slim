@@ -1,0 +1,33 @@
+.teams-wrapper.col-12
+    .teams.clearfix
+        ul
+            - set_teams.each do |team|
+                li
+                    = link_to team.name, team_path(team)
+            li Команды 
+.index-image-wrapper
+    = image_tag 'news_show.png'
+.row.show-wrapper
+    .col-lg-8
+        article.article-wrapper
+            .date = Russian::strftime(Time.current, "%d %B %Y")
+            h1.title = @video.title
+            .image-wrapper
+                = raw YouTubeRails.youtube_embed_url(@video.video_url, 420, 315, disable_suggestion: true)
+
+            .share-buttons-bottom
+                a.social-btn.fb[onclick="$('.ssb-facebook').click();"]
+                    i.fa.fa-facebook[aria-hidden="true"]
+                a.social-btn.vk.vk-btn[onclick="$('.ssb-vkontakte').click();"]
+                    i.fa.fa-vk[aria-hidden="true"]
+                a.social-btn.tw[onclick="$('.ssb-twitter').click();"]
+                    i.fa.fa-twitter[aria-hidden="true"]
+                a.social-btn.pocket.pocket-btn[onclick="$('.ssb-google_plus').click();"]
+                    i.fa.fa-google-plus[aria-hidden="true"]
+            .comments
+                = render 'shared/disqus', object: @video
+    .col-lg-4
+        = render 'shared/fixtures'
+
+
+= social_share_button_tag(@video.title, :image => "#{root_url}#{YouTubeRails.extract_video_image(@video.video_url, 'high')}", :'data-type' => 'photo', via: "mriya")
