@@ -10,7 +10,7 @@ class ArticlesController < ApplicationController
     def more
         number = params[:count]
         number = number.to_i + 3
-        @articles =Article.order(created_at: :desc).last(number)
+        @articles = Article.order(created_at: :desc).last(number)
         respond_to do |f|
             f.js {}
         end
