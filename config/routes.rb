@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   resources :articles, only: [:index, :show] do
     get :more, on: :collection
   end
-  resources :videos,   only: [:index, :show]
+  resources :videos,   only: [:index, :show] do
+    get :more, on: :collection
+  end
   resources :teams,    only: [:show]
 end
