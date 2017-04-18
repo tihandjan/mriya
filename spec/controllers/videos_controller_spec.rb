@@ -1,3 +1,20 @@
+# == Schema Information
+#
+# Table name: videos
+#
+#  id         :integer          not null, primary key
+#  title      :string
+#  summary    :string
+#  video_url  :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  slug       :string
+#
+# Indexes
+#
+#  index_videos_on_slug  (slug) UNIQUE
+#
+
 require 'rails_helper'
 
 RSpec.describe VideosController, type: :controller do

@@ -1,3 +1,20 @@
+# == Schema Information
+#
+# Table name: articles
+#
+#  id         :integer          not null, primary key
+#  title      :string
+#  body       :text
+#  image      :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  slug       :string
+#
+# Indexes
+#
+#  index_articles_on_slug  (slug) UNIQUE
+#
+
 require 'rails_helper'
 
 RSpec.describe ArticlesController, type: :controller do

@@ -7,6 +7,7 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  slug       :string
+#  photo      :string
 #
 # Indexes
 #
@@ -22,4 +23,7 @@ class Team < ApplicationRecord
 
     has_many :players
     validates :name, presence: true
+    validates :photo, presence: true
+
+    mount_uploader :photo, TeamUploader
 end

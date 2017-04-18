@@ -9,6 +9,7 @@
 #  team_id    :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  photo      :string
 #
 # Indexes
 #
@@ -21,4 +22,5 @@ RSpec.describe Player, type: :model do
   it { should validate_presence_of(:name) }
   it { should validate_presence_of(:surname) }
   it { should validate_presence_of(:birthday) }
+  it { should validate_presence_of(:photo) }
 end

@@ -7,6 +7,7 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  slug       :string
+#  photo      :string
 #
 # Indexes
 #
@@ -17,4 +18,5 @@ require 'rails_helper'
 
 RSpec.describe Team, type: :model do
     it { should validate_presence_of(:name) }
+    it { should validate_presence_of(:photo) }
 end

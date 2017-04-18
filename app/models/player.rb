@@ -9,6 +9,7 @@
 #  team_id    :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  photo      :string
 #
 # Indexes
 #
@@ -20,4 +21,7 @@ class Player < ApplicationRecord
   validates :name, presence: true
   validates :surname, presence: true
   validates :birthday, presence: true
+  validates :photo, presence: true
+
+  mount_uploader :photo, PlayerUploader
 end
