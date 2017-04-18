@@ -22,6 +22,8 @@ class Team < ApplicationRecord
     end
 
     has_many :players
+    has_many :partnership
+    has_many :coaches, through: :partnership
     validates :name, presence: true
     validates :photo, presence: true
 

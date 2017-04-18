@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170418172239) do
+ActiveRecord::Schema.define(version: 20170418181755) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,9 +28,8 @@ ActiveRecord::Schema.define(version: 20170418172239) do
   create_table "coaches", force: :cascade do |t|
     t.string   "name"
     t.string   "photo"
-    t.string   "coaching_groups"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -57,6 +56,15 @@ ActiveRecord::Schema.define(version: 20170418172239) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "partnerships", force: :cascade do |t|
+    t.integer  "team_id"
+    t.integer  "coach_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["coach_id"], name: "index_partnerships_on_coach_id", using: :btree
+    t.index ["team_id"], name: "index_partnerships_on_team_id", using: :btree
   end
 
   create_table "players", force: :cascade do |t|
@@ -136,6 +144,8 @@ ActiveRecord::Schema.define(version: 20170418172239) do
   end
 
   add_foreign_key "league_teams", "leagues"
+  add_foreign_key "partnerships", "coaches"
+  add_foreign_key "partnerships", "teams"
   add_foreign_key "players", "teams"
   add_foreign_key "tables", "leagues"
 end
