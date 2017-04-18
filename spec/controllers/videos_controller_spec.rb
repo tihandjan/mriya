@@ -20,7 +20,7 @@ require 'rails_helper'
 RSpec.describe VideosController, type: :controller do
 
     describe 'GET #index' do
-        let(:videos) { FactoryGirl.create_list(:video, 3) }
+        before(:each) { @videos = FactoryGirl.create_list(:video, 3) }
         it 'renders index template' do
             get :index
 
@@ -28,7 +28,7 @@ RSpec.describe VideosController, type: :controller do
         end
         it 'assigns videos to videos var' do
             get :index
-            expect(assigns(:videos)).to match_array(videos)
+            expect(assigns(:videos)).to match_array(@videos)
         end
     end
 

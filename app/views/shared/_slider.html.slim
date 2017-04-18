@@ -8,7 +8,7 @@
             img[data-u="image" src="#{coach.photo.url}"]
         .caption
           .title тренер учебной
-          .title группы #{coach.coaching_groups}
+          .title группы #{coach.teams.map(&:name).join(', ')}
           .name = coach.name
   span.jssora03l[data-u="arrowleft" style="top:0px;left:8px;width:55px;height:55px;" data-autocenter="2"]
   span.jssora03r[data-u="arrowright" style="top:0px;right:8px;width:55px;height:55px;" data-autocenter="2"]

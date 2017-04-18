@@ -17,5 +17,6 @@
 FactoryGirl.define do
   factory :team do
     name "MyString"
+    photo { fixture_file_upload(Rails.root.join('spec', 'test_images', 'test.png'), 'image/png') }
   end
 end
