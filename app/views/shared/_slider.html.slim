@@ -5,7 +5,7 @@
   div[data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:809px;height:150px;overflow:hidden;"]
     - set_coaches.each do |coach|
         div
-            img[data-u="image" src="#{coach.photo.url}"]
+            img[data-u="image" src="#{coach.photo.url(:wide)}"]
         .caption
           .title тренер учебной
           .title группы #{coach.teams.map(&:name).join(', ')}

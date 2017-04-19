@@ -1,10 +1,8 @@
 require 'rails_helper'
 
-feature 'more pagination' do
-    before(:each) do
-        FactoryGirl.create_list(:article, 14)
-    end
-    scenario 'cick on more btn downloads +3 article', js: true do
+feature 'more pagination', js: true do
+    before(:each) { FactoryGirl.create_list(:article, 14) }
+    scenario 'cick on more btn downloads +3 article' do
         visit articles_path
         click_on 'еще новости'
 
@@ -12,7 +10,7 @@ feature 'more pagination' do
         expect(page).to have_css('.index-col', count: 9)
     end
 
-    scenario 'double cick on more btn downloads +6 article', js: true do
+    scenario 'double cick on more btn downloads +6 article' do
         visit articles_path
         click_on 'еще новости'
         click_on 'еще новости'

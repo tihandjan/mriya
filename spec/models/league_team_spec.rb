@@ -18,5 +18,6 @@ require 'rails_helper'
 RSpec.describe LeagueTeam, type: :model do
   describe 'validations' do
     it { should validate_presence_of(:team_name) }
+    it { should belong_to(:league) }
   end
 end

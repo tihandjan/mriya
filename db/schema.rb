@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170418181755) do
+ActiveRecord::Schema.define(version: 20170419000101) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20170418181755) do
     t.string   "photo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date     "birthday"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -56,6 +57,14 @@ ActiveRecord::Schema.define(version: 20170418181755) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "merits", force: :cascade do |t|
+    t.string   "merit"
+    t.integer  "coach_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["coach_id"], name: "index_merits_on_coach_id", using: :btree
   end
 
   create_table "partnerships", force: :cascade do |t|
@@ -144,6 +153,7 @@ ActiveRecord::Schema.define(version: 20170418181755) do
   end
 
   add_foreign_key "league_teams", "leagues"
+  add_foreign_key "merits", "coaches"
   add_foreign_key "partnerships", "coaches"
   add_foreign_key "partnerships", "teams"
   add_foreign_key "players", "teams"

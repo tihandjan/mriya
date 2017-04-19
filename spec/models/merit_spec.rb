@@ -1,21 +1,20 @@
 # == Schema Information
 #
-# Table name: tables
+# Table name: merits
 #
 #  id         :integer          not null, primary key
-#  points     :integer
-#  team_name  :string
-#  league_id  :integer
+#  merit      :string
+#  coach_id   :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 # Indexes
 #
-#  index_tables_on_league_id  (league_id)
+#  index_merits_on_coach_id  (coach_id)
 #
 
 require 'rails_helper'
 
-RSpec.describe Table, type: :model do
-    it { should belong_to(:league) }
+RSpec.describe Merit, type: :model do
+  it { should belong_to(:coach) }
 end
