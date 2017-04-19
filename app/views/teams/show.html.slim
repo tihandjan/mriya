@@ -29,18 +29,19 @@ h1.last-news-header cостав команды
                             .country Украина
                             .birthday = player.birthday.strftime('%d.%m.%Y')
         h3.last-news-header.coach-header главный тренер
-        .row.coach-wrapper
-            .col-md-4.coach-col
-                .coach-image-wrapper
-                    = image_tag (@team.coaches.first.photo.blank? ? 'https://dummyimage.com/800x400/000/fff' : @team.coaches.first.photo.url(:thumb)), alt: @team.coaches.first.name
-            .col-md-8.coach-col
-                .coach-merits
-                    h4.name = @team.coaches.first.name
-                    span.country Гражданство:&nbsp;
-                    span.sitizen Украина
-                    .birthday Дата рождения: #{@team.coaches.first.birthday.strftime('%d.%m.%Y')}
-                    ul.merits
-                        - @team.coaches.first.merits.each do |merit|
-                            li = merit.merit
+        - if @team.coaches.any?
+            .row.coach-wrapper
+                .col-md-4.coach-col
+                    .coach-image-wrapper
+                        = image_tag (@team.coaches.first.photo.blank? ? 'https://dummyimage.com/800x400/000/fff' : @team.coaches.first.photo.url(:thumb)), alt: @team.coaches.first.name
+                .col-md-8.coach-col
+                    .coach-merits
+                        h4.name = @team.coaches.first.name
+                        span.country Гражданство:&nbsp;
+                        span.sitizen Украина
+                        .birthday Дата рождения: #{@team.coaches.first.birthday.strftime('%d.%m.%Y')}
+                        ul.merits
+                            - @team.coaches.first.merits.each do |merit|
+                                li = merit.merit
     .col-lg-4
         = render 'shared/fixtures'
