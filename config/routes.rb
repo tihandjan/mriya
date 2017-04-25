@@ -13,10 +13,11 @@ Rails.application.routes.draw do
   resources :articles, only: [:index, :show] do
     get :more, on: :collection
   end
-  resources :videos,   only: [:index, :show] do
+  resources :videos, only: [:index, :show] do
     get :more, on: :collection
   end
-  resources :teams,    only: [:show]
+  resources :teams, only: [:show]
+  resources :schedules, only: [:index]
 
   namespace :about, path: '/' do
     get :history
@@ -30,4 +31,6 @@ Rails.application.routes.draw do
     get :memo
     get :anthem
   end
+
+
 end
