@@ -10,5 +10,7 @@
     .about-club о клубе
 .row.about-row
     .col-lg-9.about-col
+        .image-wrapper
+            = image_tag 'about/emblema.jpg', alt: 'Эмблема клуба'
     .col-lg-3.about-col
         = render 'right_nav', index_of_active_link: 4
