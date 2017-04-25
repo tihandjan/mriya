@@ -1,0 +1,74 @@
+.schedule-wrapper {
+    background-color: #2e2e2e;   
+    margin-top: -25px; 
+    padding: 40px 70px;
+    padding-bottom: 1px;
+    @media only screen and (max-width:1199px) {
+        padding: 40px 5px;
+    }
+    .training-schedule {
+        text-transform: uppercase;
+        color: #FFF;
+        text-align: center;
+        line-height: 1;
+    }
+    .training-stadium {
+        text-align: center;
+        .quote {
+            color: #FFF;
+        }
+        .stadium {
+            color: #ffd401;
+            font-size: 18px;
+            text-transform: uppercase;
+        }
+    }
+}
+
+.schedule-table {
+    margin-bottom: 45px;
+    @media only screen and (max-width:991px) {
+        display: none;
+    }
+    thead {
+        tr {
+            th {
+                color: #005b9e;
+                font-weight: 700;
+                border: 2px solid #787878;
+                padding-top: 6px;
+                padding-bottom: 6px;
+            }
+        }
+    }
+    tbody {
+        tr {
+            td {
+                color: #FFF;
+                border: 2px solid #787878;
+                padding-top: 6px;
+                padding-bottom: 6px;
+                width: 90px;
+                white-space: nowrap;
+                @media only screen and (max-width:1199px) {
+                    font-size: 13px;
+                    padding: 4px 6px;
+                }
+                &:first-child {
+                    color: #ffd401;
+                    width: 40px;
+                }
+                &:nth-child(2) {
+                    min-width: 250px;
+                }
+            }
+        }
+    }
+}
+
+.mobile-table {
+    color: #FFF;
+    @media only screen and (min-width:992px) {
+        display: none;
+    }
+}

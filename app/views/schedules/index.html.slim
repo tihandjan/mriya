@@ -1,0 +1,119 @@
+.teams-wrapper.col-12
+    .teams.clearfix
+        ul
+            - set_teams.each do |team|
+                li
+                    = link_to team.name, team_path(team)
+            li Команды 
+.index-image-wrapper
+    = image_tag 'schedule.jpg'
+    .schedule-text-wrapper
+        .schedule-yellow расписание  
+        .schedule-white тренировок
+.schedule-wrapper
+    .training-schedule график тренировок на стадионе
+    .training-stadium
+        span.quote "
+        span.stadium металлург
+        span.quote "
+    table.table.table-bordered.schedule-table
+        thead
+            tr 
+                th U
+                th ФИО
+                th Пн
+                th Вт
+                th Ср
+                th Чт
+                th Пт
+                th Сб
+                th Вс
+        tbody
+            - @schedule_metalurg.each do |table|
+                tr
+                    td = table.team
+                    td = table.coach
+                    td = table.mon
+                    td = table.tue
+                    td = table.wed
+                    td = table.thu
+                    td = table.fri
+                    td = table.sat
+                    td = table.sun
+    table.table.table-bordered.mobile-table.table-responsive
+        thead
+            tr 
+                th U
+                th ФИО
+                th Пн
+                th Вт
+                th Ср
+                th Чт
+                th Пт
+                th Сб
+                th Вс
+        tbody
+            - @schedule_metalurg.each do |table|
+                tr
+                    td = table.team
+                    td = table.coach
+                    td = table.mon
+                    td = table.tue
+                    td = table.wed
+                    td = table.thu
+                    td = table.fri
+                    td = table.sat
+                    td = table.sun
+    .training-schedule график тренировок на стадионе
+    .training-stadium
+        span.quote "
+        span.stadium спартак
+        span.quote "
+    table.table.table-bordered.schedule-table
+        thead
+            tr 
+                th U
+                th ФИО
+                th Пн
+                th Вт
+                th Ср
+                th Чт
+                th Пт
+                th Сб
+                th Вс
+        tbody
+            - @schedule_spartac.each do |table|
+                tr
+                    td = table.team
+                    td = table.coach
+                    td = table.mon
+                    td = table.tue
+                    td = table.wed
+                    td = table.thu
+                    td = table.fri
+                    td = table.sat
+                    td = table.sun
+    table.table.table-bordered.mobile-table.table-responsive
+        thead
+            tr 
+                th U
+                th ФИО
+                th Пн
+                th Вт
+                th Ср
+                th Чт
+                th Пт
+                th Сб
+                th Вс
+        tbody
+            - @schedule_spartac.each do |table|
+                tr
+                    td = table.team
+                    td = table.coach
+                    td = table.mon
+                    td = table.tue
+                    td = table.wed
+                    td = table.thu
+                    td = table.fri
+                    td = table.sat
+                    td = table.sun
