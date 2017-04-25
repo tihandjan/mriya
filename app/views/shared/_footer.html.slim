@@ -1,7 +1,7 @@
-- unless params[:controller] == 'teams'     
+- unless params[:controller] == 'teams' || params[:controller] == 'about'   
     .history-wrapper
         = image_tag 'history.png', alt: 'история создания футбольного клуба'
-        = link_to root_path, class: 'btn my-btn blue-btn'
+        = link_to about_history_path, class: 'btn my-btn blue-btn'
             span.label читать
 .history-wrapper
     = image_tag 'tren.png', alt: 'расписание тренировок'

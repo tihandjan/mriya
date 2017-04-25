@@ -1,7 +1,19 @@
 .index-image-wrapper {
     margin-bottom: 25px;
+    position: relative;
     img {
         width: 100%;
+    }
+    .about-club {
+        position: absolute;
+        left: 10%;
+        top: 45%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        font-size: 32px;
+        color: #fecb00;
     }
 }
 

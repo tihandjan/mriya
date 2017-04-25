@@ -1,0 +1,14 @@
+.teams-wrapper.col-12
+    .teams.clearfix
+        ul
+            - set_teams.each do |team|
+                li
+                    = link_to team.name, team_path(team)
+            li Команды 
+.index-image-wrapper
+    = image_tag 'news_show.png'
+    .about-club о клубе
+.row.about-row
+    .col-lg-9.about-col
+    .col-lg-3.about-col
+        = render 'right_nav', index_of_active_link: 5

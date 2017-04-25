@@ -29,6 +29,9 @@ a {
     top: 0;
     right: 0;
     border-radius: 0;
+    @media only screen and (max-width: 991px) {
+        display: none;
+    }
 }
 
 .custom-container {
@@ -445,6 +448,7 @@ a {
         padding: 6px 112px;
         @media only screen and (max-width: 991px) {
             left: 31%;
+            padding: 6px 70px;
         }
         @media only screen and (max-width: 767px) {
             left: 24%;

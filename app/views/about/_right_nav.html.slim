@@ -1,0 +1,22 @@
+.right-nav
+    ul 
+        li class="#{'active' if index_of_active_link == 0}"
+            = link_to 'История создания клуба', about_history_path 
+        li class="#{'active' if index_of_active_link == 1}"
+            = link_to 'Спонсоры и партнеры', about_sponsors_path 
+        li class="#{'active' if index_of_active_link == 2}"
+            = link_to 'Миссия и ценности', about_mission_path 
+        li class="#{'active' if index_of_active_link == 3}"
+            = link_to 'Гимн клуба', about_anthem_path 
+        li class="#{'active' if index_of_active_link == 4}"
+            = link_to 'Эмблема', about_emblem_path 
+        li class="#{'active' if index_of_active_link == 5}"
+            = link_to 'Достижения', about_achievements_path 
+        li class="#{'active' if index_of_active_link == 6}"
+            = link_to 'Тренерский состав', about_coaching_path 
+        li class="#{'active' if index_of_active_link == 7}"
+            = link_to 'Выпускники', about_graduates_path 
+        li class="#{'active' if index_of_active_link == 8}"
+            = link_to 'Советы для родителей', about_tips_path 
+        li class="#{'active' if index_of_active_link == 9}"
+            = link_to 'Памятка для футболиста', about_memo_path 

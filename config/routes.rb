@@ -17,4 +17,17 @@ Rails.application.routes.draw do
     get :more, on: :collection
   end
   resources :teams,    only: [:show]
+
+  namespace :about, path: '/' do
+    get :history
+    get :sponsors
+    get :mission
+    get :emblem
+    get :achievements
+    get :coaching
+    get :graduates
+    get :tips
+    get :memo
+    get :anthem
+  end
 end
