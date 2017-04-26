@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170425194934) do
+ActiveRecord::Schema.define(version: 20170426060149) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "albums", force: :cascade do |t|
+    t.string   "title"
+    t.string   "cover_photo"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "slug"
+    t.index ["slug"], name: "index_albums_on_slug", unique: true, using: :btree
+  end
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
@@ -74,6 +83,14 @@ ActiveRecord::Schema.define(version: 20170425194934) do
     t.datetime "updated_at", null: false
     t.index ["coach_id"], name: "index_partnerships_on_coach_id", using: :btree
     t.index ["team_id"], name: "index_partnerships_on_team_id", using: :btree
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.integer  "album_id"
+    t.string   "photo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["album_id"], name: "index_photos_on_album_id", using: :btree
   end
 
   create_table "players", force: :cascade do |t|
@@ -167,10 +184,21 @@ ActiveRecord::Schema.define(version: 20170425194934) do
     t.index ["slug"], name: "index_videos_on_slug", unique: true, using: :btree
   end
 
+  create_table "views", force: :cascade do |t|
+    t.string   "viewable_type"
+    t.integer  "viewable_id"
+    t.integer  "views",         default: 0
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.index ["viewable_id", "viewable_type"], name: "index_views_on_viewable_id_and_viewable_type", using: :btree
+    t.index ["viewable_type", "viewable_id"], name: "index_views_on_viewable_type_and_viewable_id", using: :btree
+  end
+
   add_foreign_key "league_teams", "leagues"
   add_foreign_key "merits", "coaches"
   add_foreign_key "partnerships", "coaches"
   add_foreign_key "partnerships", "teams"
+  add_foreign_key "photos", "albums"
   add_foreign_key "players", "teams"
   add_foreign_key "tables", "leagues"
 end

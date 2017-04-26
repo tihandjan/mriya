@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   end
   resources :teams, only: [:show]
   resources :schedules, only: [:index]
+  resources :albums, only: [:index, :show]
 
   namespace :about, path: '/' do
     get :history
