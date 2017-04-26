@@ -62,6 +62,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'rails-controller-testing'
   gem 'selenium-webdriver'
+  gem 'railroady'
 end
 
 group :development do
