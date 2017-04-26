@@ -410,6 +410,33 @@ a {
     }
 }
 
+.album-card {
+    margin-bottom: 75px;
+    .caption {
+        .date-album {
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        .fa {
+            margin-top: 10px;
+            margin-left: 28px;
+            margin-right: 8px;
+        }
+        .photo-count {
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        .views-album {
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        .title-album {
+            font-size: 18px;
+            text-transform: inherit;
+        }
+    }
+}
+
 .birthday-wrapper {
     ul {
         list-style: none;
