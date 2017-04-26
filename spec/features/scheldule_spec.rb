@@ -10,11 +10,11 @@ feature 'schedule page' do
     end
 
     scenario 'user can see schedule' do
-        FactoryGirl.create(:schedule)
-        FactoryGirl.create(:schedule_spartac)
+        FactoryGirl.create_list(:schedule, 5)
+        FactoryGirl.create_list(:schedule_spartac, 2)
         visit root_path
         page.find('.history-wrapper .yellow-btn').click
         
-        expect(page).to have_css('.schedule-table tbody tr', count: 2)
+        expect(page).to have_css('.schedule-table tbody tr', count: 7)
     end
 end
