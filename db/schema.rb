@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170425194934) do
+ActiveRecord::Schema.define(version: 20170426011247) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -165,6 +165,16 @@ ActiveRecord::Schema.define(version: 20170425194934) do
     t.datetime "updated_at", null: false
     t.string   "slug"
     t.index ["slug"], name: "index_videos_on_slug", unique: true, using: :btree
+  end
+
+  create_table "views", force: :cascade do |t|
+    t.string   "viewable_type"
+    t.integer  "viewable_id"
+    t.integer  "views",         default: 0
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.index ["viewable_id", "viewable_type"], name: "index_views_on_viewable_id_and_viewable_type", using: :btree
+    t.index ["viewable_type", "viewable_id"], name: "index_views_on_viewable_type_and_viewable_id", using: :btree
   end
 
   add_foreign_key "league_teams", "leagues"
