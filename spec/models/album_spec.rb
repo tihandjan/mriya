@@ -7,6 +7,11 @@
 #  cover_photo :string
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  slug        :string
+#
+# Indexes
+#
+#  index_albums_on_slug  (slug) UNIQUE
 #
 
 require 'rails_helper'
