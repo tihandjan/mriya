@@ -1,0 +1,17 @@
+.list-group style="position:absolute;top:50px;left:-5px;right:0;z-index:5;max-width:546px;background:#FFF;padding:10px;"
+    - if @articles.any?
+        - @articles.each do |article|
+            = link_to article_path(article)
+                = image_tag article.image.url(:thumb), class: 'pull-left', style: 'margin-right:10px;width:120px;' 
+                p.list-group-item-text style="font-size:14px"
+                    = truncate(article.title, length: 70)
+    - if @videos.any?
+        - @videos.each do |video|
+            = link_to video_path(video)
+                = image_tag YouTubeRails.extract_video_image(video.video_url, 'high'), class: 'pull-left', style: 'margin-right:10px;width:120px;' 
+                p.list-group-item-text style="font-size:14px"
+                    = truncate(video.title, length: 70)
+    - if !@articles.any? && !@videos.any?
+        a.list-group-item.clearfix.text-center
+            .list-group-item-text
+                | Попробуйте изменить поисковый запрос.

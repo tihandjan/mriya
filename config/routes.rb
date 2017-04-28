@@ -33,5 +33,9 @@ Rails.application.routes.draw do
     get :anthem
   end
 
+  namespace :main, path: '/' do
+    get :search
+  end
+
 
 end

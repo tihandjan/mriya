@@ -57,8 +57,13 @@ section.main-section
         .col.social-col
             ul
                 li
-                    a href="#"
+                    a#search-icon href="#"
                         i.sprite.sprite-Search
+                li#search-wrapper
+                    = form_tag main_search_path, method: :get, remote: true do
+                      = text_field_tag :search, params[:search], class: 'form-control', placeholder: 'Как мы можем Вам помочь?', onkeypress: "setTimeout(function(){$('#search-btn').click()}, 300)"
+                      = button_tag name: nil, class: 'btn btn-default', id: 'search-btn'
+                    #search-results
                 - if user_signed_in?
                   li.reg
                       = link_to destroy_user_session_path, method: :delete
