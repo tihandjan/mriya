@@ -3,16 +3,74 @@ ru:
     models:
       article: Статьи
       league: Лиги
-      league_team: Команды Лиги
-      player: Игроки
+      league_team: Команды лиги
+      player: Игроки Мрии
       table: Таблицы
       team: Команды Мрии
       video: Видео
+      album: Альбом
+      coach: Тренера
+      merit: Заслуги тренеров
+      photo: Фотографии
+      schedule: Расписание тренировок
+      user: Пользователи
     attributes:
-      table:
+      album:
+        title: "Заголовок"
+        cover_photo: "Обложка альбома"
+        photos: "Фотографии"
+        created_at: "Создан"
+      article:
+        title: "Заголовок"
+        body: "Основной текст"
+        image: "Фото статьи"
+        created_at: "Создан"
+      league:
+        name: "Имя Лиги"
+        league_teams: "Команды лиги"
+      league_team: 
+        team_name: "Название команды"
+        league: "Из какой лиги"
+      player: 
+        name: "Имя"
+        surname: "Фамилия"
+        birthday: "День рождения"
+        photo: "Фото"
+        team: "Из какой команды"
+      table: 
         points: "Очки"
         team_name: "Название команды"
         league: "Лига"
+      team: 
+        name: "Имя команды"
+        photo: "Фото"
+      video:
+        title: "Заголовок"
+        summary: "Краткое описание видео"
+        video_url: "Ссылка с Youtube"
+      coach: 
+        name: "ФИО"
+        photo: "Фото"
+        birthday: "День рождения"
+        teams: "Тренеруемые команды"
+        merits: "Заслуги"
+      merit: 
+        merit: "Заслуга"
+        coach: "Тренер"
+      photo: 
+        album: "Альбом"
+        photo: "Фото"
+      schedule: 
+        team: "Команды"
+        coach: "Тренер"
+        stadium: "Стадион"
+        mon: "понедельник"
+        tue: "вторник"
+        wed: "среда"
+        thu: "четверг"
+        fri: "пятница"
+        sat: "субота"
+        sun: "воскресенье"
   admin:
     js:
       true: 'True'

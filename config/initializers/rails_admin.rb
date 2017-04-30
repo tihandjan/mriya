@@ -46,4 +46,213 @@ RailsAdmin.config do |config|
     # history_show
   end
 
+  config.excluded_models = ["Partnership", "Role", "View"]
+  config.model 'Album' do
+    list do
+      field :title
+      field :cover_photo
+      field :created_at
+    end
+    create do
+      field :title
+      field :cover_photo
+      field :photos
+    end
+    edit do
+      field :title
+      field :cover_photo
+      field :photos
+    end
+  end
+
+  config.model 'Article' do
+    list do
+      field :title
+      field :body
+      field :image
+      field :created_at
+    end
+    create do
+      field :title
+      field :body
+      field :image
+    end
+    edit do
+      field :title
+      field :body
+      field :image
+    end
+  end
+
+  config.model 'Video' do
+    list do
+      field :title
+      field :summary
+      field :video_url
+    end
+    create do
+      field :title
+      field :summary
+      field :video_url
+    end
+    edit do
+      field :title
+      field :summary
+      field :video_url
+    end
+  end
+  config.model 'Merit' do
+    list do
+      field :merit
+      field :coach
+    end
+    create do
+      field :merit
+      field :coach
+    end
+    edit do
+      field :merit
+      field :coach
+    end
+  end
+  config.model 'Player' do
+    list do
+      field :name
+      field :surname
+      field :birthday
+      field :photo
+      field :team
+    end
+    create do
+      field :name
+      field :surname
+      field :birthday
+      field :photo
+      field :team
+    end
+    edit do
+      field :name
+      field :surname
+      field :birthday
+      field :photo
+      field :team
+    end
+  end
+  config.model 'Team' do
+    list do
+      field :name
+      field :photo
+    end
+    create do
+      field :name
+      field :photo
+    end
+    edit do
+      field :name
+      field :photo
+    end
+  end
+  config.model 'LeagueTeam' do
+    list do
+      field :team_name
+      field :league
+    end
+    create do
+      field :team_name
+      field :league
+    end
+    edit do
+      field :team_name
+      field :league
+    end
+  end
+  config.model 'League' do
+    list do
+      field :name
+      field :league_teams
+    end
+    create do
+      field :name
+      field :league_teams
+    end
+    edit do
+      field :name
+      field :league_teams
+    end
+  end
+  config.model 'Table' do
+    list do
+      field :points
+      field :team_name
+      field :league
+    end
+    create do
+      field :points
+      field :team_name
+      field :league
+    end
+    edit do
+      field :points
+      field :team_name
+      field :league
+    end
+  end
+  config.model 'Coach' do
+    list do
+      field :name
+      field :birthday
+      field :photo
+      field :teams
+      field :merits
+    end
+    create do
+      field :name
+      field :birthday
+      field :photo
+      field :teams
+      field :merits
+    end
+    edit do
+      field :name
+      field :birthday
+      field :photo
+      field :teams
+      field :merits
+    end
+  end
+  config.model 'Schedule' do
+    create do
+      field :stadium, :enum do
+        enum do
+          ['металлург', 'спартак']
+        end
+      end
+      field :team
+      field :coach
+      field :mon
+      field :tue
+      field :wed
+      field :thu
+      field :fri
+      field :sat
+      field :sun
+    end
+    edit do
+      field :stadium, :enum do
+        enum do
+          ['металлург', 'спартак']
+        end
+      end
+      field :team
+      field :coach
+      field :mon
+      field :tue
+      field :wed
+      field :thu
+      field :fri
+      field :sat
+      field :sun
+    end
+  end
+
 end
