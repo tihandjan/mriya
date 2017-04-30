@@ -74,12 +74,12 @@ RailsAdmin.config do |config|
     end
     create do
       field :title
-      field :body
+      field :body, :ck_editor
       field :image
     end
     edit do
       field :title
-      field :body
+      field :body, :ck_editor
       field :image
     end
   end

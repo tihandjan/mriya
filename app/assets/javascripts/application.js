@@ -17,3 +17,4 @@
 //= require tether
 //= require bootstrap-sprockets
 //= require social-share-button
+//= require ckeditor/init

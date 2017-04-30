@@ -53,6 +53,9 @@ gem 'omniauth-vkontakte'
 gem 'social-share-button'
 gem 'htmlcompressor', '~> 0.2.0'
 
+# text editor
+gem 'ckeditor'
+
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'rspec-rails'
