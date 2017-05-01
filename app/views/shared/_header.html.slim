@@ -20,12 +20,12 @@ nav.navbar.navbar-toggleable-md.navbar-light.bg-faded.main-nav
         a#navbarDropdownMenuLink.nav-link[href="№" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"]
           |  Турниры 
         .dropdown-menu[aria-labelledby="navbarDropdownMenuLink"]
-          a.dropdown-item[href="#"]
-            | Action
-          a.dropdown-item[href="#"]
-            | Another action
-          a.dropdown-item[href="#"]
-            | Something else here 
+          = link_to '#', class: 'dropdown-item'
+            | Зимний
+          = link_to '#', class: 'dropdown-item'
+            | Весенний
+          = link_to '#', class: 'dropdown-item'
+            | Летний
       li.nav-item.dropdown
         a#navbarDropdownMenuLink.nav-link[href="№" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"]
           |  Галерея 
@@ -96,13 +96,13 @@ section.main-section
     .modal-content
       .header Авторизуйтесь с помощью одной из соцсетей
       .social-wrapper
-        = link_to user_vkontakte_omniauth_authorize_path, class: 'btn vk-btn'
+        = link_to user_vkontakte_omniauth_authorize_path, class: 'btn vk-btn', data: { disable_with: "<i class='fa fa-spinner fa-spin'></i>" }
           i.fa.fa-vk
           span ВКонтакте
-        = link_to user_facebook_omniauth_authorize_path, class: 'btn fb-btn'
+        = link_to user_facebook_omniauth_authorize_path, class: 'btn fb-btn', data: { disable_with: "<i class='fa fa-spinner fa-spin'></i>" }
           i.fa.fa-facebook
           span Facebook
-        = link_to user_google_oauth2_omniauth_authorize_path, class: 'btn google-btn'
+        = link_to user_google_oauth2_omniauth_authorize_path, class: 'btn google-btn', data: { disable_with: "<i class='fa fa-spinner fa-spin'></i>" }
           i.fa.fa-google-plus
           span Google
       .manual-wrapper.clearfix
