@@ -14,6 +14,7 @@ ru:
       photo: Фотографии
       schedule: Расписание тренировок
       user: Пользователи
+      tournament: Турниры
     attributes:
       album:
         title: "Заголовок"
@@ -71,6 +72,10 @@ ru:
         fri: "пятница"
         sat: "субота"
         sun: "воскресенье"
+      tournament:
+        title: "Заголовок"
+        kind: "Вид турнира"
+        body: "Основной контент"
   admin:
     js:
       true: 'True'

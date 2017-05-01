@@ -254,5 +254,29 @@ RailsAdmin.config do |config|
       field :sun
     end
   end
+  config.model 'Tournament' do
+    list do
+      field :title
+      field :kind
+    end
+    create do
+      field :title
+      field :kind, :enum do
+        enum do
+          ['зимний', 'летний', 'весенний']
+        end
+      end
+      field :body, :ck_editor
+    end
+    edit do
+      field :title
+      field :kind, :enum do
+        enum do
+          ['зимний', 'летний', 'весенний']
+        end
+      end
+      field :body, :ck_editor
+    end
+  end
 
 end

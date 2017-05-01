@@ -20,11 +20,11 @@ nav.navbar.navbar-toggleable-md.navbar-light.bg-faded.main-nav
         a#navbarDropdownMenuLink.nav-link[href="№" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"]
           |  Турниры 
         .dropdown-menu[aria-labelledby="navbarDropdownMenuLink"]
-          = link_to '#', class: 'dropdown-item'
+          = link_to winter_tournaments_path, class: 'dropdown-item'
             | Зимний
-          = link_to '#', class: 'dropdown-item'
+          = link_to spring_tournaments_path, class: 'dropdown-item'
             | Весенний
-          = link_to '#', class: 'dropdown-item'
+          = link_to summer_tournaments_path, class: 'dropdown-item'
             | Летний
       li.nav-item.dropdown
         a#navbarDropdownMenuLink.nav-link[href="№" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"]
@@ -88,7 +88,7 @@ section.main-section
                     a href="#"
                         i.sprite.sprite-ufc
 - if current_user && current_user.admin?
-  = link_to 'Admin', rails_admin_path, class: 'btn btn-primary admin-btn'
+  = link_to 'Admin', rails_admin_path, class: 'btn btn-primary admin-btn', data: { disable_with: "<i class='fa fa-spinner fa-spin'></i>" }
 
   / ********** modal registration ***********
 #registrationModal.modal.fade.registration-modal[tabindex="-1" role="dialog" aria-labelledby="registrationModalLabel" aria-hidden="true"]

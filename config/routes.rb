@@ -19,6 +19,13 @@ Rails.application.routes.draw do
   resources :teams, only: [:show]
   resources :schedules, only: [:index]
   resources :albums, only: [:index, :show]
+  resources :tournaments, only: [:show, :index] do
+    collection do
+      get :summer
+      get :winter
+      get :spring
+    end
+  end
 
   namespace :about, path: '/' do
     get :history

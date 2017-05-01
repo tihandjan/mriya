@@ -49,3 +49,20 @@
     text-transform: uppercase;
     color: #005b9e;
 }
+
+.tournament-list {
+    a {
+        .list-group-item {
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            border-bottom: 0;
+        }
+        &:last-child {
+            .list-group-item {
+                border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+            }
+        }
+    }
+}
