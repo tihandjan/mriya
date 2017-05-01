@@ -221,7 +221,8 @@ a {
     transform: skewx(-20deg);
     text-transform: uppercase;
     border-radius: 0;
-    padding: 2px 42px;
+    padding: 2px 0;
+    width: 160px;
     transition: 200ms;
     &:hover {
         cursor: pointer;
@@ -475,13 +476,15 @@ a {
         position: absolute;
         bottom: -16px;
         left: 38%;
-        padding: 6px 112px;
+        padding: 6px 0px;
+        width: 250px;
         @media only screen and (max-width: 991px) {
-            left: 31%;
-            padding: 6px 70px;
+            left: 41%;
+            width: 150px;
         }
         @media only screen and (max-width: 767px) {
-            left: 24%;
+            left: 36%;
+            bottom: -25px;
         }
     }
     .schedule {

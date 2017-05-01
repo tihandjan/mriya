@@ -8,7 +8,7 @@
     <%= errors_for(resource, :email) %>
 
     <div class="form-group">
-      <%= f.submit "Прислать инструкции сброса пароля", class: 'btn btn-reg' %>
+      <%= f.button "Прислать инструкции сброса пароля", class: 'btn btn-reg', data: { disable_with: "<i class='fa fa-spinner fa-spin'></i>" } %>
     </div>
   <% end %>
 

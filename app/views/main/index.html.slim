@@ -13,7 +13,7 @@
             .caption
                 .date = Russian::strftime(@articles.first.created_at, "%d %B %Y")
                 h1.title = truncate(@articles.first.title, length: 70)
-                = link_to article_path(@articles.first), class: 'btn my-btn yellow-btn'
+                = link_to article_path(@articles.first), class: 'btn my-btn yellow-btn', data: { disable_with: "<span class='label'><i class='fa fa-spinner fa-spin'></i></span>" }
                     span.label Читать
 .yellow-divider
 .row.video-wrapper
@@ -21,7 +21,7 @@
         .col-md-6.custom-col
             h3.title = truncate(@video.title, length: 70)
             p.summary = truncate(@video.summary, length: 120)
-            = link_to videos_path, class: 'btn my-btn yellow-btn'
+            = link_to videos_path, class: 'btn my-btn yellow-btn', data: { disable_with: "<span class='label'><i class='fa fa-spinner fa-spin'></i></span>" }
                 span.label Видео
         .col-md-6.custom-col
             .image-wrapper

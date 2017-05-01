@@ -106,8 +106,8 @@ section.main-section
           i.fa.fa-google-plus
           span Google
       .manual-wrapper.clearfix
-        = link_to 'Войти', new_user_session_path, class: 'btn reg-btn pull-left'
-        = link_to 'Регистрация', new_user_registration_path, class: 'btn reg-btn pull-right'
+        = link_to 'Войти', new_user_session_path, class: 'btn reg-btn pull-left', data: { disable_with: "<i class='fa fa-spinner fa-spin'></i>" }
+        = link_to 'Регистрация', new_user_registration_path, class: 'btn reg-btn pull-right', data: { disable_with: "<i class='fa fa-spinner fa-spin'></i>" }
 / ********** modal registration end ***********
 
   / ********** modal contacts ***********

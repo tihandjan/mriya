@@ -124,6 +124,10 @@
     right: 58px;
     display: none;
     width: 320px;
+    .form-control {
+        width: 116%;
+        margin-left: -50px;
+    }
 }
 #search-btn {
     display: none;

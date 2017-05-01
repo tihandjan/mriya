@@ -20,4 +20,4 @@
                         h3.title = truncate(article.title, length: 70)
     .row.wrapper-more-wrapper
         .col.more-wrapper
-            = link_to 'еще новости', more_articles_path(count: @articles.count), class: 'btn btn-more', remote: true, data: { disable_with: "Загрузка..." }
+            = link_to 'еще новости', more_articles_path(count: @articles.count), class: 'btn btn-more', remote: true, data: { disable_with: "<i class='fa fa-spinner fa-spin'></i>" }

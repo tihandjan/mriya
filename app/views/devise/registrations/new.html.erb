@@ -23,7 +23,7 @@
     <%= errors_for(resource, :password_confirmation) %>
 
     <div class="form-group">
-      <%= f.submit "Регистрация", class: 'btn btn-reg', data: { disable_with: "Идет регистрация..." } %>
+      <%= f.button "Регистрация", class: 'btn btn-reg', data: { disable_with: "<i class='fa fa-spinner fa-spin'></i>" } %>
     </div>
   <% end %>
 

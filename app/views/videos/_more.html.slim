@@ -9,4 +9,4 @@
                     h3.title = truncate(video.title, length: 70)
 .row.wrapper-more-wrapper
     .col.more-wrapper
-        = link_to 'еще видео', more_videos_path(count: @videos.count), class: 'btn btn-more', remote: true, data: { disable_with: "Загрузка..." }
+        = link_to 'еще видео', more_videos_path(count: @videos.count), class: 'btn btn-more', remote: true, data: { disable_with: "<i class='fa fa-spinner fa-spin'></i>" }
