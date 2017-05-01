@@ -12,8 +12,8 @@
   <body>
     <div class="container custom-container">
       <%= render 'shared/header' %>
-      <!--<%= toastr_flash %>-->
-      <%= render 'shared/notifications' %>
+      <%= custom_bootstrap_flash %>
+      <!--<%= render 'shared/notifications' %>-->
       <%= yield %>
       <%= render 'shared/footer' %>
     </div>
