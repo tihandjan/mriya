@@ -69,7 +69,7 @@ section.footer.row
 
 
 / ********** modal ***********
-#exampleModal.modal.fade[tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"]
+#exampleModal.modal.fade.feedback-modal[tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"]
   .modal-dialog[role="document"]
     .modal-content
       .modal-header
@@ -83,14 +83,14 @@ section.footer.row
           .form-group
             label.form-control-label[for="recipient-name"]
               | Почта
-            input#recipient-name.form-control[type="text"]
+            input#recipient-name.form-control[type="text" placeholder="Ваша почта.."]
           .form-group
             label.form-control-label[for="message-text"]
               | Сообщение
-            textarea#message-text.form-control
-      .modal-footer
-        button.btn.btn-secondary[type="button" data-dismiss="modal"]
+            textarea#message-text.form-control[placeholder="Ваше сообщение.."]
+      .modal-footer-custom.clearfix
+        button.btn.btn-feedback[type="button" data-dismiss="modal"]
           | Отмена
-        button.btn.btn-primary[type="button"]
+        button.btn.btn-feedback[type="button"]
           | Отправить
 / ********** modal end ***********

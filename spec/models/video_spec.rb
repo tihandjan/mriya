@@ -26,5 +26,15 @@ RSpec.describe Video, type: :model do
     it { should validate_length_of(:summary).is_at_most(200) }
   end
 
+  describe 'search' do
+    it 'if title equal to query we get video' do
+      video_1 = FactoryGirl.create(:video, title: 'Hello Video Hello Video')
+      video_2 = FactoryGirl.create(:video, title: 'Some other title to search')
+      video = Video.search('Hello Video Hello Video') 
+
+      expect(video).to match_array(video_1)
+      expect(video).to_not eq([video_1, video_2])
+    end
+  end
 
 end

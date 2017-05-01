@@ -35,14 +35,11 @@ nav.navbar.navbar-toggleable-md.navbar-light.bg-faded.main-nav
           = link_to videos_path, class: 'dropdown-item'
             | Видео
       li.nav-item
-        a.nav-link[href="#"]
+        = link_to about_history_path, class: 'nav-link'
           | Общая Информация
       li.nav-item
-        a.nav-link[href="#"]
+        a.nav-link href='#' data-toggle="modal" data-target="#contactModal"
           | Контакты
-      li.nav-item.nav-item-locales
-        a.nav-link[href="#"]
-          | en
       li.nav-item.nav-item-locales
         a.nav-link[href="#"]
           | ru
@@ -93,7 +90,7 @@ section.main-section
 - if current_user && current_user.admin?
   = link_to 'Admin', rails_admin_path, class: 'btn btn-primary admin-btn'
 
-  / ********** modal ***********
+  / ********** modal registration ***********
 #registrationModal.modal.fade.registration-modal[tabindex="-1" role="dialog" aria-labelledby="registrationModalLabel" aria-hidden="true"]
   .modal-dialog[role="document"]
     .modal-content
@@ -111,4 +108,20 @@ section.main-section
       .manual-wrapper.clearfix
         = link_to 'Войти', new_user_session_path, class: 'btn reg-btn pull-left'
         = link_to 'Регистрация', new_user_registration_path, class: 'btn reg-btn pull-right'
-/ ********** modal end ***********
+/ ********** modal registration end ***********
+
+  / ********** modal contacts ***********
+#contactModal.modal.fade.registration-modal[tabindex="-1" role="dialog" aria-labelledby="contactModalLabel" aria-hidden="true"]
+  .modal-dialog[role="document"]
+    .modal-content
+      .header Вы можете связаться с нами при помощи:
+      hr
+      .social-wrapper.text-center
+        | Тел. и факс: 
+        strong +7 812 244-88-88
+      hr
+      div.text-center
+        | Эл. почта: 
+        strong fcmriya@gmail.com
+      hr
+/ ********** modal contacts end ***********

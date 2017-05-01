@@ -24,7 +24,7 @@ h1.last-news-header cостав команды
                     article.vertical-card.player-card
                         .image-wrapper
                             = image_tag player.photo.url, alt: player.name
-                        .caption
+                        .caption.caption-coach
                             .name = player.name + ' ' + player.surname
                             .country Украина
                             .birthday = player.birthday.strftime('%d.%m.%Y')
