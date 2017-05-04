@@ -1,6 +1,6 @@
 module MainHelper
     def set_teams
-        Team.all
+        Team.all.order(created_at: :asc)
     end
     
     def set_leagues
