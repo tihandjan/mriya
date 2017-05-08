@@ -278,5 +278,40 @@ RailsAdmin.config do |config|
       field :body, :ck_editor
     end
   end
+  config.model 'Fixture' do
+    list do
+      field :home_team
+      field :away_team
+      field :score
+      field :category, :enum do
+        enum do
+          ['U-7','U-8','U-9','U-10','U-11','U-12','U-13','U-14','U-15','U-16','U-17']
+        end
+      end      
+      field :date
+    end
+    create do
+      field :home_team
+      field :away_team
+      field :score
+      field :category, :enum do
+        enum do
+          ['U-7','U-8','U-9','U-10','U-11','U-12','U-13','U-14','U-15','U-16','U-17']
+        end
+      end      
+      field :date
+    end
+    edit do
+      field :home_team
+      field :away_team
+      field :score
+      field :category, :enum do
+        enum do
+          ['U-7','U-8','U-9','U-10','U-11','U-12','U-13','U-14','U-15','U-16','U-17']
+        end
+      end       
+      field :date
+    end
+  end
 
 end

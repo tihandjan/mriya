@@ -15,6 +15,7 @@ ru:
       schedule: Расписание тренировок
       user: Пользователи
       tournament: Турниры
+      fixture: Результаты матчей
     attributes:
       album:
         title: "Заголовок"
@@ -76,6 +77,12 @@ ru:
         title: "Заголовок"
         kind: "Вид турнира"
         body: "Основной контент"
+      fixture:
+        home_team: "Домашняя команда"
+        away_team: "Гостевая команда"
+        date: "Дата матча"
+        score: "Результат"
+        category: "Команда"
   admin:
     js:
       true: 'True'
