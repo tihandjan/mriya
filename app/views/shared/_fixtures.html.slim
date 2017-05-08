@@ -41,7 +41,7 @@ table.table.table-fixtures#table-prev
                 td.team
                     = fixture.home_team
                 td.score-td
-                    .score 2-0
+                    .score = fixture.score
                 td.team
                     = fixture.away_team
 table.table.table-fixtures#table-next
@@ -57,7 +57,7 @@ table.table.table-fixtures#table-next
                 td.team
                     = fixture.home_team
                 td.score-td
-                    .score 2-0
+                    .score = fixture.date.strftime("%H-%M")
                 td.team
                     = fixture.away_team
         
