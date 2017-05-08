@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'user sign in' do
+feature 'user sign in', js: true do
     scenario 'user can log in' do
         User.create!(email: 'lol@lol.com', password: '1111111', password_confirmation: '1111111')
 
@@ -30,7 +30,7 @@ feature 'user sign in' do
     end
 end
 
-feature 'admin page' do
+feature 'admin page', js: true do
     scenario 'regular user can not visit admin page' do 
         visit rails_admin_path
 

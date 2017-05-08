@@ -16,7 +16,7 @@ section.team-top.row
         .season сезона
         .title = ((Time.current.year) - 1).to_s + '-' + (Time.current.year.to_s)
 h1.last-news-header cостав команды
-.row
+.row.mr-0
     .col-lg-8.pl-pr-16
         .row.index-row
             - @team.players.each do |player|

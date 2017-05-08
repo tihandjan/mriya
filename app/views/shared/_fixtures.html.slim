@@ -30,35 +30,35 @@
     .next.btn следующие
 table.table.table-fixtures#table-prev
     tbody.tbody
-    - 3.times do
-        tr
-            td.date
-                | 10 марта
-            td.team-age
-                | u-17
-            td
-        tr
-            td.team
-                | мрия
-            td.score-td
-                .score 2-0
-            td.team
-                | динамо к
+        - prev_fixtures.each do |fixture|
+            tr
+                td.date
+                    = Russian::strftime(fixture.date, "%d %B")
+                td.team-age
+                    = fixture.category
+                td
+            tr
+                td.team
+                    = fixture.home_team
+                td.score-td
+                    .score 2-0
+                td.team
+                    = fixture.away_team
 table.table.table-fixtures#table-next
     tbody.tbody
-    - 3.times do
-        tr
-            td.date
-                | 10 марта
-            td.team-age
-                | u-17
-            td
-        tr
-            td.team
-                | динамо к
-            td.score-td
-                .score 2-0
-            td.team
-                | мрия 
+        - next_fixtures.each do |fixture|
+            tr
+                td.date
+                    = Russian::strftime(fixture.date, "%d %B")
+                td.team-age
+                    = fixture.category
+                td
+            tr
+                td.team
+                    = fixture.home_team
+                td.score-td
+                    .score 2-0
+                td.team
+                    = fixture.away_team
         
               
