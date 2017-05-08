@@ -24,3 +24,41 @@
                         td
                             = table.points
     = link_to 'подробная таблица', root_path, class: 'btn btn-outline-secondary table-btn'
+.fixtures-header матчи
+.prev-next-wrapper.clearfix
+    .prev.btn.active прошедшие
+    .next.btn следующие
+table.table.table-fixtures#table-prev
+    tbody.tbody
+    - 3.times do
+        tr
+            td.date
+                | 10 марта
+            td.team-age
+                | u-17
+            td
+        tr
+            td.team
+                | мрия
+            td.score-td
+                .score 2-0
+            td.team
+                | динамо к
+table.table.table-fixtures#table-next
+    tbody.tbody
+    - 3.times do
+        tr
+            td.date
+                | 10 марта
+            td.team-age
+                | u-17
+            td
+        tr
+            td.team
+                | динамо к
+            td.score-td
+                .score 2-0
+            td.team
+                | мрия 
+        
+              

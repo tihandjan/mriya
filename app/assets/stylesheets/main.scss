@@ -694,6 +694,100 @@ a {
     }
 }
 
+.fixtures-header {
+    color: #005b9e;
+    text-align: center;
+    font-style: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    margin-top: 75px;
+}
+
+.prev-next-wrapper {
+    margin-bottom: 5px;
+    .btn {
+        font-size: 12px;
+        padding: 5px 15px;
+        text-transform: uppercase;
+        border-radius: 0;
+        border: 1px solid #004273;
+        &:hover {
+            background-color: #ffd401;
+            border: 1px solid #ffd401;
+            color: #005b9e;
+            cursor: pointer;
+        }
+    }
+    .next {
+        float: right;
+    }
+    .prev {
+        float: left;
+    }
+    .active {
+        background-color: #ffd401;
+        border: 1px solid #ffd401;
+        color: #005b9e;
+    }
+}
+
+.table-fixtures {
+    tbody {
+        border-top: 0 !important;
+        tr {
+            td {
+                border-bottom: 2px solid #e4e4e4;
+                border-top: 0;
+                padding: 5px 17px;
+                white-space: nowrap;
+            }
+            &:nth-child(2) {
+                margin: 3px 0;
+                td {
+                    padding: 3px 0;
+                }
+            }
+            .date {
+                font-size: 11px;
+                color: #787878;
+                text-align: left;
+                vertical-align: middle;
+            }
+            .team-age {
+                font-size: 14px;
+                color: #787878;
+                text-transform: uppercase;
+                text-align: center;
+            }
+            .team {
+                font-size: 16px;
+                text-transform: uppercase;
+                color: #005b9e;
+                text-align: center;
+                padding: 7px 17px;
+                width: 110px;
+                vertical-align: middle;
+            }
+            .score-td {
+                text-align: center;
+                text-transform: uppercase;
+                .score {
+                    color: #005b9e;
+                    background-color: #fdcb00;
+                    padding: 3px 0px;
+                    width: 56px;
+                    margin: auto;
+                }
+            }
+        }
+    }
+}
+
+#table-next {
+    display: none;
+}
+
 /*********feedback modal**********/
 .feedback-modal {
     .modal-content {

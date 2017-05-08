@@ -21,4 +21,25 @@ $(document).on('turbolinks:load', function() {
         }
     });
     // ****** table end ******
+
+    // ******* fixtures start ******** 
+
+    var prevResultsBtn = $('.prev-next-wrapper .prev'),
+        nextResultsBtn = $('.prev-next-wrapper .next'),
+        tablePrev      = $('#table-prev'),
+        tableNext      = $('#table-next');
+
+    prevResultsBtn.click(function(){
+        tableNext.hide();
+        tablePrev.show();
+        prevResultsBtn.addClass('active');
+        nextResultsBtn.removeClass('active');
+    })
+    nextResultsBtn.click(function(){
+        tableNext.show();
+        tablePrev.hide();
+        prevResultsBtn.removeClass('active');
+        nextResultsBtn.addClass('active');
+    })
+    // ******* fixtures end ******** 
 });
