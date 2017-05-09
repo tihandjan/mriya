@@ -11,6 +11,7 @@
     .col-lg-9.about-col
         h1 = @tournament.title
         .content = raw @tournament.body
-        
     .col-lg-3.about-col
         = render 'right_nav', index_of_active_link: 'none'
+script
+    | $('table').addClass('table table-striped')

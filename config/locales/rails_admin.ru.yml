@@ -16,6 +16,7 @@ ru:
       user: Пользователи
       tournament: Турниры
       fixture: Результаты матчей
+      achievement: Достижения клуба 
     attributes:
       album:
         title: "Заголовок"
@@ -83,6 +84,9 @@ ru:
         date: "Дата матча"
         score: "Результат"
         category: "Команда"
+      achievement:
+        title: "Заголовок"
+        body: "Основной контент"
   admin:
     js:
       true: 'True'

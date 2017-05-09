@@ -10,5 +10,9 @@
     .about-club о клубе
 .row.about-row
     .col-lg-9.about-col
+        h1 = @achievement.title
+        .content = raw @achievement.body
     .col-lg-3.about-col
-        = render 'right_nav', index_of_active_link: 5
+        = render 'about/right_nav', index_of_active_link: 5
+script
+    | $('table').addClass('table table-striped')

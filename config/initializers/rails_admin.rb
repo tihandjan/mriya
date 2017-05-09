@@ -313,5 +313,19 @@ RailsAdmin.config do |config|
       field :date
     end
   end
+  config.model 'Achievement' do
+    list do
+      field :title
+      field :body
+    end
+    create do
+      field :title
+      field :body, :ck_editor
+    end
+    edit do
+      field :title
+      field :body, :ck_editor
+    end
+  end
 
 end

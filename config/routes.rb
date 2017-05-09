@@ -26,6 +26,7 @@ Rails.application.routes.draw do
       get :spring
     end
   end
+  resources :achievements, only: [:index, :show]
 
   namespace :about, path: '/' do
     get :history

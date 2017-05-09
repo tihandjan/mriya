@@ -25,10 +25,20 @@
                     color: #005b9e;
                     transform: skewx(20deg);
                     padding: 0.1em 1em;
+                    transition: color 300ms ease-out;
+                    &:hover {
+                        color: #fecb00;
+                    }
                 }
                 .dropdown-menu {
                     transform: skewx(20deg);
                     left: 18px;
+                    a {
+                        transition: color 300ms ease-out;
+                        &:hover {
+                            color: #fecb00;
+                        }
+                    }
                     @media only screen and (max-width: 991px) {
                         border: 0;
                         background: transparent;
