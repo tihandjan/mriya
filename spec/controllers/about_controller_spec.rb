@@ -33,14 +33,6 @@ RSpec.describe AboutController, type: :controller do
             expect(response).to have_http_status(200)
         end
     end
-    describe 'GET #achievements' do
-        it 'renders template' do
-            get :achievements
-
-            expect(response).to render_template(:achievements)
-            expect(response).to have_http_status(200)
-        end
-    end
     describe 'GET #emblem' do
         it 'renders template' do
             get :emblem
@@ -78,6 +70,14 @@ RSpec.describe AboutController, type: :controller do
             get :anthem
 
             expect(response).to render_template(:anthem)
+            expect(response).to have_http_status(200)
+        end
+    end
+    describe 'GET #parents_community' do
+        it 'renders template' do
+            get :parents_community
+
+            expect(response).to render_template(:parents_community)
             expect(response).to have_http_status(200)
         end
     end

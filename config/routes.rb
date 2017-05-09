@@ -39,6 +39,7 @@ Rails.application.routes.draw do
     get :tips
     get :memo
     get :anthem
+    get :parents_community
   end
 
   namespace :main, path: '/' do

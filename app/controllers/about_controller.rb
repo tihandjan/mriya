@@ -19,4 +19,6 @@ class AboutController < ApplicationController
     end
     def anthem
     end
+    def parents_community
+    end
 end
