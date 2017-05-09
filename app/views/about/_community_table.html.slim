@@ -407,3 +407,5 @@ table.table.table-bordered cellpadding="7" cellspacing="0"
 p lang="ru-RU" 
   br/
   |  
+script
+    | if ($(window).width() < 960) { $('table').addClass('table-responsive') } else { $('table').removeClass('table-responsive') }

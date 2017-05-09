@@ -15,3 +15,5 @@
         = render 'right_nav', index_of_active_link: 'none'
 script
     | $('table').addClass('table table-striped')
+script
+    | if ($(window).width() < 960) { $('table').addClass('table-responsive') } else { $('table').removeClass('table-responsive') }
