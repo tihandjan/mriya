@@ -46,6 +46,7 @@ feature 'about pages' do
         expect(current_path).to eq(about_emblem_path)
     end
     scenario 'graduates page' do
+        FactoryGirl.create(:graduate)
         visit root_path
         page.find('.history-wrapper .blue-btn').click
         click_on('Выпускники')
