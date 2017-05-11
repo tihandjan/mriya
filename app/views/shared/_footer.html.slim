@@ -21,8 +21,9 @@
             i.sprite.sprite-letter
 .blue-line.hidden-md-down
 .sponsor-title генеральный спонсор
-.sponsor-logo
-    i.sprite.sprite.sprite-logo-utc
+.sponsor-l
+    = link_to 'http://ufc-fish.com/ru/', target: '_blank'
+        i.sprite.sprite.sprite-logo-utc
 .grey-line
 
 section.footer.row
@@ -49,10 +50,8 @@ section.footer.row
             li
                 = link_to 'Видео', videos_path
     .col-md-3.custom-col
-        span.footer-header руководство
-        ul 
-            li
-                = link_to 'Директор академии', '#'
+        span.footer-header о клубе
+        ul
             li
                 = link_to 'Достижения', about_achievements_path
             li

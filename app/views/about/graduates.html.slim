@@ -13,3 +13,7 @@
         = raw @graduates.body
     .col-lg-3.about-col
         = render 'right_nav', index_of_active_link: 7
+script
+    | $('table').addClass('table table-striped')
+script
+    | if ($(window).width() < 960) { $('table').addClass('table-responsive') } else { $('table').removeClass('table-responsive') }
