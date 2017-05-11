@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170511094646) do
+ActiveRecord::Schema.define(version: 20170511120841) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,6 +71,15 @@ ActiveRecord::Schema.define(version: 20170511094646) do
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
     t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
+  end
+
+  create_table "games", force: :cascade do |t|
+    t.string   "season",     default: "Турнирная таблица Первенства Украины 2017/2018"
+    t.text     "body"
+    t.string   "slug"
+    t.datetime "created_at",                                                            null: false
+    t.datetime "updated_at",                                                            null: false
+    t.index ["slug"], name: "index_games_on_slug", using: :btree
   end
 
   create_table "graduates", force: :cascade do |t|

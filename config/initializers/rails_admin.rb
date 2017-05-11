@@ -338,5 +338,19 @@ RailsAdmin.config do |config|
       field :body, :ck_editor
     end
   end
+  config.model 'Game' do
+    list do
+      field :season
+      field :body
+    end
+    create do
+      field :season
+      field :body, :ck_editor
+    end
+    edit do
+      field :season
+      field :body, :ck_editor
+    end
+  end
 
 end

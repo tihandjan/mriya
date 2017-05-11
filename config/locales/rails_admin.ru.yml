@@ -18,6 +18,7 @@ ru:
       fixture: Результаты матчей
       achievement: Достижения клуба 
       graduate: Выпускники
+      game: Матчи
     attributes:
       album:
         title: "Заголовок"
@@ -89,6 +90,9 @@ ru:
         title: "Заголовок"
         body: "Основной контент"
       graduate:
+        body: "Основной контент"
+      game:
+        season: Какой сезон
         body: "Основной контент"
   admin:
     js:
