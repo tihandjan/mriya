@@ -1,6 +1,11 @@
 - unless params[:controller] == 'teams' || params[:controller] == 'about'   
     .history-wrapper
-        = image_tag 'history.png', alt: 'история создания футбольного клуба'
+        = image_tag 'history.jpg', alt: 'история создания футбольного клуба'
+        .history
+            span.history-yellow история 
+            span создания клуба
+            p.history-small "моя справа - найкраща мрія"
+            p.history-small о.лущик
         = link_to about_history_path, class: 'btn my-btn blue-btn', data: { disable_with: "<span class='label'><i class='fa fa-spinner fa-spin'></i></span>" }
             span.label читать
 .history-wrapper

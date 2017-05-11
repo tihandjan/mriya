@@ -470,6 +470,46 @@ a {
     margin-top: 55px;
     position: relative;
     margin-bottom: 55px;
+    .history {
+        text-transform: uppercase;
+        font-size: 60px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        white-space: nowrap;    
+        font-weight: 700;
+        color: #FFF;
+        @media only screen and (max-width: 991px) {
+            font-size: 40px;
+        }
+        @media only screen and (max-width: 767px) {
+            font-size: 30px;
+            top: 52%;
+        }
+        @media only screen and (max-width: 450px) {
+            font-size: 26px;
+        }
+        .history-yellow {
+            color: #dbb313;
+        }
+        .history-small {
+            font-style: italic;
+            font-family: 'PT Sans';
+            font-size: 18px;
+            line-height: 10px;
+            text-align: center;
+            font-weight: normal;
+            @media only screen and (max-width: 767px) {
+                line-height: 5px;
+                margin-top: 10px;
+            }
+            @media only screen and (max-width: 450px) {
+                font-size: 16px;
+                margin-top: 0px;
+            }
+        }
+    }
     img {
         width: 100%;
     }
