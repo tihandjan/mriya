@@ -1,0 +1,17 @@
+.teams-wrapper.col-12
+    .teams.clearfix
+        ul
+            - set_teams.each do |team|
+                li
+                    = link_to team.name, team_path(team)
+            li Команды 
+.index-image-wrapper
+    = image_tag 'news_show.png'
+    h1.about-club.about-coaching турнирное положение фк "мрія"
+.row.about-row
+    .col-lg-12.about-col
+        .list-group.tournament-list
+            - @games.each do |game|
+                = link_to game_path(game)
+                    .list-group-item
+                        .list-group-item-text = game.season

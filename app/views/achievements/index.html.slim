@@ -10,7 +10,6 @@
     h1.about-club.about-coaching Достижения фк "мрія"
 .row.about-row
     .col-lg-9.about-col
-        h1.text-center Достижения клуба
         .list-group.tournament-list
             - @achievements.each_with_index do |achievement, index|
                 = link_to achievement_path(achievement)

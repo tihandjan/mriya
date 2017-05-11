@@ -8,16 +8,9 @@ nav.navbar.navbar-toggleable-md.navbar-light.bg-faded.main-nav
       li.nav-item
         = link_to articles_path, class: 'nav-link'
           | Новости 
-      li.nav-item.dropdown
-        a#navbarDropdownMenuLink.nav-link[href="№" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"]
-          |  Матчи 
-        .dropdown-menu[aria-labelledby="navbarDropdownMenuLink"]
-          a.dropdown-item[href="#"]
-            | Action
-          a.dropdown-item[href="#"]
-            | Another action
-          a.dropdown-item[href="#"]
-            | Something else here 
+      li.nav-item
+        = link_to games_path, class: 'nav-link'
+          | Матчи
       li.nav-item.dropdown
         a#navbarDropdownMenuLink.nav-link[href="№" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"]
           |  Турниры 
