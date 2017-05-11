@@ -17,6 +17,7 @@ ru:
       tournament: Турниры
       fixture: Результаты матчей
       achievement: Достижения клуба 
+      graduate: Выпускники
     attributes:
       album:
         title: "Заголовок"
@@ -86,6 +87,8 @@ ru:
         category: "Команда"
       achievement:
         title: "Заголовок"
+        body: "Основной контент"
+      graduate:
         body: "Основной контент"
   admin:
     js:

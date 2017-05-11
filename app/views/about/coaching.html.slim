@@ -7,8 +7,22 @@
             li Команды 
 .index-image-wrapper
     = image_tag 'news_show.png'
-    .about-club о клубе
+    h1.about-club.about-coaching ТРЕНЕРСКИЙ СОСТАВ ФК "МРIЯ"
 .row.about-row
     .col-lg-9.about-col
+        - @coaches.each do |coach|
+            .row.coach-wrapper
+                .col-md-4.coach-col
+                    .coach-image-wrapper
+                        = image_tag (coach.photo.blank? ? 'https://dummyimage.com/800x400/000/fff' : coach.photo.url(:thumb)), alt: coach.name
+                .col-md-8.coach-col
+                    .coach-merits
+                        h4.name = coach.name
+                        span.country Гражданство:&nbsp;
+                        span.sitizen Украина
+                        .birthday Дата рождения: #{coach.birthday.strftime('%d.%m.%Y')}
+                        ul.merits
+                            - coach.merits.each do |merit|
+                                li = merit.merit
     .col-lg-3.about-col
         = render 'right_nav', index_of_active_link: 6

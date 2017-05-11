@@ -12,10 +12,12 @@ class AboutController < ApplicationController
     def emblem
     end
     def graduates
+        @graduates = Graduate.last
     end
     def sponsors
     end
     def coaching
+        @coaches = Coach.all
     end
     def anthem
     end

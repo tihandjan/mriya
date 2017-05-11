@@ -7,8 +7,9 @@
             li Команды 
 .index-image-wrapper
     = image_tag 'news_show.png'
-    .about-club о клубе
+    h1.about-club.about-coaching ВЫПУСКНИКИ ФК "МРИЯ"
 .row.about-row
     .col-lg-9.about-col
+        = raw @graduates.body
     .col-lg-3.about-col
         = render 'right_nav', index_of_active_link: 7

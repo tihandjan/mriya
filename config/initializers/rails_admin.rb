@@ -327,5 +327,16 @@ RailsAdmin.config do |config|
       field :body, :ck_editor
     end
   end
+  config.model 'Graduate' do
+    list do
+      field :body
+    end
+    create do
+      field :body, :ck_editor
+    end
+    edit do
+      field :body, :ck_editor
+    end
+  end
 
 end
