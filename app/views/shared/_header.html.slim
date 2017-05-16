@@ -36,11 +36,14 @@ nav.navbar.navbar-toggleable-md.navbar-light.bg-faded.main-nav
         a.nav-link href='#' data-toggle="modal" data-target="#contactModal"
           | Контакты
       li.nav-item.nav-item-locales
-        a.nav-link[href="#"]
+        = link_to url_for(locale: 'ru'), class: 'nav-link'
           | ru
       li.nav-item.nav-item-locales
-        a.nav-link[href="#"]
+        = link_to url_for(locale: 'ua'), class: 'nav-link'
           | ua
+      li.nav-item.nav-item-locales
+        = link_to url_for(locale: 'en'), class: 'nav-link'
+          | en
 section.main-section
     .row.main-row.hidden-md-down
         .col.logo-col

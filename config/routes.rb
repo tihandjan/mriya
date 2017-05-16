@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
-  root 'main#index'
+
+  scope "(:locale)", locale: /en|ru|ua/ do
+    root 'main#index'
+    resources :articles, only: [:index, :show] do
+      get :more, on: :collection
+    end
+    resources :videos, only: [:index, :show] do
+      get :more, on: :collection
+    end
+  end
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
@@ -10,12 +19,6 @@ Rails.application.routes.draw do
     get 'omniauth_callbacks/vkontakte'
   end
 
-  resources :articles, only: [:index, :show] do
-    get :more, on: :collection
-  end
-  resources :videos, only: [:index, :show] do
-    get :more, on: :collection
-  end
   resources :teams, only: [:show]
   resources :schedules, only: [:index]
   resources :albums, only: [:index, :show]

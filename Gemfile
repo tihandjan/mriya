@@ -53,6 +53,7 @@ gem 'omniauth-vkontakte'
 gem 'social-share-button'
 gem 'htmlcompressor', '~> 0.2.0'
 gem 'toastr-rails'
+gem 'rails-i18n', '~> 5.0.0'
 
 # text editor
 gem 'ckeditor'

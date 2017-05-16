@@ -23,6 +23,7 @@ module Mriya
       g.template_engine :slim
     end
 
+    config.i18n.available_locales = [:ua, :ru, :en]
     config.i18n.default_locale = :ru
 
     config.time_zone = 'Moscow'
