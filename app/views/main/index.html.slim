@@ -11,7 +11,7 @@
             = image_tag 'sub_fon.png', class: 'sub-fon'
             = image_tag @articles.first.image.url, class: 'top-article-image', alt: @articles.first.title
             .caption
-                .date = Russian::strftime(@articles.first.created_at, "%d %B %Y")
+                .date = l(@articles.first.created_at, format: '%d %B %Y')
                 h1.title = truncate(@articles.first.title, length: 70)
                 = link_to article_path(@articles.first), class: 'btn my-btn yellow-btn', data: { disable_with: "<span class='label'><i class='fa fa-spinner fa-spin'></i></span>" }
                     span.label Читать

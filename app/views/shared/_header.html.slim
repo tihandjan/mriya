@@ -7,40 +7,40 @@ nav.navbar.navbar-toggleable-md.navbar-light.bg-faded.main-nav
     ul.navbar-nav.ml-auto
       li.nav-item
         = link_to articles_path, class: 'nav-link'
-          | Новости 
+          = t 'header.news'
       li.nav-item
         = link_to games_path, class: 'nav-link'
-          | Матчи
+          = t 'header.games'
       li.nav-item.dropdown
         a#navbarDropdownMenuLink.nav-link[href="№" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"]
-          |  Турниры 
+          = t 'header.tournaments' 
         .dropdown-menu[aria-labelledby="navbarDropdownMenuLink"]
           = link_to winter_tournaments_path, class: 'dropdown-item'
-            | Зимний
+            = t 'header.winter' 
           = link_to spring_tournaments_path, class: 'dropdown-item'
-            | Весенний
+            = t 'header.spring' 
           = link_to summer_tournaments_path, class: 'dropdown-item'
-            | Летний
+            = t 'header.summer' 
       li.nav-item.dropdown
         a#navbarDropdownMenuLink.nav-link[href="№" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"]
-          |  Галерея 
+          = t 'header.galery'
         .dropdown-menu[aria-labelledby="navbarDropdownMenuLink"]
           = link_to albums_path, class: 'dropdown-item'
-            | Фотоальбом
+            = t 'header.photoalbum'
           = link_to videos_path, class: 'dropdown-item'
-            | Видео
+            = t 'header.video'
       li.nav-item
         = link_to about_history_path, class: 'nav-link'
-          | Общая Информация
+          = t 'header.basic_info'
       li.nav-item
         a.nav-link href='#' data-toggle="modal" data-target="#contactModal"
-          | Контакты
+          = t 'header.contacts'
       li.nav-item.nav-item-locales
         = link_to url_for(locale: 'ru'), class: 'nav-link'
           | ru
       li.nav-item.nav-item-locales
-        = link_to url_for(locale: 'ua'), class: 'nav-link'
-          | ua
+        = link_to url_for(locale: 'uk'), class: 'nav-link'
+          | uk
       li.nav-item.nav-item-locales
         = link_to url_for(locale: 'en'), class: 'nav-link'
           | en

@@ -53,7 +53,7 @@ gem 'omniauth-vkontakte'
 gem 'social-share-button'
 gem 'htmlcompressor', '~> 0.2.0'
 gem 'toastr-rails'
-gem 'rails-i18n', '~> 5.0.0'
+# gem 'rails-i18n', '~> 5.0.0'
 
 # text editor
 gem 'ckeditor'
@@ -75,7 +75,6 @@ group :development do
   gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem "better_errors"
   gem "binding_of_caller"
   gem 'annotate'
 end
