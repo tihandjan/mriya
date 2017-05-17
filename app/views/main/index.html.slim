@@ -44,7 +44,7 @@ section.row.body-row
                                 .image-wrapper
                                     = image_tag article.image.url(:thumb), alt: article.title
                                 .caption
-                                    .date = l(article.first.created_at, format: '%d %B %Y')
+                                    .date = l(article.created_at, format: '%d %B %Y')
                                     h3.title = truncate(article.title, length: 70)
         h4.last-news-header = t 'body.birthdays'
         .birthday-wrapper
