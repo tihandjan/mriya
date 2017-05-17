@@ -2,25 +2,25 @@
     .history-wrapper
         = image_tag 'history.jpg', alt: 'история создания футбольного клуба'
         .history
-            span.history-yellow история 
-            span создания клуба
-            p.history-small "моя справа - найкраща мрія"
-            p.history-small о.лущик
+            span.history-yellow = (t 'footer.history') + ' ' 
+            span = t 'footer.club_creation' 
+            p.history-small "#{t 'footer.my_job_the_best_dream'}"
+            p.history-small = t 'footer.luschik'
         = link_to about_history_path, class: 'btn my-btn blue-btn', data: { disable_with: "<span class='label'><i class='fa fa-spinner fa-spin'></i></span>" }
-            span.label читать
+            span.label = t 'buttons.read'
 .history-wrapper
     = image_tag 'tren.png', alt: 'расписание тренировок'
     = link_to schedules_path, class: 'btn my-btn yellow-btn', data: { disable_with: "<span class='label'><i class='fa fa-spinner fa-spin'></i></span>" }
-        span.label читать
-    h4.schedule расписание тренировок
+        span.label = t 'buttons.read'
+    h4.schedule = t 'footer.training_schedule'
 .feedback.row.hidden-md-down
-    .col-md-5.first обратная связь
-    .col-md-6.second Обратная связь. Если у Вас есть вопросы, предложения или замечания напишите нам, заполнив форму 
+    .col-md-5.first = t 'footer.feedback'
+    .col-md-6.second = t 'footer.feedback_long'
     .col-md-1.third
         a href='#' data-toggle="modal" data-target="#exampleModal"
             i.sprite.sprite-letter
 .blue-line.hidden-md-down
-.sponsor-title генеральный спонсор
+.sponsor-title = t 'footer.general_sponsor'
 .sponsor-l
     = link_to 'http://ufc-fish.com/ru/', target: '_blank'
         i.sprite.sprite.sprite-logo-utc
@@ -28,7 +28,7 @@
 
 section.footer.row
     .col-md-3.custom-col 
-        span.footer-header команды
+        span.footer-header = t 'footer.teams'
         .clearfix
             .team-col-first
                 ul 
@@ -41,26 +41,26 @@ section.footer.row
                         li
                             = link_to team.name, team_path(team)
     .col-md-3.custom-col 
-        span.footer-header общая информация
+        span.footer-header = t 'header.basic_info'
         ul 
             li
-                = link_to 'Новости', articles_path
+                = link_to (t 'footer.news'), articles_path
             li
-                = link_to 'Фото', albums_path
+                = link_to (t 'footer.photo'), albums_path
             li
-                = link_to 'Видео', videos_path
+                = link_to (t 'footer.video'), videos_path
     .col-md-3.custom-col
-        span.footer-header о клубе
+        span.footer-header = t 'footer.about'
         ul
             li
-                = link_to 'Достижения', about_achievements_path
+                = link_to (t 'footer.achievements'), about_achievements_path
             li
-                = link_to 'История клуба', about_history_path
+                = link_to (t 'footer.history_of_club'), about_history_path 
     .col-md-3.custom-col
-        span.footer-header контакты
+        span.footer-header = t 'header.contacts'
         ul 
-            li Тел. и факс: +7 812 244-88-88
-            li Эл. почта: fcmriya@gmail.com
+            li #{t 'footer.phone_and_fax'}: +7 812 244-88-88
+            li #{t 'footer.email'}: fcmriya@gmail.com
             li
                 = link_to '#'
                     i.sprite.sprite-fb
@@ -78,7 +78,7 @@ section.footer.row
     .modal-content
       .modal-header
         h5#exampleModalLabel.modal-title
-          | Обратная связь.
+          = t 'footer.feedback'
         button.close[type="button" data-dismiss="modal" aria-label="Close"]
           span[aria-hidden="true"]
             | ×
@@ -86,15 +86,15 @@ section.footer.row
         form
           .form-group
             label.form-control-label[for="recipient-name"]
-              | Почта
-            input#recipient-name.form-control[type="text" placeholder="Ваша почта.."]
+              | Email
+            input#recipient-name.form-control[type="text" placeholder="#{t 'buttons.email_placeholder'}"]
           .form-group
             label.form-control-label[for="message-text"]
-              | Сообщение
-            textarea#message-text.form-control[placeholder="Ваше сообщение.."]
+              | Messages
+            textarea#message-text.form-control[placeholder="#{t 'buttons.message_placeholder'}"]
       .modal-footer-custom.clearfix
         button.btn.btn-feedback[type="button" data-dismiss="modal"]
-          | Отмена
+          = t 'buttons.cancel'
         button.btn.btn-feedback[type="button"]
-          | Отправить
+          = t 'buttons.send'
 / ********** modal end ***********

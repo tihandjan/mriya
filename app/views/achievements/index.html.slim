@@ -1,10 +1,4 @@
-.teams-wrapper.col-12
-    .teams.clearfix
-        ul
-            - set_teams.each do |team|
-                li
-                    = link_to team.name, team_path(team)
-            li Команды 
+= render 'shared/team_list' 
 .index-image-wrapper
     = image_tag 'news_show.png'
     h1.about-club.about-coaching Достижения фк "мрія"

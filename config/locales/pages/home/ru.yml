@@ -1,4 +1,17 @@
 ru:
+  buttons:
+    read: читать
+    video: видео
+    more: еще
+    cancel: Отмена
+    send: Отправить
+    email_placeholder: Ваша почта..
+    message_placeholder: Ваше сообщение..
+    sign_in: войти
+    registration: регистрация
+    detailed_table: подробная таблица
+    past: прошедшие
+    following: следующие
   header:
     news: НОВОСТИ
     games: МАТЧИ
@@ -11,6 +24,40 @@ ru:
     video: ВИДЕО
     basic_info: ОБЩАЯ ИНФОРМАЦИЯ
     contacts: КОНТАКТЫ
+    registration: регистрация
+    logout: выйти
+    social: Авторизуйтесь с помощью одной из соцсетей
+    how_we_can_help: Как мы можем Вам помочь?
+    contacts_long: ВЫ МОЖЕТЕ СВЯЗАТЬСЯ С НАМИ ПРИ ПОМОЩИ
+  body:
+    last_news: ПОСЛЕДНИЕ НОВОСТИ
+    birthdays: ДНИ РОЖДЕНИЯ
+    birthday: день рождение
+    coaches: ТРЕНЕРСКИЙ СОСТАВ
+  footer:
+    history: ИСТОРИЯ
+    club_creation: СОЗДАНИЯ КЛУБА
+    my_job_the_best_dream: МОЕ ДЕЛО - ЛУЧШАЯ МЕЧТА
+    luschik: О.ЛУЩИК
+    training_schedule: РАСПИСАНИЕ ТРЕНИРОВОК
+    feedback: Обратная связь
+    feedback_long: Обратная связь. Если у Вас есть вопросы, предложения или замечания напишите нам, заполнив форму
+    general_sponsor: ГЕНЕРАЛЬНЫЙ СПОНСОР
+    teams: КОМАНДЫ
+    about: о клубе
+    news: Новости
+    photo: Фото
+    video: Видео
+    achievements: Достижения
+    history_of_club: История клуба
+    phone_and_fax: Тел. и факс
+    email: Эл. почта
+  fixtures:
+    championship: Чемпионат Украины
+    first_league: первая лига
+    team: команда
+    games: матчи
+
     
 
 

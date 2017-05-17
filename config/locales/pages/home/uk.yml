@@ -1,4 +1,17 @@
 uk:
+  buttons:
+    read: читати
+    video: відео
+    more: більше
+    cancel: Відміна
+    send: Відправити
+    email_placeholder: Ваша пошта..
+    message_placeholder: Ваше повідомлення..
+    sign_in: увійти
+    registration: реєстрація
+    detailed_table: детальна таблиця
+    past: минулі
+    following: наступні
   header:
     news: 'НОВИНИ'
     games: МАТЧІ
@@ -11,6 +24,40 @@ uk:
     video: ВІДЕО
     basic_info: ЗАГАЛЬНА ІНФОРМАЦІЯ
     contacts: КОНТАКТИ
+    registration: реєстрація
+    logout: вийти
+    social: Авторизуйтесь за допомогою однієї з соцмереж
+    how_we_can_help: Як ми можемо Вам допомогти?
+    contacts_long: ВИ МОЖЕТЕ ЗВ'ЯЗАТИСЯ З НАМИ ЗА ДОПОМОГОЮ
+  body:
+    last_news: ОСТАННІ НОВИНИ
+    birthdays: ДНІ НАРОДЖЕННЯ
+    birthday: день народження
+    coaches: тренерський склад
+  footer:
+    history: ІСТОРІЯ
+    club_creation: СТВОРЕННЯ КЛУБУ
+    my_job_the_best_dream: МОЯ СПРАВА - НАЙКРАЩА МРІЯ
+    luschik: О.ЛУЩІК
+    training_schedule: РОЗКЛАД ТРЕНУВАНЬ
+    feedback: Зворотній зв'язок
+    feedback_long: Зворотній зв'язок. Якщо у Вас є питання, пропозиції або зауваження напишіть нам, заповнивши форму
+    general_sponsor: ГЕНЕРАЛЬНИЙ СПОНСОР
+    teams: КОМАНДИ
+    about: про клуб
+    news: Новини
+    photo: Фото
+    video: Відео
+    achievements: Досягнення
+    history_of_club: Історія клубу
+    phone_and_fax: Тел. і факс
+    email: Ел. пошта
+  fixtures:
+    championship: Чемпіонат України
+    first_league: перша ліга
+    team: команда
+    games: матчі
+
     
 
 

@@ -1,10 +1,4 @@
-.teams-wrapper.col-12
-    .teams.clearfix
-        ul
-            - set_teams.each do |team|
-                li
-                    = link_to team.name, team_path(team)
-            li Команды 
+= render 'shared/team_list'
 .row.top-article-wrapper
     - if @articles.any?
         .col 
@@ -14,7 +8,7 @@
                 .date = l(@articles.first.created_at, format: '%d %B %Y')
                 h1.title = truncate(@articles.first.title, length: 70)
                 = link_to article_path(@articles.first), class: 'btn my-btn yellow-btn', data: { disable_with: "<span class='label'><i class='fa fa-spinner fa-spin'></i></span>" }
-                    span.label Читать
+                    span.label = t 'buttons.read'
 .yellow-divider
 .row.video-wrapper
     - unless @video.blank?
@@ -22,14 +16,14 @@
             h3.title = truncate(@video.title, length: 70)
             p.summary = truncate(@video.summary, length: 120)
             = link_to videos_path, class: 'btn my-btn yellow-btn', data: { disable_with: "<span class='label'><i class='fa fa-spinner fa-spin'></i></span>" }
-                span.label Видео
+                span.label = t 'buttons.video'
         .col-md-6.custom-col
             .image-wrapper
                 = link_to video_path(@video)
                     = image_tag YouTubeRails.extract_video_image(@video.video_url, 'high'), alt: @video.title
                     .play
                         = fa_icon "play"
-h2.last-news-header Последние новости
+h2.last-news-header = t 'body.last_news'
 section.row.body-row
     section.col-lg-8.custom-col
         - unless @articles[1].blank?
@@ -39,7 +33,7 @@ section.row.body-row
                         .col.image-wrapper
                             = image_tag @articles[1].image.url(:thumb), alt: @articles[1].title
                         .col.caption
-                            .date = Russian::strftime(@articles.first.created_at, "%d %B %Y")
+                            .date = l(@articles.first.created_at, format: '%d %B %Y')
                             h3.title = truncate(@articles[1].title, length: 70)
         - unless @articles[2].blank?
             .row
@@ -50,18 +44,18 @@ section.row.body-row
                                 .image-wrapper
                                     = image_tag article.image.url(:thumb), alt: article.title
                                 .caption
-                                    .date = Russian::strftime(article.created_at, "%d %B %Y")
+                                    .date = l(article.first.created_at, format: '%d %B %Y')
                                     h3.title = truncate(article.title, length: 70)
-        h4.last-news-header Дни Рождения
+        h4.last-news-header = t 'body.birthdays'
         .birthday-wrapper
             ul
                 - @players.each do |player|
                     li
-                        span.date = Russian::strftime(Time.current, "%d %B %Y")
-                        span.name день рождение #{player.name} #{player.surname} 
+                        span.date = l(Time.current, format: '%d %B %Y')
+                        span.name #{t 'body.birthday'} #{player.name} #{player.surname} 
     section.col-lg-4
         = render 'shared/fixtures'
 
 
-h4.last-news-header Тренерский состав
+h4.last-news-header = t 'body.coaches'
 = render 'shared/slider' 

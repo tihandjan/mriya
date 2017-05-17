@@ -1,4 +1,17 @@
 en:
+  buttons:
+    read: read
+    video: video
+    more: more
+    cancel: Cancel
+    send: Send
+    email_placeholder: Your mail..
+    message_placeholder: Your message..
+    sign_in: sign in
+    registration: sign up
+    detailed_table: Detailed table
+    past: previous
+    following: following
   header:
     news: NEWS
     games: MATCHES
@@ -11,3 +24,37 @@ en:
     video: VIDEO
     basic_info: GENERAL INFORMATION
     contacts: CONTACTS
+    registration: sign up
+    logout: logout
+    social: Log in via one of the social networks
+    how_we_can_help: How we can help you?
+    contacts_long: LETS GET IN TOUCH
+  body:
+    last_news: LAST NEWS
+    birthdays: BIRTHDAY
+    birthday: birthday
+    coaches: coaches
+  footer:
+    history: HISTORY
+    club_creation: OF THE CLUB CREATION
+    my_job_the_best_dream: MY JOB - THE BEST DREAM
+    luschik: A.LUSCHIK
+    training_schedule: TRAINING SCHEDULE
+    feedback: FEEDBACK
+    feedback_long: Feedback. If you have any questions, suggestions or comments, please write to us by filling out the form
+    general_sponsor: GENERAL SPONSOR
+    teams: TEAMS
+    about: about 
+    news: News
+    photo: Photo
+    video: Video
+    achievements: Achievements
+    history_of_club: Club history
+    phone_and_fax: Phone and Fax
+    email: Email
+  fixtures:
+    championship: Championship of Ukraine
+    first_league: First league
+    team: team
+    games: games
+    

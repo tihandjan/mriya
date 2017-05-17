@@ -1,17 +1,17 @@
 .right-wrapper
     .table-header-wrapper
         i.sprite.sprite-L#back
-        h4.table-header перевенство украины
+        h4.table-header = t 'fixtures.championship'
         i.sprite.sprite-R#forward
     - set_leagues.each_with_index do |league, i|
-        .sub-header class="table-#{i}" первая лига #{league.name}
+        .sub-header class="table-#{i}" #{t 'fixtures.first_league'} #{league.name}
         table.table class="table-#{i}"
             thead
                 tr
                     th
                         | #
                     th
-                        | команда
+                        = t 'fixtures.team'
                     th
                         |о
             tbody
@@ -23,17 +23,17 @@
                             = table.team_name
                         td
                             = table.points
-    = link_to 'подробная таблица', root_path, class: 'btn btn-outline-secondary table-btn'
-.fixtures-header матчи
+    = link_to (t 'buttons.detailed_table'), root_path, class: 'btn btn-outline-secondary table-btn'
+.fixtures-header = t 'fixtures.games'
 .prev-next-wrapper.clearfix
-    .prev.btn.active прошедшие
-    .next.btn следующие
+    .prev.btn.active = t 'buttons.past'
+    .next.btn = t 'buttons.following'
 table.table.table-fixtures#table-prev
     tbody.tbody
         - prev_fixtures.each do |fixture|
             tr
                 td.date
-                    = Russian::strftime(fixture.date, "%d %B")
+                    = l(fixture.date, format: "%d %B")
                 td.team-age
                     = fixture.category
                 td
@@ -49,7 +49,7 @@ table.table.table-fixtures#table-next
         - next_fixtures.each do |fixture|
             tr
                 td.date
-                    = Russian::strftime(fixture.date, "%d %B")
+                    = l(fixture.date, format: "%d %B")
                 td.team-age
                     = fixture.category
                 td

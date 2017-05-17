@@ -40,7 +40,7 @@ nav.navbar.navbar-toggleable-md.navbar-light.bg-faded.main-nav
           | ru
       li.nav-item.nav-item-locales
         = link_to url_for(locale: 'uk'), class: 'nav-link'
-          | uk
+          | ua
       li.nav-item.nav-item-locales
         = link_to url_for(locale: 'en'), class: 'nav-link'
           | en
@@ -56,17 +56,17 @@ section.main-section
                         i.sprite.sprite-Search
                 li#search-wrapper
                     = form_tag main_search_path, method: :get, remote: true do
-                      = text_field_tag :search, params[:search], class: 'form-control', placeholder: 'Как мы можем Вам помочь?', onkeypress: "setTimeout(function(){$('#search-btn').click()}, 300)"
+                      = text_field_tag :search, params[:search], class: 'form-control', placeholder: (t 'header.how_we_can_help'), onkeypress: "setTimeout(function(){$('#search-btn').click()}, 300)"
                       = button_tag name: nil, class: 'btn btn-default', id: 'search-btn'
                     #search-results
                 - if user_signed_in?
                   li.reg
                       = link_to destroy_user_session_path, method: :delete
-                          | Выйти
+                          = t 'header.logout'
                 - else
                   li.reg
                       a href='#' data-toggle="modal" data-target="#registrationModal"
-                          | Регистрация
+                          = t 'header.registration'
                 li
                     a href="#"
                         i.sprite.sprite-youtube
@@ -92,11 +92,11 @@ section.main-section
 #registrationModal.modal.fade.registration-modal[tabindex="-1" role="dialog" aria-labelledby="registrationModalLabel" aria-hidden="true"]
   .modal-dialog[role="document"]
     .modal-content
-      .header Авторизуйтесь с помощью одной из соцсетей
+      .header = t 'header.social'
       .social-wrapper
         = link_to user_vkontakte_omniauth_authorize_path, class: 'btn vk-btn', data: { disable_with: "<i class='fa fa-spinner fa-spin'></i>" }
           i.fa.fa-vk
-          span ВКонтакте
+          span Vkontakte
         = link_to user_facebook_omniauth_authorize_path, class: 'btn fb-btn', data: { disable_with: "<i class='fa fa-spinner fa-spin'></i>" }
           i.fa.fa-facebook
           span Facebook
@@ -104,15 +104,15 @@ section.main-section
           i.fa.fa-google-plus
           span Google
       .manual-wrapper.clearfix
-        = link_to 'Войти', new_user_session_path, class: 'btn reg-btn pull-left', data: { disable_with: "<i class='fa fa-spinner fa-spin'></i>" }
-        = link_to 'Регистрация', new_user_registration_path, class: 'btn reg-btn pull-right', data: { disable_with: "<i class='fa fa-spinner fa-spin'></i>" }
+        = link_to (t 'buttons.sign_in'), new_user_session_path, class: 'btn reg-btn pull-left', data: { disable_with: "<i class='fa fa-spinner fa-spin'></i>" }
+        = link_to (t 'buttons.registration'), new_user_registration_path, class: 'btn reg-btn pull-right', data: { disable_with: "<i class='fa fa-spinner fa-spin'></i>" }
 / ********** modal registration end ***********
 
   / ********** modal contacts ***********
 #contactModal.modal.fade.registration-modal.contact-modal[tabindex="-1" role="dialog" aria-labelledby="contactModalLabel" aria-hidden="true"]
   .modal-dialog[role="document"]
     .modal-content
-      .header Вы можете связаться с нами при помощи:
+      .header = t 'header.contacts_long'
       hr
       .social-wrapper.text-left
         p
