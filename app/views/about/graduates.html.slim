@@ -4,7 +4,7 @@
     h1.about-club.about-coaching = t 'about.body.graduates' 
 .row.about-row
     .col-lg-9.about-col
-        = raw @graduates.body
+        = raw @graduates.try(:body)
     .col-lg-3.about-col
         = render 'right_nav', index_of_active_link: 7
 script
