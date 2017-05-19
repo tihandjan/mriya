@@ -10,6 +10,16 @@ body {
     overflow-x: hidden;
 }
 
+::-moz-selection {
+    background: #dbb313;
+    text-shadow: none;
+}
+
+::selection {
+    background: #dbb313;
+    text-shadow: none;
+}
+
 a {
     color: inherit;
     &:hover {
