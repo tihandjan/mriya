@@ -34,6 +34,33 @@ en:
     birthdays: BIRTHDAY
     birthday: birthday
     coaches: coaches
+    photoalbum_fc_mriya: Photoalbum of fc "mriya"
+    photoalbums: Photoalbums
+    winter_tournament: Winter Tournament
+    spring_tournament: Spring Tournament
+    summer_tournament: Summer Tournament
+    structure: structure 
+    season: season
+    main_coach: Main coach
+    ukraine: Ukraine
+    sitizenship: Citizenship
+    date_of_birth: Date of birth
+    schedule: schedule
+    training: training
+    schedule_of_the_training: schedule of training at the stadium
+    metallurg: metallurg
+    spartac: spartac
+    full_name: Full
+    sun: Sun
+    mon: Mon
+    tue: Tue
+    wed: Wed
+    thu: Thu
+    fri: Fri
+    sat: Sat
+    change_search_query: Try to change search query
+    tournament_position: Tournament position fc "mriya"
+    achievements_fc_mriya: Achievements fc "mriya"
   footer:
     history: HISTORY
     club_creation: OF THE CLUB CREATION
@@ -57,4 +84,39 @@ en:
     first_league: First league
     team: team
     games: games
+  about:
+    right_nav:
+      club_creation_history: History of the club
+      sponsors_and_partners: Sponsors and partners
+      mission: Mission
+      anthem: Hymn of the club
+      emblem: Emblem
+      achievements: Achievements
+      coaching_stracture: Coaching staff
+      graduates: Graduates
+      tips_for_parents: Tips for Parents
+      tips_for_player: Memo for football player
+      parents_community: Parent committee
+    body:
+      anthem: hymn of FC "MRIYA"
+      coaching: TRAINING OF FC "MRIYA"
+      emblem: Emblem of FC "MRIYA"
+      graduates: Graduates of FC "Mriya"
+      history: The history of the creation of FC "MRIYA"
+      memo: Memo for football player
+      mission: MISSION AND VALUES OF FC "MRIYA"
+      parents_community: The parent committee of FC "MRIYA" 
+      sponsors: Sponsors and partners of FC "Mriya"
+      tips: Tips for parents
+    history:
+      first: Football club "Mriya" was established in 2000 in the city of Kupyansk. Since 2003, the club's general sponsor is the UFC group of companies, and the club's president is Oleg Dmitrievich Lushchyk, currently the Chairman of the Board of the Universal Fish Company. UFC takes an active social position and makes a significant contribution to the future of our society - the development of children's sports. Since 2003, thanks to a group of UFC companies, was started financing of the club , which led to its current high performance. A strong coaching staff was formed, the teams are replenished every year with young football players, forms, balls and other necessary equipment are purchased.
+      second: The motto of the club
+      third: "MY JOB - THE BEST DREAM!"
+      fourth: And indeed it is. The football club gives children an ability to achieve their dream - to become real professionals, the pride of the city, region, country!
+      fifth: Today, the club is played by 10 teams of different age categories - from 7 to 17 years. More than 200 boys hone their skills under the guidance of talented coaches who skillfully instill in them love for football, discipline and team play. Teams FC "Mriya" loudly announced themselves victories in many major tournaments, both Ukrainian and international. Young players had the opportunity to demonstrate their high skills by playing a series of games in England and Germany. FC "Mriya" is a permanent participant of the championship of the children's and youthful football league of Ukraine, participates in all-Ukrainian competitions for prizes of the club "Leather ball". Also many alumni of our club act in the composition of the most famous football clubs of Ukraine.
+      six: "A special tradition of the football club is the International Football Tournament for Children and Youth dedicated to the Children's Day, which is held annually in Kupyansk. This tournament is reserved in the official calendar of children's tournaments in Ukraine, it attracts teams from all over Ukraine. On the opening day of the tournament, with the support of UFC, a real holiday is organized: children's creative groups and specially invited guests perform. Annually more than 100 teams take part in the Tournament, that is about 2000 people, in general, the festival gathers up to three thousand participants and spectators." 
+      seven: On the territory of the sports and health complex of the Kovsharovka town, with the support of the group of companies UFC, was built a football field with a unique artificial coating, which is one of the best in Ukraine.
+      eight: We believe in the work we are doing, and we do everything to make the cherished dreams of the boys come true! FC "Mriya" and "Universal Fish Company", will continue to grow and develop, because we are focused on the result. The task of the club is joy in children's eyes, the possibility of realizing a children's dream - to become professionals of big football.
+      nine: FOR THE FUTURE,
+      ten: "MY JOB - THE BEST DREAM!"
     

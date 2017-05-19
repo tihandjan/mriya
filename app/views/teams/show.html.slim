@@ -4,12 +4,16 @@ section.team-top.row
         .image-wrapper
             = image_tag (@team.photo.blank? ? 'https://dummyimage.com/800x400/000/fff' : @team.photo.url), alt: @team.name
     .col-lg-4.hidden-md-down.team-content
-        .title состав
-        .title команды
+        - if params[:locale] == 'en'
+            .title = t 'fixtures.team'
+            .title = t 'body.structure'
+        - else
+            .title = t 'body.structure'
+            .title = t 'footer.teams'
         h2.team-name = @team.name
-        .season сезона
+        .season = t 'body.season'
         .title = ((Time.current.year) - 1).to_s + '-' + (Time.current.year.to_s)
-h1.last-news-header cостав команды
+h1.last-news-header = params[:locale] == 'en' ? (t 'fixtures.team') + ' ' + (t 'body.structure') : (t 'body.structure') + ' ' + (t 'footer.teams')
 .row.mr-0
     .col-lg-8.pl-pr-16
         .row.index-row
@@ -20,9 +24,9 @@ h1.last-news-header cостав команды
                             = image_tag player.photo.url, alt: player.name
                         .caption.caption-coach
                             .name = player.name + ' ' + player.surname
-                            .country Украина
+                            .country = t 'body.ukraine'
                             .birthday = player.birthday.strftime('%d.%m.%Y')
-        h3.last-news-header.coach-header главный тренер
+        h3.last-news-header.coach-header = t 'body.main_coach'
         - if @team.coaches.any?
             .row.coach-wrapper
                 .col-md-4.coach-col
@@ -31,9 +35,9 @@ h1.last-news-header cостав команды
                 .col-md-8.coach-col
                     .coach-merits
                         h4.name = @team.coaches.first.name
-                        span.country Гражданство:&nbsp;
-                        span.sitizen Украина
-                        .birthday Дата рождения: #{@team.coaches.first.birthday.strftime('%d.%m.%Y')}
+                        span.country #{t 'body.sitizenship'}:&nbsp;
+                        span.sitizen = t 'body.ukraine'
+                        .birthday #{t 'body.date_of_birth'}: #{@team.coaches.first.birthday.strftime('%d.%m.%Y')}
                         ul.merits
                             - @team.coaches.first.merits.each do |merit|
                                 li = merit.merit

@@ -2,26 +2,30 @@
 .index-image-wrapper
     = image_tag 'schedule.jpg'
     .schedule-text-wrapper
-        .schedule-yellow расписание  
-        .schedule-white тренировок
+        - if params[:locale] == 'en'
+            .schedule-yellow = t 'body.training'  
+            .schedule-white = t 'body.schedule'
+        - else
+            .schedule-yellow = t 'body.schedule' 
+            .schedule-white = t 'body.training' 
 .schedule-wrapper
-    .training-schedule график тренировок на стадионе
+    .training-schedule = t 'body.schedule_of_the_training' 
     .training-stadium
         span.quote "
-        span.stadium металлург
+        span.stadium = t 'body.metallurg'
         span.quote "
     table.table.table-bordered.schedule-table
         thead
             tr 
                 th U
-                th ФИО
-                th Пн
-                th Вт
-                th Ср
-                th Чт
-                th Пт
-                th Сб
-                th Вс
+                th = t 'body.full_name'
+                th = t 'body.mon'
+                th = t 'body.tue'
+                th = t 'body.wed'
+                th = t 'body.thu'
+                th = t 'body.fri'
+                th = t 'body.sat'
+                th = t 'body.sun'
         tbody
             - @schedule_metalurg.each do |table|
                 tr
@@ -38,14 +42,14 @@
         thead
             tr 
                 th U
-                th ФИО
-                th Пн
-                th Вт
-                th Ср
-                th Чт
-                th Пт
-                th Сб
-                th Вс
+                th = t 'body.full_name'
+                th = t 'body.mon'
+                th = t 'body.tue'
+                th = t 'body.wed'
+                th = t 'body.thu'
+                th = t 'body.fri'
+                th = t 'body.sat'
+                th = t 'body.sun'
         tbody
             - @schedule_metalurg.each do |table|
                 tr
@@ -58,23 +62,23 @@
                     td = table.fri
                     td = table.sat
                     td = table.sun
-    .training-schedule график тренировок на стадионе
+    .training-schedule = t 'body.schedule_of_the_training' 
     .training-stadium
         span.quote "
-        span.stadium спартак
+        span.stadium = t 'body.spartac' 
         span.quote "
     table.table.table-bordered.schedule-table
         thead
             tr 
                 th U
-                th ФИО
-                th Пн
-                th Вт
-                th Ср
-                th Чт
-                th Пт
-                th Сб
-                th Вс
+                th = t 'body.full_name'
+                th = t 'body.mon'
+                th = t 'body.tue'
+                th = t 'body.wed'
+                th = t 'body.thu'
+                th = t 'body.fri'
+                th = t 'body.sat'
+                th = t 'body.sun'
         tbody
             - @schedule_spartac.each do |table|
                 tr
@@ -91,14 +95,14 @@
         thead
             tr 
                 th U
-                th ФИО
-                th Пн
-                th Вт
-                th Ср
-                th Чт
-                th Пт
-                th Сб
-                th Вс
+                th = t 'body.full_name'
+                th = t 'body.mon'
+                th = t 'body.tue'
+                th = t 'body.wed'
+                th = t 'body.thu'
+                th = t 'body.fri'
+                th = t 'body.sat'
+                th = t 'body.sun'
         tbody
             - @schedule_spartac.each do |table|
                 tr

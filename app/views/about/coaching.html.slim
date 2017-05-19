@@ -1,7 +1,7 @@
 = render 'shared/team_list'
 .index-image-wrapper
     = image_tag 'news_show.png'
-    h1.about-club.about-coaching ТРЕНЕРСКИЙ СОСТАВ ФК "МРIЯ"
+    h1.about-club.about-coaching = t 'about.body.coaching' 
 .row.about-row
     .col-lg-9.about-col
         - @coaches.each do |coach|
@@ -12,9 +12,9 @@
                 .col-md-8.coach-col
                     .coach-merits
                         h4.name = coach.name
-                        span.country Гражданство:&nbsp;
-                        span.sitizen Украина
-                        .birthday Дата рождения: #{coach.birthday.strftime('%d.%m.%Y')}
+                        span.country #{t 'body.sitizenship'}:&nbsp;
+                        span.sitizen = t 'body.ukraine'
+                        .birthday #{t 'body.date_of_birth'}: #{coach.birthday.strftime('%d.%m.%Y')}
                         ul.merits
                             - coach.merits.each do |merit|
                                 li = merit.merit

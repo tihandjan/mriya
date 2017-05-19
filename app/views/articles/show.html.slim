@@ -4,7 +4,7 @@
 .row.show-wrapper.mr-0
     .col-lg-8
         article.article-wrapper
-            .date = Russian::strftime(Time.current, "%d %B %Y")
+            .date = l(@article.created_at, format: "%d %B %Y")
             h1.title = @article.title
             .image-wrapper
                 = image_tag @article.image.url, alt: @article.title

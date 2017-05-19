@@ -1,9 +1,9 @@
 .right-nav
     ul 
         li class="#{'active' if index_of_active_link == 0}"
-            = link_to 'Зимний турнир', winter_tournaments_path
+            = link_to (t 'body.winter_tournament'), winter_tournaments_path
         li class="#{'active' if index_of_active_link == 1}"
-            = link_to 'Весенний турнир', spring_tournaments_path 
+            = link_to (t 'body.spring_tournament'), spring_tournaments_path 
         li class="#{'active' if index_of_active_link == 2}"
-            = link_to 'Летний турнир', summer_tournaments_path
+            = link_to (t 'body.summer_tournament'), summer_tournaments_path
        

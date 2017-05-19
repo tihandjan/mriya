@@ -1,8 +1,8 @@
 = render 'shared/team_list'
 .index-image-wrapper.index-image-wrapper-album
     = image_tag 'news_show.png'
-    h1.about-club.about-album фотоальбом фк "мрия"
-h4.last-news-header фотоальбомы
+    h1.about-club.about-album = t 'body.photoalbum_fc_mriya'
+h4.last-news-header = t 'body.photoalbums'
 .row.index-row#more
     - @albums.each do |album|
         .col-md-4.index-col
@@ -11,7 +11,7 @@ h4.last-news-header фотоальбомы
                     .image-wrapper
                         = image_tag album.cover_photo.url, alt: album.title
                     .caption
-                        span.date.date-album = Russian::strftime(album.created_at, "%d %B")
+                        span.date.date-album = l(album.created_at, format: "%d %B")
                         i.fa.fa-camera
                         span.photo-count = album.photos.count
                         i.fa.fa-eye

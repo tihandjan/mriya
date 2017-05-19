@@ -8,6 +8,32 @@ Rails.application.routes.draw do
     resources :videos, only: [:index, :show] do
       get :more, on: :collection
     end
+    resources :teams, only: [:show]
+    resources :schedules, only: [:index]
+    resources :albums, only: [:index, :show]
+    resources :tournaments, only: [:show, :index] do
+      collection do
+        get :summer
+        get :winter
+        get :spring
+      end
+    end
+    resources :achievements, only: [:index, :show]
+    resources :games, only: [:index, :show]
+
+    namespace :about, path: '/' do
+      get :history
+      get :sponsors
+      get :mission
+      get :emblem
+      get :achievements
+      get :coaching
+      get :graduates
+      get :tips
+      get :memo
+      get :anthem
+      get :parents_community
+    end
   end
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
@@ -19,32 +45,6 @@ Rails.application.routes.draw do
     get 'omniauth_callbacks/vkontakte'
   end
 
-  resources :teams, only: [:show]
-  resources :schedules, only: [:index]
-  resources :albums, only: [:index, :show]
-  resources :tournaments, only: [:show, :index] do
-    collection do
-      get :summer
-      get :winter
-      get :spring
-    end
-  end
-  resources :achievements, only: [:index, :show]
-  resources :games, only: [:index, :show]
-
-  namespace :about, path: '/' do
-    get :history
-    get :sponsors
-    get :mission
-    get :emblem
-    get :achievements
-    get :coaching
-    get :graduates
-    get :tips
-    get :memo
-    get :anthem
-    get :parents_community
-  end
 
   namespace :main, path: '/' do
     get :search

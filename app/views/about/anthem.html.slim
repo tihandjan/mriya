@@ -1,7 +1,7 @@
 = render 'shared/team_list'
 .index-image-wrapper
     = image_tag 'news_show.png'
-    h1.about-club.about-coaching гимн клуба ФК "МРIЯ"
+    h1.about-club.about-coaching = t 'about.body.anthem'
 .row.about-row
     .col-lg-9.about-col
         audio[src="#{audio_path('gimn.mp3')}" type="audio/mpeg/mp3" controls]

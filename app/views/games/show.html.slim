@@ -1,7 +1,7 @@
 = render 'shared/team_list'
 .index-image-wrapper
     = image_tag 'news_show.png'
-    h2.about-club.about-coaching ТУРНИРНОЕ ПОЛОЖЕНИЕ ФК "МРІЯ"
+    h2.about-club.about-coaching = t 'body.tournament_position'
 .row.about-row
     .col-lg-9.about-col
         h1 = @game.season
