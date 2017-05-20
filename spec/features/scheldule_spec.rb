@@ -6,7 +6,6 @@ feature 'schedule page' do
         page.find('.history-wrapper .yellow-btn').click
         
         expect(page).to have_content('расписание')
-        expect(current_path).to eq(schedules_path)
     end
 
     scenario 'user can see schedule' do

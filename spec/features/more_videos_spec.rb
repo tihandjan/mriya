@@ -5,7 +5,7 @@ feature 'more pagination', js: true do
     scenario 'click on more btn we get + 3 videos' do
         visit videos_path
 
-        click_on 'еще видео'
+        click_on 'еще'
 
         expect(page).to have_css('.index-col', 9)
     end
@@ -13,8 +13,8 @@ feature 'more pagination', js: true do
     scenario 'click on more btn we get + 3 videos' do
         visit videos_path
 
-        click_on 'еще видео'
-        click_on 'еще видео'
+        click_on 'еще'
+        click_on 'еще'
 
         expect(page).to have_css('.index-col', 12)
     end

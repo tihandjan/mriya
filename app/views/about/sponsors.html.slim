@@ -4,46 +4,74 @@
     h1.about-club.about-coaching = t 'about.body.sponsors' 
 .row.about-row
     .col-lg-9.about-col
-        p
-            strong ОБЩАЯ ИНФОРМАЦИЯ О КОМПАНИИ
-
-        p &laquo;Юниверсал Фиш Компани&raquo; является крупнейшим оператором на рыбном рынке Украины,
-
-        p предоставляет широкий спектр услуг: импорт, переработка, реализация рыбной продукции на
-
-        p внутреннем рынке и экспортные поставки готовой рыбной продукции за пределы Украины.
-
-        p Также Компания является владельцем крупного холодильного логистического комплекса по
-
-        p переработке и хранению замороженной и охлажденной продукции.
-
-        p
-            strong ПАРТНЕРЫ НА ВСЮ ЖИЗНЬ
-
-        p Успехи &laquo;Юниверсал Фиш Компани&raquo; обусловлены вниманием к своим партнерам и
-
-        p выполнением всех своих обязательств. Благодаря нашему ответственному отношению, мы
-
-        p завоевали преданность наших партнеров, мы прислушиваемся к их мнению и потребностям,
-
-        p совершенствуя свой бизнес, помогаем улучшить их бизнес.
-
-        p &laquo;Юниверсал Фиш Компани&raquo; имеет возможность производить рыбу и морепродукты согласно
-
-        p требованиям клиента (Private Label), мы готовы к любым вариантам взаимовыгодных деловых
-
-        p отношений.
-
-        p
-            strong ПРИСУТСТВИЕ НА МЕЖДУНАРОДНОМ РЫНКЕ
-
-        p С 2014 года &laquo;Юниверсал Фиш Компани&raquo; стала официальным игроком на мировом рыбном
-
-        p рынке, осуществив свои первые экспортные поставки. Готовая продукция собственного
-
-        p производства была высоко оценена и востребована в странах ЕС, где предельно высокие
-
-        p требования к качеству продуктов питания.
-
+        - if params[:locale] == 'en'
+            p
+                strong COMPANY OVERVIEW
+            p &laquo; Universal Fish Company &raquo; Is the largest operator on the fish market of Ukraine,
+            p provides a wide range of services: import, processing, sale of fish products on
+            p domestic market and export supplies of finished fish products outside Ukraine.
+            p The Company also owns a large refrigeration logistics complex by
+            p processing and storage of frozen and chilled products.
+            p
+                strong PARTNERS FOR ALL LIFE
+            p Successes &laquo; Universal Fish Company &raquo; Are caused by attention to their partners and
+            p the fulfillment of all its obligations. Thanks to our responsible attitude, we
+            p have won the loyalty of our partners, we listen to their opinions and needs,
+            p Improving your business, helping to improve their business.
+            p &laquo; Universal Fish Company &raquo; Has the ability to produce fish and seafood according to
+            p the requirements of the client (Private Label), we are ready for any variants of mutually beneficial business
+            p Relationships.
+            p
+                strong PRESENCE ON THE INTERNATIONAL MARKET
+            p Since 2014, the Universal Fish Company &raquo; Became an official player on the world fish
+            p market, having carried out its first export deliveries. Finished products of own
+            p production was highly valued and in demand in EU countries, where extremely high
+            p requirements for the quality of food.
+        - elsif params[:locale] == 'uk'
+            p 
+                strong ЗАГАЛЬНА ІНФОРМАЦІЯ ПРО КОМПАНІЮ
+            p &laquo;Юніверсал Фіш Компані&raquo; є найбільшим оператором на рибному ринку України,
+            p надає широкий спектр послуг: імпорт, переробка, реалізація рибної продукції на
+            p внутрішньому ринку і експортні поставки готової рибної продукції за межі України.
+            p Також Компанія є власником великого холодильного логістичного комплексу по
+            p переробки та зберігання замороженої та охолодженої продукції.
+            p lang="uk-UA"  
+                strong ПАРТНЕРИ НА ВСЕ ЖИТТЯ
+            p Успіхи &laquo;Юніверсал Фіш Компані&raquo; обумовлені увагою до своїх партнерів і
+            p виконанням всіх своїх зобов'язань. Завдяки нашому відповідальному ставленню, ми
+            p завоювали відданість наших партнерів, ми прислухаємося до їхньої думки і потреб,
+            p удосконалюючи свій бізнес, допомагаємо поліпшити їх бізнес.
+            p &laquo;Юніверсал Фіш Компані&raquo; має можливість виробляти рибу і морепродукти згідно
+            p вимогам клієнта (Private Label), ми готові до будь-яких варіантів взаємовигідних ділових
+            p відносин.
+            p lang="uk-UA"  
+                strong ПРИСУТНІСТЬ НА МІЖНАРОДНОМУ РИНКУ
+            p З 2014 року &laquo;Юніверсал Фіш Компані&raquo; стала офіційним гравцем на світовому рибному
+            p ринку, здійснивши свої перші експортні поставки. Готова продукція власного
+            p виробництва була високо оцінена і затребувана в країнах ЄС, де гранично високі
+            p вимоги до якості продуктів харчування.
+        - else
+            p
+                strong ОБЩАЯ ИНФОРМАЦИЯ О КОМПАНИИ
+            p &laquo;Юниверсал Фиш Компани&raquo; является крупнейшим оператором на рыбном рынке Украины,
+            p предоставляет широкий спектр услуг: импорт, переработка, реализация рыбной продукции на
+            p внутреннем рынке и экспортные поставки готовой рыбной продукции за пределы Украины.
+            p Также Компания является владельцем крупного холодильного логистического комплекса по
+            p переработке и хранению замороженной и охлажденной продукции.
+            p
+                strong ПАРТНЕРЫ НА ВСЮ ЖИЗНЬ
+            p Успехи &laquo;Юниверсал Фиш Компани&raquo; обусловлены вниманием к своим партнерам и
+            p выполнением всех своих обязательств. Благодаря нашему ответственному отношению, мы
+            p завоевали преданность наших партнеров, мы прислушиваемся к их мнению и потребностям,
+            p совершенствуя свой бизнес, помогаем улучшить их бизнес.
+            p &laquo;Юниверсал Фиш Компани&raquo; имеет возможность производить рыбу и морепродукты согласно
+            p требованиям клиента (Private Label), мы готовы к любым вариантам взаимовыгодных деловых
+            p отношений.
+            p
+                strong ПРИСУТСТВИЕ НА МЕЖДУНАРОДНОМ РЫНКЕ
+            p С 2014 года &laquo;Юниверсал Фиш Компани&raquo; стала официальным игроком на мировом рыбном
+            p рынке, осуществив свои первые экспортные поставки. Готовая продукция собственного
+            p производства была высоко оценена и востребована в странах ЕС, где предельно высокие
+            p требования к качеству продуктов питания.
     .col-lg-3.about-col
         = render 'right_nav', index_of_active_link: 1

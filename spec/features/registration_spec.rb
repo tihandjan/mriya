@@ -6,12 +6,12 @@ feature 'user sign in', js: true do
 
         visit new_user_session_path
         within(".form-wrapper") do
-            fill_in 'Почта', with: 'lol@lol.com'
-            fill_in 'Пароль', with: '1111111'
-            click_on 'Войти'
+            fill_in 'Email', with: 'lol@lol.com'
+            fill_in 'Password', with: '1111111'
+            click_on 'войти'
         end
 
-        expect(current_path).to eq(root_path)
+        expect(current_path).to eq('/ru')
         expect(page).to have_content("Вход в систему выполнен.")
     end
 
@@ -25,7 +25,7 @@ feature 'user sign in', js: true do
             click_button 'Регистрация'
         end
 
-        expect(current_path).to eq(root_path)
+        expect(current_path).to eq('/ru')
         expect(page).to have_content("Добро пожаловать! Вы успешно зарегистрировались.")
     end
 end
@@ -34,7 +34,7 @@ feature 'admin page', js: true do
     scenario 'regular user can not visit admin page' do 
         visit rails_admin_path
 
-        expect(current_path).to eq(root_path)
+        expect(current_path).to eq('/')
         expect(page).to have_content("You are not authorize to access this page!")
     end
 
@@ -42,7 +42,7 @@ feature 'admin page', js: true do
         user_sign_in
         visit rails_admin_path
 
-        expect(current_path).to eq(root_path)
+        expect(current_path).to eq('/')
         expect(page).to have_content("You are not authorize to access this page!")
     end
 

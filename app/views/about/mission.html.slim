@@ -4,11 +4,20 @@
     h1.about-club.about-coaching = t 'about.body.mission' 
 .row.about-row
     .col-lg-9.about-col
-        strong НАША МИССИЯ
-        p Развивать молодое поколение, предоставляя им возможность заниматься спортом, используя
-        p передовые методы, привлекая профессиональный тренерский состав, заботясь о здоровье нации!
-        strong ЦЕННОСТИ
-        p Лидерство. Командность. Воля к победе. Профессионализм. Любовь к делу. Индивидуальный
-        p подход. Успех в жизни. Здоровая нация.
+        - if params[:locale] == 'en'
+            strong OUR MISSION
+            p To develop the new generation, giving them the opportunity to exercise using advanced techniques involving professional coaching staff, taking care of the health of the nation!
+            strong VALUES
+            p Leadership. The will to win. Professionalism. The love affairs. Individual approach. Success in life. Healthy Nation.
+        - elsif params[:locale] == 'uk'
+            strong НАША МІСІЯ
+            p Розвивати молоде покоління, надаючи їм можливість займатися спортом, використовуючи передові методи, залучаючи професійний тренерський склад, піклуючись про здоров'я нації!
+            strong ЦІННОСТІ
+            p Лідерство. Командність. Воля до перемоги. Професіоналізм. Любов до справи. Індивідуальний підхід. Успіх у житті. Здорова нація.
+        - else
+            strong НАША МИССИЯ
+            p Развивать молодое поколение, предоставляя им возможность заниматься спортом, используя передовые методы, привлекая профессиональный тренерский состав, заботясь о здоровье нации!
+            strong ЦЕННОСТИ
+            p Лидерство. Командность. Воля к победе. Профессионализм. Любовь к делу. Индивидуальный подход. Успех в жизни. Здоровая нация.
     .col-lg-3.about-col
         = render 'right_nav', index_of_active_link: 2
