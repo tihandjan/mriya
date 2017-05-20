@@ -7,7 +7,7 @@ $(document).on('turbolinks:load', function() {
     var position = 0;
 
     forward.click(function() {
-        if(position < 10) {
+        if(position < 1) {
              position ++;
              $('.right-wrapper .table, .sub-header').hide();
              $('.table-' + position).show();

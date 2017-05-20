@@ -45,6 +45,20 @@ a {
     z-index: 9999;
 }
 
+.slider-btn {
+    transform: skewx(-20deg);
+    padding: 0 58px;
+    background-color: #FDD400;
+    height: 35px;
+    background-size: 25px;
+    @media only screen and (max-width: 767px) {
+        padding: 0;
+        background-color: transparent;
+        transform: skewx(0deg);
+        background-size: 21px;
+    }
+}
+
 .custom-container {
     background-color: #FFF;
     padding-left: 0;

@@ -342,12 +342,23 @@ RailsAdmin.config do |config|
     list do
       field :season
       field :body
+      field :category
     end
     create do
+      field :category, :enum do
+        enum do
+          ['перевенство ДЮФЛ', 'первенство харьковской обл.']
+        end
+      end
       field :season
       field :body, :ck_editor
     end
     edit do
+      field :category, :enum do
+        enum do
+          ['перевенство ДЮФЛ', 'первенство харьковской обл.']
+        end
+      end
       field :season
       field :body, :ck_editor
     end

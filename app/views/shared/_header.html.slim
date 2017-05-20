@@ -8,9 +8,14 @@ nav.navbar.navbar-toggleable-md.navbar-light.bg-faded.main-nav
       li.nav-item
         = link_to articles_path, class: 'nav-link'
           = t 'header.news'
-      li.nav-item
-        = link_to games_path, class: 'nav-link'
+      li.nav-item.dropdown
+        a#navbarDropdownMenuLink.nav-link[href="№" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"]
           = t 'header.games'
+        .dropdown-menu[aria-labelledby="navbarDropdownMenuLink"]
+          = link_to duflu_games_path, class: 'dropdown-item'
+            = t 'header.dufu' 
+          = link_to kharkiv_games_path, class: 'dropdown-item'
+            = t 'header.kharkiv' 
       li.nav-item.dropdown
         a#navbarDropdownMenuLink.nav-link[href="№" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"]
           = t 'header.tournaments' 

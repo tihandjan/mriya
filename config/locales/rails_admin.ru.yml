@@ -95,6 +95,7 @@ ru:
       game:
         season: Какой сезон
         body: "Основной контент"
+        category: Категория
       contact:
         russian: На Русском
         ukrainian: На Украинском

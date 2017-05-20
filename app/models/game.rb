@@ -8,6 +8,7 @@
 #  slug       :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  category   :string
 #
 # Indexes
 #
@@ -23,4 +24,5 @@ class Game < ApplicationRecord
 
     validates :season, presence: true
     validates :body, presence: true
+    validates :category, presence: true
 end

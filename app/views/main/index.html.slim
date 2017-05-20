@@ -25,7 +25,7 @@
                         = fa_icon "play"
 h2.last-news-header = t 'body.last_news'
 section.row.body-row
-    section.col-lg-8.custom-col
+    section.col-xl-8.custom-col
         - unless @articles[1].blank?
             .col
                 = link_to article_path(@articles[1])
@@ -53,7 +53,7 @@ section.row.body-row
                     li
                         span.date = l(Time.current, format: '%d %B %Y')
                         span.name #{t 'body.birthday'} #{player.name} #{player.surname} 
-    section.col-lg-4
+    section.col-xl-4
         = render 'shared/fixtures'
 
 

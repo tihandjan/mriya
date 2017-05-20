@@ -8,6 +8,7 @@
 #  slug       :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  category   :string
 #
 # Indexes
 #
@@ -20,5 +21,6 @@ RSpec.describe Game, type: :model do
   describe 'validation' do
     it { should validate_presence_of(:season) }
     it { should validate_presence_of(:body) }
+    it { should validate_presence_of(:category) }
   end
 end
