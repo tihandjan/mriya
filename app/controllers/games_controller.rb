@@ -6,11 +6,9 @@ class GamesController < ApplicationController
     end
 
     def duflu
-        
     end
 
     def kharkiv
-        
     end
 
     private

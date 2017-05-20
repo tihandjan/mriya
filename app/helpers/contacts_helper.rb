@@ -2,13 +2,13 @@ module ContactsHelper
   def contact_info(language: 'ru')
     case language
     when 'ru'
-       Contact.last.russian
+       Contact.last.try(:russian)
     when 'uk'
-      Contact.last.ukrainian
+      Contact.last.try(:ukrainian)
     when 'en'
-      Contact.last.english
+      Contact.last.try(:english)
     else
-      Contact.last.russian 
+      Contact.last.try(:russian) 
     end
   end
 end

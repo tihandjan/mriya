@@ -18,21 +18,34 @@
 require 'rails_helper'
 
 RSpec.describe GamesController, type: :controller do
-    describe 'GET #index' do
-        let!(:games) { FactoryGirl.create_list(:game, 2) }
+    describe 'GET #duflu' do
+        let!(:games) { FactoryGirl.create(:game, category: 'перевенство ДЮФЛ') }
         it 'renders index template' do
-            get :index
+            get :duflu
 
             expect(response).to render_template(:index)
         end
         it 'assigns all records to games var' do
-            get :index
+            get :duflu
+
+            expect(assigns(:games)).to match_array(games)
+        end
+    end
+    describe 'GET #kharkiv' do
+        let!(:games) { FactoryGirl.create(:game, category: 'первенство харьковской обл.') }
+        it 'renders index template' do
+            get :kharkiv
+
+            expect(response).to render_template(:index)
+        end
+        it 'assigns all records to games var' do
+            get :kharkiv
 
             expect(assigns(:games)).to match_array(games)
         end
     end
     describe 'GET #show' do
-        let!(:game) { FactoryGirl.create(:game) }
+        let!(:game) { FactoryGirl.create(:game, category: 'первенство харьковской обл.') }
         it 'renders index template' do
             get :show, id: game
 
