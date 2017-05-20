@@ -19,6 +19,7 @@ ru:
       achievement: Достижения клуба 
       graduate: Выпускники
       game: Матчи
+      contact: Контакты
     attributes:
       album:
         title: "Заголовок"
@@ -94,6 +95,10 @@ ru:
       game:
         season: Какой сезон
         body: "Основной контент"
+      contact:
+        russian: На Русском
+        ukrainian: На Украинском
+        english: На Английском
   admin:
     js:
       true: 'True'

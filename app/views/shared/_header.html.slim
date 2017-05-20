@@ -114,45 +114,52 @@ section.main-section
     .modal-content
       .header = t 'header.contacts_long'
       hr
-      .social-wrapper.text-left
-        p
-          strong тел. (067) 57-96-976
-          br/
-          strong факс. (05742) 5-17-11
-        p
-          strong
-            | E-mail:&nbsp;
-            a href="mailto:mriya@ufc-fish.com"  mriya@ufc-fish.com
-        p Директор ФК &quot;Мрия&quot;:
-        p
-          strong> Сероштан Игорь Григорьевич
-          | &nbsp;моб. (050) 406-52-33
-          br/
-          | Тренер команды 1999 г.р:
-        p
-          strong> Гречанников Юрий Александрович
-          | &nbsp;моб. (066) 603-14-41
-        p Тренер команд 2000, 2008 гг.р:
-        p
-          strong> Лаута Олег Юрьевич
-          | &nbsp;моб. (066) 709-46-65
-        p Тренер команд 2001, 2005 гг.р:
-        p
-          strong> Загоруйко Сергей Владимирович
-          | &nbsp;моб. (095) 625-00-20
-          br/
-          | Тренер команд 2002, 2003, 2004 гг.р:
-        p
-          strong> Коленда Максим Михайлович
-          | &nbsp;моб. (050) 166-28-67
-          br/
-          | Тренер команд 2006, 2007 гг.р:
-        p
-          strong> Ульяновский Александр Геннадиевич
-          | &nbsp;моб. (050) 136-43-93
-        p Тренер команды 2008-2009 гг.р:
-        p
-          strong> Бреус Игорь Иванович
-          | &nbsp;моб. (099) 303-91-56
+      - if params[:locale] == 'en'
+        = raw contact_info(language: 'en')
+      - elsif params[:locale] == 'uk'
+        = raw contact_info(language: 'uk')
+      - elsif params[:locale] == 'ru'
+        = raw contact_info(language: 'ru')
+      - else
+        .social-wrapper.text-left
+          p
+            strong тел. (067) 57-96-976
+            br/
+            strong факс. (05742) 5-17-11
+          p
+            strong
+              | E-mail:&nbsp;
+              a href="mailto:mriya@ufc-fish.com"  mriya@ufc-fish.com
+          p Директор ФК &quot;Мрия&quot;:
+          p
+            strong> Сероштан Игорь Григорьевич
+            | &nbsp;моб. (050) 406-52-33
+            br/
+            | Тренер команды 1999 г.р:
+          p
+            strong> Гречанников Юрий Александрович
+            | &nbsp;моб. (066) 603-14-41
+          p Тренер команд 2000, 2008 гг.р:
+          p
+            strong> Лаута Олег Юрьевич
+            | &nbsp;моб. (066) 709-46-65
+          p Тренер команд 2001, 2005 гг.р:
+          p
+            strong> Загоруйко Сергей Владимирович
+            | &nbsp;моб. (095) 625-00-20
+            br/
+            | Тренер команд 2002, 2003, 2004 гг.р:
+          p
+            strong> Коленда Максим Михайлович
+            | &nbsp;моб. (050) 166-28-67
+            br/
+            | Тренер команд 2006, 2007 гг.р:
+          p
+            strong> Ульяновский Александр Геннадиевич
+            | &nbsp;моб. (050) 136-43-93
+          p Тренер команды 2008-2009 гг.р:
+          p
+            strong> Бреус Игорь Иванович
+            | &nbsp;моб. (099) 303-91-56
 
 / ********** modal contacts end ***********

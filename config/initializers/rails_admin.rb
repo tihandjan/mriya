@@ -352,5 +352,22 @@ RailsAdmin.config do |config|
       field :body, :ck_editor
     end
   end
+  config.model 'Contact' do
+    list do
+      field :russian
+      field :ukrainian
+      field :english
+    end
+    create do
+      field :russian, :ck_editor
+      field :ukrainian, :ck_editor
+      field :english, :ck_editor
+    end
+    edit do
+      field :russian, :ck_editor
+      field :ukrainian, :ck_editor
+      field :english, :ck_editor
+    end
+  end
 
 end
