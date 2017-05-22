@@ -18,7 +18,7 @@ set :rails_env, :production
 set :stage, :production
 
  set :ssh_options, {
-   keys: %w(/home/deployer/.ssh/id_rsa),
+   keys: %w(/home/igor/.ssh/id_rsa),
    forward_agent: true,
    auth_methods: %w(publickey),
    port: 4321
