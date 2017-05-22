@@ -7,7 +7,6 @@
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
 
-server "95.85.43.70", user: "deployer", roles: %w{app db web}, primary: true
 
 
 role :app, %w{deployer@95.85.43.70}
@@ -17,13 +16,14 @@ role :db,  %w{deployer@95.85.43.70}, primary: true
 set :rails_env, :production
 set :stage, :production
 
- set :ssh_options, {
-   keys: %w(/home/igor/.ssh/id_rsa),
-   forward_agent: true,
-   auth_methods: %w(publickey),
-   port: 4321
- }
+server "95.85.43.70", user: "deployer", roles: %w{app db web}, primary: true
 
+set :ssh_options, {
+  keys: %w(/home/tihandjan/.ssh/id_rsa),
+  forward_agent: true,
+  auth_methods: %w(publickey),
+  port: 4321
+}
 # role-based syntax
 # ==================
 
