@@ -17,6 +17,7 @@
 .byebug_history
 /spec/tmp
 /config/*.yml
+config/database.yml
 /public/system
 /public/uploads
 /public/*.gz
