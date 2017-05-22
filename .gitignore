@@ -18,6 +18,7 @@
 /spec/tmp
 /config/*.yml
 config/database.yml
+config/secrets.yml
 /public/system
 /public/uploads
 /public/*.gz
