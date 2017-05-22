@@ -9,21 +9,21 @@
 
 
 
-role :app, %w{deployer@95.85.43.70}
-role :web, %w{deployer@95.85.43.70}
-role :db,  %w{deployer@95.85.43.70}, primary: true
+# role :app, %w{deployer@95.85.43.70}
+# role :web, %w{deployer@95.85.43.70}
+# role :db,  %w{deployer@95.85.43.70}, primary: true
 
-set :rails_env, :production
-set :stage, :production
+# set :rails_env, :production
+# set :stage, :production
 
-server "95.85.43.70", user: "deployer", roles: %w{app db web}, primary: true
+# server "95.85.43.70", user: "deployer", roles: %w{app db web}, primary: true
 
-set :ssh_options, {
-  keys: %w(/home/tihandjan/.ssh/id_rsa),
-  forward_agent: true,
-  auth_methods: %w(publickey),
-  port: 4321
-}
+# set :ssh_options, {
+#   keys: %w(/home/tihandjan/.ssh/id_rsa),
+#   forward_agent: true,
+#   auth_methods: %w(publickey),
+#   port: 4321
+# }
 # role-based syntax
 # ==================
 
