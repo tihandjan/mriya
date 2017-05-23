@@ -3,8 +3,6 @@
 # Table name: players
 #
 #  id         :integer          not null, primary key
-#  name       :string
-#  surname    :string
 #  birthday   :date
 #  team_id    :integer
 #  created_at :datetime         not null

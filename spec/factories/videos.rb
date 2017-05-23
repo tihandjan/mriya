@@ -3,8 +3,6 @@
 # Table name: videos
 #
 #  id         :integer          not null, primary key
-#  title      :string
-#  summary    :string
 #  video_url  :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null

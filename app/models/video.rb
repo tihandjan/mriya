@@ -3,8 +3,6 @@
 # Table name: videos
 #
 #  id         :integer          not null, primary key
-#  title      :string
-#  summary    :string
 #  video_url  :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
@@ -21,6 +19,11 @@ class Video < ApplicationRecord
     def should_generate_new_friendly_id?
         slug.blank? || title_changed?
     end
+
+    translates :title, :summary
+    accepts_nested_attributes_for :translations, allow_destroy: true
+    translation_class.validates :title, presence: true
+    translation_class.validates :summary, presence: true
     
     validates :title, presence: true, length: {minimum: 10, maximum: 170}
     validates :summary, length: {maximum: 200}

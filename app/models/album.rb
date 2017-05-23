@@ -3,7 +3,6 @@
 # Table name: albums
 #
 #  id          :integer          not null, primary key
-#  title       :string
 #  cover_photo :string
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
@@ -20,6 +19,11 @@ class Album < ApplicationRecord
     def should_generate_new_friendly_id?
         slug.blank? || title_changed?
     end
+
+    translates :title
+    accepts_nested_attributes_for :translations, allow_destroy: true
+    translation_class.validates :title, presence: true
+
     has_one :view, as: :viewable
     has_many :photos
     validates :title, presence: true

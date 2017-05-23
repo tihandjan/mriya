@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170520143648) do
+ActiveRecord::Schema.define(version: 20170523204047) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,16 @@ ActiveRecord::Schema.define(version: 20170520143648) do
     t.index ["slug"], name: "index_achievements_on_slug", using: :btree
   end
 
+  create_table "album_translations", force: :cascade do |t|
+    t.integer  "album_id",   null: false
+    t.string   "locale",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "title"
+    t.index ["album_id"], name: "index_album_translations_on_album_id", using: :btree
+    t.index ["locale"], name: "index_album_translations_on_locale", using: :btree
+  end
+
   create_table "albums", force: :cascade do |t|
     t.string   "title"
     t.string   "cover_photo"
@@ -31,6 +41,17 @@ ActiveRecord::Schema.define(version: 20170520143648) do
     t.datetime "updated_at",  null: false
     t.string   "slug"
     t.index ["slug"], name: "index_albums_on_slug", unique: true, using: :btree
+  end
+
+  create_table "article_translations", force: :cascade do |t|
+    t.integer  "article_id", null: false
+    t.string   "locale",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "title"
+    t.text     "body"
+    t.index ["article_id"], name: "index_article_translations_on_article_id", using: :btree
+    t.index ["locale"], name: "index_article_translations_on_locale", using: :btree
   end
 
   create_table "articles", force: :cascade do |t|
@@ -41,6 +62,16 @@ ActiveRecord::Schema.define(version: 20170520143648) do
     t.datetime "updated_at", null: false
     t.string   "slug"
     t.index ["slug"], name: "index_articles_on_slug", unique: true, using: :btree
+  end
+
+  create_table "coach_translations", force: :cascade do |t|
+    t.integer  "coach_id",   null: false
+    t.string   "locale",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "name"
+    t.index ["coach_id"], name: "index_coach_translations_on_coach_id", using: :btree
+    t.index ["locale"], name: "index_coach_translations_on_locale", using: :btree
   end
 
   create_table "coaches", force: :cascade do |t|
@@ -111,6 +142,16 @@ ActiveRecord::Schema.define(version: 20170520143648) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "merit_translations", force: :cascade do |t|
+    t.integer  "merit_id",   null: false
+    t.string   "locale",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "merit"
+    t.index ["locale"], name: "index_merit_translations_on_locale", using: :btree
+    t.index ["merit_id"], name: "index_merit_translations_on_merit_id", using: :btree
+  end
+
   create_table "merits", force: :cascade do |t|
     t.string   "merit"
     t.integer  "coach_id"
@@ -134,6 +175,17 @@ ActiveRecord::Schema.define(version: 20170520143648) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["album_id"], name: "index_photos_on_album_id", using: :btree
+  end
+
+  create_table "player_translations", force: :cascade do |t|
+    t.integer  "player_id",  null: false
+    t.string   "locale",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "name"
+    t.string   "surname"
+    t.index ["locale"], name: "index_player_translations_on_locale", using: :btree
+    t.index ["player_id"], name: "index_player_translations_on_player_id", using: :btree
   end
 
   create_table "players", force: :cascade do |t|
@@ -225,6 +277,17 @@ ActiveRecord::Schema.define(version: 20170520143648) do
     t.integer "user_id"
     t.integer "role_id"
     t.index ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id", using: :btree
+  end
+
+  create_table "video_translations", force: :cascade do |t|
+    t.integer  "video_id",   null: false
+    t.string   "locale",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "title"
+    t.string   "summary"
+    t.index ["locale"], name: "index_video_translations_on_locale", using: :btree
+    t.index ["video_id"], name: "index_video_translations_on_video_id", using: :btree
   end
 
   create_table "videos", force: :cascade do |t|

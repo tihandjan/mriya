@@ -11,6 +11,10 @@
 #
 
 class Coach < ApplicationRecord
+    translates :name
+    accepts_nested_attributes_for :translations, allow_destroy: true
+    translation_class.validates :name, presence: true
+
     has_many :partnership, dependent: :destroy
     has_many :teams, through: :partnership
     has_many :merits, dependent: :destroy

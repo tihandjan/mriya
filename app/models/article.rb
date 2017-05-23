@@ -3,8 +3,6 @@
 # Table name: articles
 #
 #  id         :integer          not null, primary key
-#  title      :string
-#  body       :text
 #  image      :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
@@ -21,6 +19,11 @@ class Article < ApplicationRecord
     def should_generate_new_friendly_id?
         slug.blank? || title_changed?
     end
+
+    translates :title, :body
+    accepts_nested_attributes_for :translations, allow_destroy: true
+    translation_class.validates :title, presence: true
+    translation_class.validates :body, presence: true
 
     validates :title, presence: true, length: {minimum: 10, maximum: 200}
     validates :body,  presence: true, length: {minimum: 10, maximum: 10000}

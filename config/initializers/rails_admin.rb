@@ -18,6 +18,32 @@ RailsAdmin.config do |config|
       end
     end
 
+  config.included_models = [
+    'Album',
+    'Video',
+    'Graduate',
+    'Achievement',
+    'Merit', 
+    'Player',
+    'Team',
+    'LeagueTeam',
+    'Contact',
+    'League',
+    'Game',
+    'User',
+    'Schedule',
+    'Fixture',
+    'Article',
+    'Table',
+    'Coach',
+    'Tournament',
+    'Photo',
+    'Article::Translation',
+    'Album::Translation',
+    'Video::Translation',
+    'Player::Translation',
+    'Coach::Translation'
+  ]
   ## == Pundit ==
   # config.authorize_with :pundit
 
@@ -48,59 +74,69 @@ RailsAdmin.config do |config|
 
   config.excluded_models = ["Partnership", "Role", "View"]
   config.model 'Album' do
-    list do
-      field :title
-      field :cover_photo
-      field :created_at
+    configure :translations, :globalize_tabs
+    exclude_fields :slug
+  end
+
+  config.model 'Album::Translation' do
+    visible false
+    configure :locale, :hidden do
+      help ''
     end
     create do
       field :title
-      field :cover_photo
-      field :photos
+      field :locale
     end
     edit do
       field :title
-      field :cover_photo
-      field :photos
+      field :locale
     end
   end
 
   config.model 'Article' do
-    list do
-      field :title
-      field :body
-      field :image
-      field :created_at
+    configure :translations, :globalize_tabs
+    exclude_fields :slug
+  end
+
+  config.model 'Article::Translation' do
+    visible false
+    configure :locale, :hidden do
+      help ''
     end
     create do
       field :title
       field :body, :ck_editor
-      field :image
+      field :locale
     end
     edit do
       field :title
       field :body, :ck_editor
-      field :image
+      field :locale
     end
   end
 
   config.model 'Video' do
-    list do
-      field :title
-      field :summary
-      field :video_url
+    configure :translations, :globalize_tabs
+    exclude_fields :slug
+  end
+
+  config.model 'Video::Translation' do
+    visible false
+    configure :locale, :hidden do
+      help ''
     end
     create do
       field :title
       field :summary
-      field :video_url
+      field :locale
     end
     edit do
       field :title
       field :summary
-      field :video_url
+      field :locale
     end
   end
+
   config.model 'Merit' do
     list do
       field :merit
@@ -116,28 +152,28 @@ RailsAdmin.config do |config|
     end
   end
   config.model 'Player' do
-    list do
-      field :name
-      field :surname
-      field :birthday
-      field :photo
-      field :team
+    configure :translations, :globalize_tabs
+  end
+
+
+  config.model 'Player::Translation' do
+    visible false
+    configure :locale, :hidden do
+      help ''
     end
     create do
       field :name
       field :surname
-      field :birthday
-      field :photo
-      field :team
+      field :locale
     end
     edit do
       field :name
       field :surname
-      field :birthday
-      field :photo
-      field :team
+      field :locale
     end
   end
+
+
   config.model 'Team' do
     list do
       field :name
@@ -198,26 +234,22 @@ RailsAdmin.config do |config|
     end
   end
   config.model 'Coach' do
-    list do
-      field :name
-      field :birthday
-      field :photo
-      field :teams
-      field :merits
+    configure :translations, :globalize_tabs
+  end
+
+
+  config.model 'Coach::Translation' do
+    visible false
+    configure :locale, :hidden do
+      help ''
     end
     create do
       field :name
-      field :birthday
-      field :photo
-      field :teams
-      field :merits
+      field :locale
     end
     edit do
       field :name
-      field :birthday
-      field :photo
-      field :teams
-      field :merits
+      field :locale
     end
   end
   config.model 'Schedule' do

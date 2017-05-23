@@ -27,6 +27,7 @@ module Mriya
 
     config.i18n.available_locales = [:uk, :ru, :en]
     config.i18n.default_locale = :ru
+    config.i18n.fallbacks = true
 
     config.time_zone = 'Moscow'
     config.active_record.default_timezone = :local
@@ -34,6 +35,7 @@ module Mriya
     config.assets.precompile += Ckeditor.assets
     config.assets.precompile += %w( ckeditor/* )
     config.autoload_paths += %w(#{config.root}/app/models/ckeditor)
+
     
   end
 end

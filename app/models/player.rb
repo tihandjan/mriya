@@ -3,8 +3,6 @@
 # Table name: players
 #
 #  id         :integer          not null, primary key
-#  name       :string
-#  surname    :string
 #  birthday   :date
 #  team_id    :integer
 #  created_at :datetime         not null
@@ -22,6 +20,11 @@ class Player < ApplicationRecord
   validates :surname, presence: true
   validates :birthday, presence: true
   validates :photo, presence: true
+
+  translates :name, :surname
+  accepts_nested_attributes_for :translations, allow_destroy: true
+  translation_class.validates :name, presence: true
+  translation_class.validates :surname, presence: true
 
   mount_uploader :photo, PlayerUploader
 end
