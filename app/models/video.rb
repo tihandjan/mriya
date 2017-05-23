@@ -20,7 +20,7 @@ class Video < ApplicationRecord
         slug.blank? || title_changed?
     end
 
-    translates :title
+    translates :title, :summary
     accepts_nested_attributes_for :translations, allow_destroy: true
     translation_class.validates :title, presence: true
     
