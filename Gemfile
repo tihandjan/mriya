@@ -17,7 +17,7 @@ gem 'turbolinks', '~> 5'
 gem 'jquery-rails'
 gem 'sass-rails', '~> 5.0'
 gem 'coffee-rails', '~> 4.2'
-gem 'slim-rails'
+gem 'slim-rails', '3.1.1'
 gem 'bootstrap', '~> 4.0.0.alpha6'
 gem "font-awesome-rails"
 source 'https://rails-assets.org' do
