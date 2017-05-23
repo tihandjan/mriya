@@ -1,5 +1,9 @@
 # Change these
-server '95.85.43.70', port: 4321, roles: [:web, :app, :db], primary: true
+server '95.85.43.70', user: "deployer", port: 4321, roles: [:web, :app, :db], primary: true
+
+role :app, %w{deployer@95.85.43.70}
+role :web, %w{deployer@95.85.43.70}
+role :db,  %w{deployer@95.85.43.70}, primary: true
 
 set :repo_url,        'git@github.com:tihandjan/mriya.git'
 set :application,     'fcmriya'
