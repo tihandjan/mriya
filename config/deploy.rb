@@ -1,9 +1,5 @@
 # Change these
-server '95.85.43.70', user: "deployer", port: 4321, roles: [:web, :app, :db], primary: true
-
-role :app, %w{deployer@95.85.43.70}
-role :web, %w{deployer@95.85.43.70}
-role :db,  %w{deployer@95.85.43.70}, primary: true
+server '95.85.43.70', port: 4321, roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'git@github.com:tihandjan/mriya.git'
 set :application,     'fcmriya'
@@ -37,7 +33,7 @@ set :console_env, :production
 
 ## Linked Files & Directories (Default None):
 set :linked_files, %w{config/database.yml config/secrets.yml}
-set :linked_dirs,  %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+set :linked_dirs,  %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads binlog}
 
 namespace :puma do
   desc 'Create Directories for Puma Pids and Socket'
@@ -77,7 +73,7 @@ namespace :deploy do
 #       invoke 'puma:restart'
 #     end
 #   end
-
+  after :publishing, 'deploy:restart'
   before :starting,     :check_revision
   after  :finishing,    :compile_assets
   after  :finishing,    :cleanup
