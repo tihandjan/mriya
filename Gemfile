@@ -30,6 +30,7 @@ gem "mini_magick"
 
 # admin
 gem 'rails_admin', '~> 1.1.1'
+gem 'rails_admin_globalize_field'
 
 # adapter for russian language
 gem 'russian', '~> 0.6.0'
@@ -53,6 +54,8 @@ gem 'omniauth-vkontakte'
 gem 'social-share-button'
 gem 'htmlcompressor', '~> 0.2.0'
 gem 'toastr-rails'
+gem 'globalize', git: 'https://github.com/globalize/globalize'
+gem 'activemodel-serializers-xml'
 # helper gems for solving capistrano problems
 gem 'therubyracer'
 

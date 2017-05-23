@@ -53,13 +53,13 @@ ru:
     metallurg: металлург
     spartac: спартак
     full_name: ФИО
-    sun: Вос
-    mon: Пон
+    sun: Вс
+    mon: Пн
     tue: Вт
     wed: Ср
-    thu: Чет
-    fri: Пят
-    sat: Суб
+    thu: Чт
+    fri: Пт
+    sat: Сб
     change_search_query: Попробуйте изменить поисковый запрос
     tournament_position: турнирное положение фк "мрия"
     achievements_fc_mriya: Достижения фк "мрия"
