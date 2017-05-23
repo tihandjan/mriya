@@ -6,6 +6,7 @@ require 'capistrano/rails'
 require 'capistrano/bundler'
 require 'capistrano/rvm'
 require 'capistrano/puma'
+require 'capistrano/rails/console'
 
 install_plugin Capistrano::Puma
 
