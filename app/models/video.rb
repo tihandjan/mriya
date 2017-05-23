@@ -20,10 +20,9 @@ class Video < ApplicationRecord
         slug.blank? || title_changed?
     end
 
-    translates :title, :summary
+    translates :title
     accepts_nested_attributes_for :translations, allow_destroy: true
     translation_class.validates :title, presence: true
-    translation_class.validates :summary, presence: true
     
     validates :title, presence: true, length: {minimum: 10, maximum: 170}
     validates :summary, length: {maximum: 200}
