@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170523204047) do
+ActiveRecord::Schema.define(version: 20170524225840) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "achievement_translations", force: :cascade do |t|
+    t.integer  "achievement_id", null: false
+    t.string   "locale",         null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.string   "title"
+    t.text     "body"
+    t.index ["achievement_id"], name: "index_achievement_translations_on_achievement_id", using: :btree
+    t.index ["locale"], name: "index_achievement_translations_on_locale", using: :btree
+  end
 
   create_table "achievements", force: :cascade do |t|
     t.string   "title"
@@ -112,6 +123,17 @@ ActiveRecord::Schema.define(version: 20170523204047) do
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
   end
 
+  create_table "game_translations", force: :cascade do |t|
+    t.integer  "game_id",    null: false
+    t.string   "locale",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "season"
+    t.text     "body"
+    t.index ["game_id"], name: "index_game_translations_on_game_id", using: :btree
+    t.index ["locale"], name: "index_game_translations_on_locale", using: :btree
+  end
+
   create_table "games", force: :cascade do |t|
     t.string   "season",     default: "Турнирная таблица Первенства Украины 2017/2018"
     t.text     "body"
@@ -120,6 +142,16 @@ ActiveRecord::Schema.define(version: 20170523204047) do
     t.datetime "updated_at",                                                            null: false
     t.string   "category"
     t.index ["slug"], name: "index_games_on_slug", using: :btree
+  end
+
+  create_table "graduate_translations", force: :cascade do |t|
+    t.integer  "graduate_id", null: false
+    t.string   "locale",      null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.text     "body"
+    t.index ["graduate_id"], name: "index_graduate_translations_on_graduate_id", using: :btree
+    t.index ["locale"], name: "index_graduate_translations_on_locale", using: :btree
   end
 
   create_table "graduates", force: :cascade do |t|
@@ -209,6 +241,16 @@ ActiveRecord::Schema.define(version: 20170523204047) do
     t.index ["name"], name: "index_roles_on_name", using: :btree
   end
 
+  create_table "schedule_translations", force: :cascade do |t|
+    t.integer  "schedule_id", null: false
+    t.string   "locale",      null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "coach"
+    t.index ["locale"], name: "index_schedule_translations_on_locale", using: :btree
+    t.index ["schedule_id"], name: "index_schedule_translations_on_schedule_id", using: :btree
+  end
+
   create_table "schedules", force: :cascade do |t|
     t.string   "team"
     t.string   "coach"
@@ -240,6 +282,17 @@ ActiveRecord::Schema.define(version: 20170523204047) do
     t.string   "slug"
     t.string   "photo"
     t.index ["slug"], name: "index_teams_on_slug", unique: true, using: :btree
+  end
+
+  create_table "tournament_translations", force: :cascade do |t|
+    t.integer  "tournament_id", null: false
+    t.string   "locale",        null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.string   "title"
+    t.text     "body"
+    t.index ["locale"], name: "index_tournament_translations_on_locale", using: :btree
+    t.index ["tournament_id"], name: "index_tournament_translations_on_tournament_id", using: :btree
   end
 
   create_table "tournaments", force: :cascade do |t|

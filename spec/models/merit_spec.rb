@@ -3,7 +3,6 @@
 # Table name: merits
 #
 #  id         :integer          not null, primary key
-#  merit      :string
 #  coach_id   :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null

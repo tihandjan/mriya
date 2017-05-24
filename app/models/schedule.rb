@@ -18,7 +18,12 @@
 #
 
 class Schedule < ApplicationRecord
+    translates :coach
+    accepts_nested_attributes_for :translations, allow_destroy: true
+    translation_class.validates :coach, presence: true
+    
     validates :stadium, presence: true
     validates :coach, presence: true
     validates :team, presence: true
+    
 end

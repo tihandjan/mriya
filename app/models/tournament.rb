@@ -4,8 +4,6 @@
 #
 #  id         :integer          not null, primary key
 #  kind       :string
-#  title      :string
-#  body       :text
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  slug       :string
@@ -21,6 +19,11 @@ class Tournament < ApplicationRecord
     def should_generate_new_friendly_id?
         slug.blank? || title_changed?
     end
+
+    translates :title, :body
+    accepts_nested_attributes_for :translations, allow_destroy: true
+    translation_class.validates :title, presence: true
+    translation_class.validates :body, presence: true
     
     validates :title, presence: true
     validates :kind, presence: true

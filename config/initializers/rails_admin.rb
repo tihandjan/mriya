@@ -42,7 +42,13 @@ RailsAdmin.config do |config|
     'Album::Translation',
     'Video::Translation',
     'Player::Translation',
-    'Coach::Translation'
+    'Coach::Translation',
+    'Tournament::Translation',
+    'Achievement::Translation',
+    'Graduate::Translation',
+    'Game::Translation',
+    'Merit::Translation',
+    'Schedule::Translation'
   ]
   ## == Pundit ==
   # config.authorize_with :pundit
@@ -138,17 +144,20 @@ RailsAdmin.config do |config|
   end
 
   config.model 'Merit' do
-    list do
-      field :merit
-      field :coach
+    configure :translations, :globalize_tabs
+  end
+  config.model 'Merit::Translation' do
+    visible false
+    configure :locale, :hidden do
+      help ''
     end
     create do
       field :merit
-      field :coach
+      field :locale
     end
     edit do
       field :merit
-      field :coach
+      field :locale     
     end
   end
   config.model 'Player' do
@@ -237,7 +246,6 @@ RailsAdmin.config do |config|
     configure :translations, :globalize_tabs
   end
 
-
   config.model 'Coach::Translation' do
     visible false
     configure :locale, :hidden do
@@ -252,64 +260,59 @@ RailsAdmin.config do |config|
       field :locale
     end
   end
+
   config.model 'Schedule' do
-    create do
-      field :stadium, :enum do
-        enum do
-          ['металлург', 'спартак']
-        end
+    configure :translations, :globalize_tabs
+    include_all_fields
+    field :stadium, :enum do
+      enum do
+        ['металлург', 'спартак']
       end
-      field :team
-      field :coach
-      field :mon
-      field :tue
-      field :wed
-      field :thu
-      field :fri
-      field :sat
-      field :sun
-    end
-    edit do
-      field :stadium, :enum do
-        enum do
-          ['металлург', 'спартак']
-        end
-      end
-      field :team
-      field :coach
-      field :mon
-      field :tue
-      field :wed
-      field :thu
-      field :fri
-      field :sat
-      field :sun
     end
   end
+
+  config.model 'Schedule::Translation' do
+    visible false
+    configure :locale, :hidden do
+      help ''
+    end
+    create do
+      field :coach
+      field :locale
+    end
+    edit do
+      field :coach
+      field :locale
+    end
+  end
+
   config.model 'Tournament' do
-    list do
-      field :title
-      field :kind
+    configure :translations, :globalize_tabs
+    exclude_fields :slug
+    field :kind, :enum do
+      enum do
+        ['зимний', 'летний', 'весенний']
+      end
+    end
+  end
+
+  config.model 'Tournament::Translation' do
+    visible false
+    configure :locale, :hidden do
+      help ''
     end
     create do
       field :title
-      field :kind, :enum do
-        enum do
-          ['зимний', 'летний', 'весенний']
-        end
-      end
       field :body, :ck_editor
+      field :locale
     end
     edit do
       field :title
-      field :kind, :enum do
-        enum do
-          ['зимний', 'летний', 'весенний']
-        end
-      end
       field :body, :ck_editor
+      field :locale
     end
   end
+
   config.model 'Fixture' do
     list do
       field :home_team
@@ -346,53 +349,67 @@ RailsAdmin.config do |config|
     end
   end
   config.model 'Achievement' do
-    list do
-      field :title
-      field :body
+    configure :translations, :globalize_tabs
+    exclude_fields :slug
+  end
+  config.model 'Achievement::Translation' do
+    visible false
+    configure :locale, :hidden do
+      help ''
     end
     create do
       field :title
       field :body, :ck_editor
+      field :locale
     end
     edit do
       field :title
       field :body, :ck_editor
+      field :locale
     end
   end
   config.model 'Graduate' do
-    list do
-      field :body
+    configure :translations, :globalize_tabs
+    exclude_fields :slug
+  end
+  config.model 'Graduate::Translation' do
+    visible false
+    configure :locale, :hidden do
+      help ''
     end
     create do
       field :body, :ck_editor
+      field :locale
     end
     edit do
       field :body, :ck_editor
+      field :locale
     end
   end
   config.model 'Game' do
-    list do
-      field :season
-      field :body
-      field :category
+    configure :translations, :globalize_tabs    
+    exclude_fields :slug
+    field :category, :enum do
+      enum do
+        ['перевенство ДЮФЛ', 'первенство харьковской обл.']
+      end
+    end
+    
+  end
+  config.model 'Game::Translation' do
+    visible false
+    configure :locale, :hidden do
+      help ''
     end
     create do
-      field :category, :enum do
-        enum do
-          ['перевенство ДЮФЛ', 'первенство харьковской обл.']
-        end
-      end
-      field :season
       field :body, :ck_editor
+      field :locale
+      field :season
     end
     edit do
-      field :category, :enum do
-        enum do
-          ['перевенство ДЮФЛ', 'первенство харьковской обл.']
-        end
-      end
-      field :season
       field :body, :ck_editor
+      field :locale
+      field :season      
     end
   end
   config.model 'Contact' do

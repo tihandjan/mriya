@@ -3,8 +3,6 @@
 # Table name: games
 #
 #  id         :integer          not null, primary key
-#  season     :string           default("Турнирная таблица Первенства Украины 2017/2018")
-#  body       :text
 #  slug       :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
@@ -21,6 +19,11 @@ class Game < ApplicationRecord
     def should_generate_new_friendly_id?
         slug.blank? || season_changed?
     end
+
+    translates :body, :season
+    accepts_nested_attributes_for :translations, allow_destroy: true
+    translation_class.validates :body, presence: true
+    translation_class.validates :season, presence: true
 
     validates :season, presence: true
     validates :body, presence: true
