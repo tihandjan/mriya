@@ -35,4 +35,12 @@ class Video < ApplicationRecord
         end
         end
     end
+
+    def self.search(search)
+      unless search.strip.length == 0
+        if search
+            with_translations(I18n.locale).where("LOWER(video_translations.title) LIKE ?", "%#{search.downcase}%").order(created_at: :desc).first(4)
+        end
+      end
+    end
 end

@@ -32,11 +32,11 @@ class Article < ApplicationRecord
     mount_uploader :image, ArticleUploader
 
     def self.search(search)
-        unless search.strip.length == 0
+      unless search.strip.length == 0
         if search
-            where("lower(title) LIKE ?", "%#{search.downcase}%").order(created_at: :desc).last(4)
+            with_translations(I18n.locale).where("LOWER(article_translations.title) LIKE ?", "%#{search.downcase}%").order(created_at: :desc).first(4)
         end
-        end
+      end
     end
 
 end
