@@ -348,10 +348,12 @@ RailsAdmin.config do |config|
       field :date
     end
   end
+
   config.model 'Achievement' do
     configure :translations, :globalize_tabs
     exclude_fields :slug
   end
+
   config.model 'Achievement::Translation' do
     visible false
     configure :locale, :hidden do
@@ -368,10 +370,12 @@ RailsAdmin.config do |config|
       field :locale
     end
   end
+
   config.model 'Graduate' do
     configure :translations, :globalize_tabs
     exclude_fields :slug
   end
+
   config.model 'Graduate::Translation' do
     visible false
     configure :locale, :hidden do
@@ -386,6 +390,7 @@ RailsAdmin.config do |config|
       field :locale
     end
   end
+
   config.model 'Game' do
     configure :translations, :globalize_tabs    
     exclude_fields :slug
@@ -394,8 +399,8 @@ RailsAdmin.config do |config|
         ['перевенство ДЮФЛ', 'первенство харьковской обл.']
       end
     end
-    
   end
+
   config.model 'Game::Translation' do
     visible false
     configure :locale, :hidden do
@@ -412,6 +417,7 @@ RailsAdmin.config do |config|
       field :season      
     end
   end
+
   config.model 'Contact' do
     list do
       field :russian
@@ -429,5 +435,4 @@ RailsAdmin.config do |config|
       field :english, :ck_editor
     end
   end
-
 end
