@@ -27,4 +27,15 @@ class Player < ApplicationRecord
   translation_class.validates :surname, presence: true
 
   mount_uploader :photo, PlayerUploader
+
+  def self.search(search)
+    surname = search.split(' ')[0] || 'asdfghjkl'
+    name = search.split(' ')[1] || 'asdfghjkl'
+    unless search.strip.length == 0
+      if search
+          with_translations(I18n.locale).where("LOWER(player_translations.surname) LIKE ? OR LOWER(player_translations.surname) LIKE ? OR LOWER(player_translations.name) LIKE ? OR LOWER(player_translations.name) LIKE ?", "%#{surname.try(:downcase)}%", "%#{name.try(:downcase)}%", "%#{surname.try(:downcase)}%", "%#{name.try(:downcase)}%").order(created_at: :desc).first(4)
+      end
+    end
+  end
+
 end

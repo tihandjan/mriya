@@ -11,7 +11,19 @@
                 = image_tag YouTubeRails.extract_video_image(video.video_url, 'high'), class: 'pull-left', style: 'margin-right:10px;width:120px;' 
                 p.list-group-item-text style="font-size:14px"
                     = truncate(video.title, length: 70)
-    - if !@articles.any? && !@videos.any?
+    - if @coaches.any?
+        - @coaches.each do |coach|
+            = link_to team_path(coach.teams.first)
+                = image_tag coach.photo.url(:wide), class: 'pull-left', style: 'margin-right:10px;width:120px;' 
+                p.list-group-item-text style="font-size:14px"
+                    = coach.name
+    - if @players.any?
+        - @players.each do |player|
+            = link_to team_path(player.team)
+                = image_tag player.photo.url(:wide), class: 'pull-left', style: 'margin-right:10px;width:120px;' 
+                p.list-group-item-text style="font-size:14px"
+                    = player.name + ' ' + player.surname
+    - if !@articles.any? && !@videos.any? && !@coaches.any? && !@players.any?
         a.list-group-item.clearfix.text-center
             .list-group-item-text
                 = t 'body.change_search_query'

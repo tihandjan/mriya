@@ -29,14 +29,6 @@ class Video < ApplicationRecord
     validates :video_url, presence: true
 
     def self.search(search)
-        unless search.strip.length == 0
-        if search
-            where("lower(title) LIKE ?", "%#{search.downcase}%").order(created_at: :desc).last(4)
-        end
-        end
-    end
-
-    def self.search(search)
       unless search.strip.length == 0
         if search
             with_translations(I18n.locale).where("LOWER(video_translations.title) LIKE ?", "%#{search.downcase}%").order(created_at: :desc).first(4)

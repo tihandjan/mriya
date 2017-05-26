@@ -29,6 +29,9 @@ class PlayerUploader < CarrierWave::Uploader::Base
   #   # do something
   # end
   process resize_to_fill: [170, 230]
+  version :wide do
+    process resize_to_fill(290, 215, gravity="north")
+  end 
   # Create different versions of your uploaded files:
   # version :thumb do
   #   process resize_to_fit: [50, 50]

@@ -23,4 +23,12 @@ class Coach < ApplicationRecord
     validates :birthday, presence: true
 
     mount_uploader :photo, CoachUploader
+
+    def self.search(search)
+      unless search.strip.length == 0
+        if search
+            with_translations(I18n.locale).where("LOWER(coach_translations.name) LIKE ?", "%#{search.downcase}%").order(created_at: :desc).first(4)
+        end
+      end
+    end
 end

@@ -30,12 +30,12 @@ class CoachUploader < CarrierWave::Uploader::Base
   # end
   # Create different versions of your uploaded files:
   version :thumb do
-    process resize_to_fill: [300, 420]
+    process resize_to_fill: [360, 505]
   end
 
-  # version :wide do
-  #   process resize_to_fill(290, 215, gravity="north")
-  # end    
+  version :wide do
+    process resize_to_fill(290, 215, gravity="north")
+  end    
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
