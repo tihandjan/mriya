@@ -32,12 +32,12 @@ section.footer.row
         .clearfix
             .team-col-first
                 ul 
-                    - set_teams.first(6).each do |team|
+                    - set_teams[0..4].try(:each) do |team|
                         li
                             = link_to team.name, team_path(team)
             .team-col-second
                 ul 
-                    - set_teams.last(5).each do |team|
+                    - set_teams[5..-1].try(:each) do |team|
                         li
                             = link_to team.name, team_path(team)
     .col-md-3.custom-col 

@@ -4,9 +4,19 @@
     li[data-target="#carouselExampleIndicators" data-slide-to="1"]
   .carousel-inner[role="listbox"]
     .carousel-item class="active"
-      = image_tag 'coaches_1.jpg', class: 'd-block img-fluid', alt: 'fc mriya coaches'
+      - if params[:locale] == 'uk'
+        = image_tag 'coaches_1_ua.jpg', class: 'd-block img-fluid', alt: 'fc mriya coaches'
+      - elsif params[:locale] == 'en'
+        = image_tag 'coaches_1_en.jpg', class: 'd-block img-fluid', alt: 'fc mriya coaches'
+      - else
+        = image_tag 'coaches_1.jpg', class: 'd-block img-fluid', alt: 'fc mriya coaches'
     .carousel-item class=""
-      = image_tag 'coaches_2.jpg', class: 'd-block img-fluid', alt: 'fc mriya coaches'
+      - if params[:locale] == 'uk'
+        = image_tag 'coaches_2_ua.jpg', class: 'd-block img-fluid', alt: 'fc mriya coaches'
+      - elsif params[:locale] == 'en'
+        = image_tag 'coaches_2_en.jpg', class: 'd-block img-fluid', alt: 'fc mriya coaches'
+      - else
+        = image_tag 'coaches_2.jpg', class: 'd-block img-fluid', alt: 'fc mriya coaches'
   a.carousel-control-prev[href="#carouselExampleIndicators" role="button" data-slide="prev"]
     span.carousel-control-prev-icon.slider-btn[aria-hidden="true"]
     span.sr-only

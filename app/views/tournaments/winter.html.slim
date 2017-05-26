@@ -1,6 +1,11 @@
 = render 'shared/team_list'
 .index-image-wrapper
-    = image_tag 'tournament.png'
+    - if params[:locale] == 'uk'
+        = image_tag 'tournament_ua.jpg'
+    - elsif params[:locale] == 'en'
+        = image_tag 'tournament_en.jpg'
+    - else
+        = image_tag 'tournament.png'
 .row.about-row
     .col-lg-9.about-col
         .list-group.tournament-list

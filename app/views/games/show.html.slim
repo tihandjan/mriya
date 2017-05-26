@@ -1,7 +1,16 @@
 = render 'shared/team_list'
 .index-image-wrapper
-    = image_tag 'news_show.png'
-    h2.about-club.about-coaching = t 'body.tournament_position'
+    - if @game.category == 'перевенство ДЮФЛ'
+        = link_to 'http://www.ffu.org.ua/ukr/', target: '_blank'
+            - if params[:locale] == 'uk'
+                = image_tag 'duflu_ua.jpg'
+            - elsif params[:locale] == 'en'
+                = image_tag 'duflu_en.jpg'
+            - else
+                = image_tag 'duflu_ru.jpg'
+    - else
+        = image_tag 'news_show.png'
+        h1.about-club.about-coaching = t 'body.tournament_position'
 .row.about-row
     .col-lg-9.about-col
         h1 = @game.season
