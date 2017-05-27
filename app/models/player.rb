@@ -33,7 +33,7 @@ class Player < ApplicationRecord
     name = search.split(' ')[1] || 'asdfghjkl'
     unless search.strip.length == 0
       if search
-          with_translations(I18n.locale).where("LOWER(player_translations.surname) LIKE ? OR LOWER(player_translations.surname) LIKE ? OR LOWER(player_translations.name) LIKE ? OR LOWER(player_translations.name) LIKE ?", "%#{surname.try(:downcase)}%", "%#{name.try(:downcase)}%", "%#{surname.try(:downcase)}%", "%#{name.try(:downcase)}%").order(created_at: :desc).first(4)
+          with_translations(I18n.locale).where("LOWER(player_translations.surname) LIKE ? OR LOWER(player_translations.surname) LIKE ? OR LOWER(player_translations.name) LIKE ? OR LOWER(player_translations.name) LIKE ?", "%#{surname.try(:mb_chars.downcase.to_s)}%", "%#{name.try(:mb_chars.downcase.to_s)}%", "%#{surname.try(:mb_chars.downcase.to_s)}%", "%#{name.try(:mb_chars.downcase.to_s)}%").order(created_at: :desc).first(4)
       end
     end
   end
