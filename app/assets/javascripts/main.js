@@ -62,4 +62,5 @@ $(document).on('turbolinks:load', function() {
 		);
 	});
     // scroll top end
+
 });

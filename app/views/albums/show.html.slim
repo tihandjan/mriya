@@ -1,16 +1,30 @@
-#carouselExampleIndicators.carousel.slide.photo-slider[data-ride="carousel"]
-  ol.carousel-indicators
-    - @album.photos.each_with_index do |photo, index|
-      li[data-target="#carouselExampleIndicators" data-slide-to="#{index}"]
-  .carousel-inner[role="listbox"]
-    - @album.photos.each_with_index do |photo, index|
-      .carousel-item class="#{'active' if index == 0}"
-        img.d-block.img-fluid[src="#{photo.photo.url}" alt="#{@album.title}"]
-  a.carousel-control-prev[href="#carouselExampleIndicators" role="button" data-slide="prev"]
-    span.carousel-control-prev-icon[aria-hidden="true"]
-    span.sr-only
-      | Previous
-  a.carousel-control-next[href="#carouselExampleIndicators" role="button" data-slide="next"]
-    span.carousel-control-next-icon[aria-hidden="true"]
-    span.sr-only
-      | Next
+/ #carouselExampleIndicators.carousel.slide.photo-slider[data-ride="carousel"]
+/   ol.carousel-indicators
+/     - @album.photos.each_with_index do |photo, index|
+/       li[data-target="#carouselExampleIndicators" data-slide-to="#{index}"]
+/   .carousel-inner[role="listbox"]
+/     - @album.photos.each_with_index do |photo, index|
+/       .carousel-item class="#{'active' if index == 0}"
+/         img.d-block.img-fluid[src="#{photo.photo.url}" alt="#{@album.title}"]
+/   a.carousel-control-prev[href="#carouselExampleIndicators" role="button" data-slide="prev"]
+/     span.carousel-control-prev-icon[aria-hidden="true"]
+/     span.sr-only
+/       | Previous
+/   a.carousel-control-next[href="#carouselExampleIndicators" role="button" data-slide="next"]
+/     span.carousel-control-next-icon[aria-hidden="true"]
+/     span.sr-only
+/       | Next
+#galleria
+  .galleria
+    - @album.photos.each do |photo|
+      a href="#{photo.photo.url}" 
+        img data-big="#{photo.photo.url}" data-description=("My description") data-title=("My title") src="#{photo.photo.url(:thumb)}" 
+javascript:
+  Galleria.loadAssetTheme('classic');
+    Galleria.configure({
+        imageCrop: false,
+        transition: 'fade',
+        log: true,
+        dummy: '/assets/photos/dummy.png' 
+    });  
+    Galleria.run('#galleria');
