@@ -13,7 +13,7 @@
                     = truncate(video.title, length: 70)
     - if @coaches.any?
         - @coaches.each do |coach|
-            = link_to team_path(coach.teams.first)
+            = link_to team_path(coach.teams[0])
                 = image_tag coach.photo.url(:wide), class: 'pull-left', style: 'margin-right:10px;width:120px;' 
                 p.list-group-item-text style="font-size:14px"
                     = coach.name
