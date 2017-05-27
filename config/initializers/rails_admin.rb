@@ -172,12 +172,10 @@ RailsAdmin.config do |config|
     end
     create do
       field :name
-      field :surname
       field :locale
     end
     edit do
       field :name
-      field :surname
       field :locale
     end
   end

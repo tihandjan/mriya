@@ -22,7 +22,7 @@
             = link_to team_path(player.team)
                 = image_tag player.photo.url(:wide), class: 'pull-left', style: 'margin-right:10px;width:120px;' 
                 p.list-group-item-text style="font-size:14px"
-                    = player.name + ' ' + player.surname
+                    = player.name 
     - if !@articles.any? && !@videos.any? && !@coaches.any? && !@players.any?
         a.list-group-item.clearfix.text-center
             .list-group-item-text

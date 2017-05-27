@@ -23,7 +23,7 @@ h1.last-news-header = params[:locale] == 'en' ? (t 'fixtures.team') + ' ' + (t '
                         .image-wrapper
                             = image_tag player.photo.url, alt: player.name
                         .caption.caption-coach
-                            .name = player.name + ' ' + player.surname
+                            .name = player.name 
                             .country = t 'body.ukraine'
                             .birthday = player.birthday.strftime('%d.%m.%Y')
         h3.last-news-header.coach-header = t 'body.main_coach'

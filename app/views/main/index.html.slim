@@ -52,7 +52,7 @@ section.row.body-row
                 - @players.each do |player|
                     li
                         span.date = l(Time.current, format: '%d %B %Y')
-                        span.name #{t 'body.birthday'} #{player.name} #{player.surname} 
+                        span.name #{t 'body.birthday'} #{player.name}
     section.col-xl-4
         = render 'shared/fixtures'
 

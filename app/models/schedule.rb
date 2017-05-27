@@ -4,7 +4,6 @@
 #
 #  id         :integer          not null, primary key
 #  team       :string
-#  coach      :string
 #  stadium    :string
 #  mon        :string
 #  tue        :string
