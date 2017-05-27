@@ -25,7 +25,7 @@ class Album < ApplicationRecord
     translation_class.validates :title, presence: true
 
     has_one :view, as: :viewable
-    has_many :photos
+    has_many :photos, dependent: :destroy
     validates :title, presence: true
     validates :cover_photo, presence: true
 
