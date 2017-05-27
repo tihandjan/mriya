@@ -162,6 +162,7 @@ RailsAdmin.config do |config|
   end
   config.model 'Player' do
     configure :translations, :globalize_tabs
+    exclude_fields :name
   end
 
 
