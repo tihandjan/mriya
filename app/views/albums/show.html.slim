@@ -4,16 +4,30 @@
       a href="#{photo.photo.url}" 
         img data-big="#{photo.photo.url}" data-description=("My description") data-title=("My title") src="#{photo.photo.url(:thumb)}" 
 javascript:
-  //Galleria.loadAssetTheme('classic');
-    Galleria.addTheme({
-    name: 'classic',
-    author: 'Galleria',
-    css: 'classic.css',
-    defaults: {
-        transition: 'slide',
-        thumbCrop:  'height',
+      //Galleria.loadAssetTheme('classic');
+        /**
+    * Galleria Classic Theme 2012-08-08
+    * http://galleria.io
+    *
+    * Licensed under the MIT license
+    * https://raw.github.com/aino/galleria/master/LICENSE
+    *
+    */
 
-        // set this to false if you want to show the caption all the time:
+
+    (function($) {
+
+    /*global jQuery, Galleria */
+
+    Galleria.addTheme({
+        name: 'classic',
+        author: 'Galleria',
+        css: 'classic.css',
+        defaults: {
+            transition: 'slide',
+            thumbCrop:  'height',
+
+            // set this to false if you want to show the caption all the time:
             _toggleInfo: true
         },
         init: function(options) {
