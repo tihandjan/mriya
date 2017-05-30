@@ -8,7 +8,6 @@ class MainController < ApplicationController
   def search
     @articles = Article.search(params[:search])
     @videos = Video.search(params[:search])
-    @coaches = Coach.search(params[:search])
     @players = Player.search(params[:search])
     respond_to do |f|
       f.js

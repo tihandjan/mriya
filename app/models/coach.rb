@@ -24,11 +24,4 @@ class Coach < ApplicationRecord
 
     mount_uploader :photo, CoachUploader
 
-    def self.search(search)
-      unless search.strip.length == 0
-        if search
-            with_translations(I18n.locale).where("LOWER(coach_translations.name) LIKE ?", "%#{search.mb_chars.downcase.to_s}%").order(created_at: :desc).first(4)
-        end
-      end
-    end
 end
