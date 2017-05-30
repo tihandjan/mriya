@@ -6,7 +6,7 @@ h4.last-news-header = t 'body.photoalbums'
 .row.index-row#more
     - @albums.each do |album|
         .col-md-4.index-col
-            = link_to album_path(album)
+            = link_to album_path(album), data: { turbolinks: false }
                 article.vertical-card.album-card
                     .image-wrapper
                         = image_tag album.cover_photo.url, alt: album.title

@@ -19,6 +19,3 @@
 //= require social-share-button
 //= require ckeditor/init
 //= require toastr
-
-//= require gallery/galleria
-//= require gallery/galleria/classic
