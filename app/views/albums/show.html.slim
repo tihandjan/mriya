@@ -3,12 +3,3 @@
     - @album.photos.each do |photo|
       a href="#{photo.photo.url}" 
         img data-big="#{photo.photo.url}" data-description=("My description") data-title=("My title") src="#{photo.photo.url(:thumb)}" 
-javascript:
-  Galleria.loadTheme('gallery/galleria/classic.js');
-    Galleria.configure({
-        imageCrop: false,
-        transition: 'fade',
-        lightbox: true,
-        dummy: '/assets/photos/dummy.png' 
-    });  
-    Galleria.run('#galleria');
