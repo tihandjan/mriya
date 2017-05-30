@@ -34,6 +34,7 @@ module Mriya
 
     config.assets.precompile += Ckeditor.assets
     config.assets.precompile += %w( ckeditor/* )
+    config.assets.precompile += %w( gallery/* )
     config.autoload_paths += %w(#{config.root}/app/models/ckeditor)
 
     
