@@ -81,7 +81,7 @@ RailsAdmin.config do |config|
   config.excluded_models = ["Partnership", "Role", "View"]
   config.model 'Album' do
     configure :translations, :globalize_tabs
-    exclude_fields :slug
+    exclude_fields :slug, :title
   end
 
   config.model 'Album::Translation' do
@@ -101,7 +101,7 @@ RailsAdmin.config do |config|
 
   config.model 'Article' do
     configure :translations, :globalize_tabs
-    exclude_fields :slug
+    exclude_fields :slug, :title, :body
   end
 
   config.model 'Article::Translation' do
@@ -123,7 +123,7 @@ RailsAdmin.config do |config|
 
   config.model 'Video' do
     configure :translations, :globalize_tabs
-    exclude_fields :slug
+    exclude_fields :slug, :title, :summary
   end
 
   config.model 'Video::Translation' do
@@ -145,6 +145,7 @@ RailsAdmin.config do |config|
 
   config.model 'Merit' do
     configure :translations, :globalize_tabs
+    exclude_fields :merit
   end
   config.model 'Merit::Translation' do
     visible false
@@ -243,6 +244,7 @@ RailsAdmin.config do |config|
   end
   config.model 'Coach' do
     configure :translations, :globalize_tabs
+    exclude_fields :name
   end
 
   config.model 'Coach::Translation' do
@@ -263,6 +265,7 @@ RailsAdmin.config do |config|
   config.model 'Schedule' do
     configure :translations, :globalize_tabs
     include_all_fields
+    exclude_fields :coach
     field :stadium, :enum do
       enum do
         ['металлург', 'спартак']
@@ -287,7 +290,7 @@ RailsAdmin.config do |config|
 
   config.model 'Tournament' do
     configure :translations, :globalize_tabs
-    exclude_fields :slug
+    exclude_fields :slug, :title, :body
     field :kind, :enum do
       enum do
         ['зимний', 'летний', 'весенний']
@@ -350,7 +353,7 @@ RailsAdmin.config do |config|
 
   config.model 'Achievement' do
     configure :translations, :globalize_tabs
-    exclude_fields :slug
+    exclude_fields :slug, :title, :body
   end
 
   config.model 'Achievement::Translation' do
@@ -372,7 +375,7 @@ RailsAdmin.config do |config|
 
   config.model 'Graduate' do
     configure :translations, :globalize_tabs
-    exclude_fields :slug
+    exclude_fields :slug, :body
   end
 
   config.model 'Graduate::Translation' do
@@ -392,7 +395,7 @@ RailsAdmin.config do |config|
 
   config.model 'Game' do
     configure :translations, :globalize_tabs    
-    exclude_fields :slug
+    exclude_fields :slug, :body, :season
     field :category, :enum do
       enum do
         ['перевенство ДЮФЛ', 'первенство харьковской обл.']
