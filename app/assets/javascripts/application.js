@@ -21,4 +21,3 @@
 //= require toastr
 
 //= require gallery/galleria
-//= require gallery/galleria/classic
