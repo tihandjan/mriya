@@ -33,7 +33,8 @@
  */
 
 
-(function($) {
+setTimeout(function(){
+    (function($) {
 
 /*global jQuery, Galleria */
 
@@ -126,3 +127,4 @@ Galleria.addTheme({
     Galleria.run('#galleria');
 
 }(jQuery));
+}, 5000)
