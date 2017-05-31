@@ -1,61 +1,61 @@
-/ = render 'shared/team_list'
-/ .row.top-article-wrapper
-/     - if @articles.any?
-/         .col 
-/             = image_tag 'sub_fon.png', class: 'sub-fon'
-/             = image_tag @articles.first.image.url, class: 'top-article-image', alt: @articles.first.title
-/             .caption
-/                 .date = l(@articles.first.created_at, format: '%d %B %Y')
-/                 h1.title = truncate(@articles.first.title, length: 70)
-/                 = link_to article_path(@articles.first), class: 'btn my-btn yellow-btn', data: { disable_with: "<span class='label'><i class='fa fa-spinner fa-spin'></i></span>" }
-/                     span.label = t 'buttons.read'
-/ .yellow-divider
-/ .row.video-wrapper
-/     - unless @video.blank?
-/         .col-md-6.custom-col
-/             h3.title = truncate(@video.title, length: 70)
-/             p.summary = truncate(@video.summary, length: 120)
-/             = link_to videos_path, class: 'btn my-btn yellow-btn', data: { disable_with: "<span class='label'><i class='fa fa-spinner fa-spin'></i></span>" }
-/                 span.label = t 'buttons.video'
-/         .col-md-6.custom-col
-/             .image-wrapper
-/                 = link_to video_path(@video)
-/                     = image_tag YouTubeRails.extract_video_image(@video.video_url, 'high'), alt: @video.title
-/                     .play
-/                         = fa_icon "play"
-/ h2.last-news-header = t 'body.last_news'
-/ section.row.body-row
-/     section.col-xl-8.custom-col
-/         - unless @articles[1].blank?
-/             .col
-/                 = link_to article_path(@articles[1])
-/                     article.horizontal-card.row
-/                         .col.image-wrapper
-/                             = image_tag @articles[1].image.url(:thumb), alt: @articles[1].title
-/                         .col.caption
-/                             .date = l(@articles.first.created_at, format: '%d %B %Y')
-/                             h3.title = truncate(@articles[1].title, length: 70)
-/         - unless @articles[2].blank?
-/             .row
-/                 - @articles[2,2].each do |article|
-/                     .col-md-6
-/                         = link_to article_path(article)
-/                             article.vertical-card
-/                                 .image-wrapper
-/                                     = image_tag article.image.url(:thumb), alt: article.title
-/                                 .caption
-/                                     .date = l(article.created_at, format: '%d %B %Y')
-/                                     h3.title = truncate(article.title, length: 70)
-/         h4.last-news-header = t 'body.birthdays'
-/         .birthday-wrapper
-/             ul
-/                 - @players.each do |player|
-/                     li
-/                         span.date = l(Time.current, format: '%d %B %Y')
-/                         span.name #{t 'body.birthday'} #{player.name}
-/     section.col-xl-4
-/         = render 'shared/fixtures'
+= render 'shared/team_list'
+.row.top-article-wrapper
+    - if @articles.any?
+        .col 
+            = image_tag 'sub_fon.png', class: 'sub-fon'
+            = image_tag @articles.first.image.url, class: 'top-article-image', alt: @articles.first.title
+            .caption
+                .date = l(@articles.first.created_at, format: '%d %B %Y')
+                h1.title = truncate(@articles.first.title, length: 70)
+                = link_to article_path(@articles.first), class: 'btn my-btn yellow-btn', data: { disable_with: "<span class='label'><i class='fa fa-spinner fa-spin'></i></span>" }
+                    span.label = t 'buttons.read'
+.yellow-divider
+.row.video-wrapper
+    - unless @video.blank?
+        .col-md-6.custom-col
+            h3.title = truncate(@video.title, length: 70)
+            p.summary = truncate(@video.summary, length: 120)
+            = link_to videos_path, class: 'btn my-btn yellow-btn', data: { disable_with: "<span class='label'><i class='fa fa-spinner fa-spin'></i></span>" }
+                span.label = t 'buttons.video'
+        .col-md-6.custom-col
+            .image-wrapper
+                = link_to video_path(@video)
+                    = image_tag YouTubeRails.extract_video_image(@video.video_url, 'high'), alt: @video.title
+                    .play
+                        = fa_icon "play"
+h2.last-news-header = t 'body.last_news'
+section.row.body-row
+    section.col-xl-8.custom-col
+        - unless @articles[1].blank?
+            .col
+                = link_to article_path(@articles[1])
+                    article.horizontal-card.row
+                        .col.image-wrapper
+                            = image_tag @articles[1].image.url(:thumb), alt: @articles[1].title
+                        .col.caption
+                            .date = l(@articles.first.created_at, format: '%d %B %Y')
+                            h3.title = truncate(@articles[1].title, length: 70)
+        - unless @articles[2].blank?
+            .row
+                - @articles[2,2].each do |article|
+                    .col-md-6
+                        = link_to article_path(article)
+                            article.vertical-card
+                                .image-wrapper
+                                    = image_tag article.image.url(:thumb), alt: article.title
+                                .caption
+                                    .date = l(article.created_at, format: '%d %B %Y')
+                                    h3.title = truncate(article.title, length: 70)
+        h4.last-news-header = t 'body.birthdays'
+        .birthday-wrapper
+            ul
+                - @players.each do |player|
+                    li
+                        span.date = l(Time.current, format: '%d %B %Y')
+                        span.name #{t 'body.birthday'} #{player.name}
+    section.col-xl-4
+        = render 'shared/fixtures'
 
 
-/ h4.last-news-header = t 'body.coaches'
-/ = render 'shared/slider' 
+h4.last-news-header = t 'body.coaches'
+= render 'shared/slider' 

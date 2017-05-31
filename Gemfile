@@ -32,9 +32,6 @@ gem "mini_magick"
 gem 'rails_admin', '~> 1.1.1'
 gem 'rails_admin_globalize_field'
 
-# adapter for russian language
-gem 'russian', '~> 0.6.0'
-
 # handle video displaying
 gem 'youtube_rails'
 
