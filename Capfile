@@ -8,6 +8,7 @@ require 'capistrano/rvm'
 require 'capistrano/puma'
 require 'capistrano/rails/console'
 require "capistrano/scm/git"
+require 'capistrano/puma/monit'
 install_plugin Capistrano::SCM::Git
 
 install_plugin Capistrano::Puma
