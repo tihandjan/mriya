@@ -5,7 +5,7 @@ set :repo_url,        'git@github.com:tihandjan/mriya.git'
 set :application,     'fcmriya'
 set :user,            'deployer'
 set :puma_threads,    [4, 16]
-set :puma_workers,    1
+set :puma_workers,    0
 
 # Don't change these unless you know what you're doing
 set :pty,             true
@@ -65,17 +65,17 @@ namespace :deploy do
     end
   end
 
-  # desc 'Restart application'
-  # task :restart do
-  #   on roles(:app), in: :sequence, wait: 5 do
-  #     invoke 'puma:restart'
-  #   end
-  # end
-  after :publishing, 'deploy:restart'
+  desc 'Restart application'
+  task :restart do
+    on roles(:app), in: :sequence, wait: 5 do
+      invoke 'puma:restart'
+    end
+  end
+
   before :starting,     :check_revision
   after  :finishing,    :compile_assets
   after  :finishing,    :cleanup
-  # after  :finishing,    :restart
+  after  :finishing,    :restart
 end
 
 # ps aux | grep puma    # Get puma pid
