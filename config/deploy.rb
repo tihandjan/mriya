@@ -22,8 +22,6 @@ set :ssh_options,     { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh
 set :puma_preload_app, true
 set :puma_worker_timeout, nil
 set :puma_init_active_record, true  # Change to false when not using ActiveRecord
-set :rails_env, :production
-set :console_env, :production
 ## Defaults:
 # set :scm,           :git
 # set :branch,        :master
