@@ -1,9 +1,6 @@
 class PhotoUploader < CarrierWave::Uploader::Base
 
   include CarrierWave::MiniMagick
-  include CarrierWave::TinyPNG
-  process convert: 'png'
-  process :tinypng
 
   storage :file
   def store_dir
