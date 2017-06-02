@@ -9,7 +9,6 @@ ruby '2.3.0'
 gem 'rails', '~> 5.0.2'
 gem 'pg', '~> 0.18'
 gem 'puma'
-gem 'unicorn'
 gem 'uglifier', '>= 1.3.0'
 gem 'jbuilder', '~> 2.5'
 
@@ -84,7 +83,6 @@ group :development do
   gem 'capistrano-rails',   require: false
   gem 'capistrano-bundler', require: false
   gem 'capistrano3-puma',   require: false
-  gem 'capistrano3-unicorn',require: false
   gem 'capistrano-rails-console', require: false
 end
 
