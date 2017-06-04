@@ -1,3 +1,8 @@
+- set_meta_tags title: @article.title,
+                site: root_url.split('/')[2],
+                description: @article.title,
+                canonical: article_url(@article),
+                reverse: true
 = render 'shared/team_list' 
 .index-image-wrapper
     = image_tag 'news_show.png'

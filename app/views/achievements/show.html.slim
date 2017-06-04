@@ -1,3 +1,8 @@
+- set_meta_tags title: @achievement.title,
+                site: root_url.split('/')[2],
+                description: "Достижения футбольного клуба Мрия | #{@achievement.title}",
+                canonical: achievement_url(@achievement),
+                reverse: true
 = render 'shared/team_list' 
 .index-image-wrapper
     = image_tag 'news_show.png'

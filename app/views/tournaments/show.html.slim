@@ -1,3 +1,8 @@
+- set_meta_tags title: @tournament.title,
+                site: root_url.split('/')[2],
+                description: 'Информация о турнирах в которых участвует футбольный клуб Мрия',
+                canonical: tournament_url(@tournament),
+                reverse: true
 = render 'shared/team_list'
 .index-image-wrapper
     - if params[:locale] == 'uk'

@@ -1,3 +1,8 @@
+- set_meta_tags title: "#{@team.name} | команды клуба Мрия",
+                site: root_url.split('/')[2],
+                description: 'Информация о различных возрастных командах клуба Мрия',
+                canonical: team_url(@team),
+                reverse: true
 = render 'shared/team_list'
 section.team-top.row
     .col-lg-8.team-col

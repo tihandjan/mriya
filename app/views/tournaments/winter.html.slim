@@ -1,3 +1,8 @@
+- set_meta_tags title: 'Зимний турнир | футбольный клуб Мрия',
+                site: root_url.split('/')[2],
+                description: 'Информация о турнирах в которых участвует футбольный клуб Мрия',
+                canonical: winter_tournaments_url,
+                reverse: true
 = render 'shared/team_list'
 .index-image-wrapper
     - if params[:locale] == 'uk'

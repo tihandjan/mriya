@@ -1,3 +1,8 @@
+- set_meta_tags title: @game.season,
+                site: root_url.split('/')[2],
+                description: 'Участие футбольного клуба Мрия в перевенстве ДЮФЛУ ',
+                canonical: game_url(@game),
+                reverse: true
 = render 'shared/team_list'
 .index-image-wrapper
     - if @game.category == 'перевенство ДЮФЛ'

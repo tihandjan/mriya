@@ -1,3 +1,15 @@
+- if current_page?(action: 'duflu')
+    - set_meta_tags title: 'Первенство ДЮФЛУ | федерация футбола Украины',
+                    site: root_url.split('/')[2],
+                    description: 'Участие футбольного клуба Мрия в перевенстве ДЮФЛУ ',
+                    canonical: duflu_games_url,
+                    reverse: true
+- else
+    - set_meta_tags title: 'Первенство Харьковской области',
+                    site: root_url.split('/')[2],
+                    description: 'Участие футбольного клуба Мрия в перевенстве Харьковской области',
+                    canonical: kharkiv_games_url,
+                    reverse: true
 = render 'shared/team_list' 
 .index-image-wrapper
     - if current_page?(action: 'duflu')

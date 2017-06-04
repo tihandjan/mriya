@@ -47,6 +47,13 @@ gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-vkontakte'
 
+# text editor
+gem 'ckeditor'
+
+# seo tools
+gem 'meta-tags'
+gem 'sitemap_generator'
+
 # other
 gem 'social-share-button'
 gem 'htmlcompressor', '~> 0.2.0'
@@ -55,9 +62,6 @@ gem 'globalize', git: 'https://github.com/globalize/globalize'
 gem 'activemodel-serializers-xml'
 # helper gems for solving capistrano problems
 gem 'therubyracer'
-
-# text editor
-gem 'ckeditor'
 
 group :development, :test do
   gem 'byebug', platform: :mri

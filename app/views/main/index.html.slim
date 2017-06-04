@@ -1,3 +1,8 @@
+- set_meta_tags title: 'Информация о футбольном клубе Мрия',
+                site: root_url.split('/')[2],
+                description: 'Здесь вы найдете все новости академии, расписание, результаты, таблицы и другую полезную информацию, касающуюся Академии футбольного клуба Мрия',
+                canonical: root_url,
+                reverse: true
 = render 'shared/team_list'
 .row.top-article-wrapper
     - if @articles.any?

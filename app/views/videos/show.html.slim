@@ -1,3 +1,8 @@
+- set_meta_tags title: @video.title,
+                site: root_url.split('/')[2],
+                description: 'Видео футбольного клуба Мрия',
+                canonical: video_url(@video),
+                reverse: true
 = render 'shared/team_list'
 .index-image-wrapper
     = image_tag 'news_show.png'
