@@ -79,8 +79,9 @@ en:
     video: Video
     achievements: Achievements
     history_of_club: Club history
-    phone_and_fax: Phone and Fax
+    phone_and_fax: Phone
     email: Email
+    fax: fax
   fixtures:
     championship: Championship of Ukraine
     first_league: First league

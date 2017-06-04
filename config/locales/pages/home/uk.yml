@@ -79,8 +79,9 @@ uk:
     video: Відео
     achievements: Досягнення
     history_of_club: Історія клубу
-    phone_and_fax: Тел. і факс
+    phone_and_fax: Тел.
     email: Ел. пошта
+    fax: факс
   fixtures:
     championship: Чемпіонат України
     first_league: перша ліга

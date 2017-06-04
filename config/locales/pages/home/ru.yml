@@ -79,8 +79,9 @@ ru:
     video: Видео
     achievements: Достижения
     history_of_club: История клуба
-    phone_and_fax: Тел. и факс
+    phone_and_fax: Тел.
     email: Эл. почта
+    fax: факс
   fixtures:
     championship: Чемпионат Украины
     first_league: первая лига

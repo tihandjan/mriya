@@ -51,8 +51,8 @@ section.row.body-row
             ul
                 - @players.each do |player|
                     li
-                        span.date = l(Time.current, format: '%d %B %Y')
-                        span.name #{t 'body.birthday'} #{player.name}
+                        span.date style="color: #{'#ffd401' if player.birthday.strftime('%d').to_i == Time.current.day}" = l(player.birthday, format: '%d %B %Y')
+                        span.name style="color: #{'#ffd401' if player.birthday.strftime('%d').to_i == Time.current.day}" #{t 'body.birthday'} #{player.name}
     section.col-xl-4
         = render 'shared/fixtures'
 
