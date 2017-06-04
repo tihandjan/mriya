@@ -9,6 +9,8 @@
     h1.about-club.about-coaching = t 'about.body.sponsors' 
 .row.about-row
     .col-lg-9.about-col
+        = link_to 'http://ufc-fish.com/ru/', target: '_blank'
+            = image_tag 'sponsors.jpg', height: '210px',style:'margin-bottom:15px'
         - if params[:locale] == 'en'
             p
                 strong COMPANY OVERVIEW
