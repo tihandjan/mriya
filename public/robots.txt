@@ -3,3 +3,4 @@
 # To ban all spiders from the entire site uncomment the next two lines:
 # User-agent: *
 # Disallow: /
+Sitemap: http://95.85.43.70/sitemap.xml.gz

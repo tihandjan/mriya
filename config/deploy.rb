@@ -30,7 +30,7 @@ set :puma_init_active_record, true  # Change to false when not using ActiveRecor
 # set :keep_releases, 5
 
 ## Linked Files & Directories (Default None):
-set :linked_files, %w{config/database.yml config/secrets.yml}
+set :linked_files, %w{config/database.yml config/secrets.yml public/sitemap.xml.gz}
 set :linked_dirs,  %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads binlog}
 
 namespace :puma do
@@ -57,6 +57,17 @@ namespace :deploy do
     end
   end
 
+  desc 'Create sitemap and ping search engines'
+  task :refresh do
+    on roles :web do
+      within release_path do
+        with rails_env: fetch(:rails_env) do
+          execute :rake, "sitemap:refresh"
+        end
+      end
+    end
+  end
+
   desc 'Initial Deploy'
   task :initial do
     on roles(:app) do
@@ -75,6 +86,7 @@ namespace :deploy do
   before :starting,     :check_revision
   after  :finishing,    :compile_assets
   after  :finishing,    :cleanup
+  after  :finishing,  'sitemap:refresh'
   # after  :finishing,    :restart
 end
 

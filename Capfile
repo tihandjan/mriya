@@ -9,6 +9,7 @@ require 'capistrano/puma'
 require 'capistrano/rails/console'
 require "capistrano/scm/git"
 require 'capistrano/puma/monit'
+require 'capistrano/sitemap_generator'
 install_plugin Capistrano::SCM::Git
 
 install_plugin Capistrano::Puma

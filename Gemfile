@@ -60,7 +60,7 @@ gem 'htmlcompressor', '~> 0.2.0'
 gem 'toastr-rails'
 gem 'globalize', git: 'https://github.com/globalize/globalize'
 gem 'activemodel-serializers-xml'
-# helper gems for solving capistrano problems
+gem 'whenever', :require => false
 gem 'therubyracer'
 
 group :development, :test do
