@@ -2,7 +2,7 @@ class MainController < ApplicationController
   def index
     @articles = Article.order(created_at: :desc)
     @video = Video.last
-    @players = Player.where('extract(month from birthday) = ?', Time.current.month)
+    @players = Player.where('extract(month from birthday) = ?', Time.current.month).order(birthday: :asc)
   end
 
   def search
