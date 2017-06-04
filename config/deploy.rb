@@ -86,7 +86,7 @@ namespace :deploy do
   before :starting,     :check_revision
   after  :finishing,    :compile_assets
   after  :finishing,    :cleanup
-  before :starting,  'sitemap:refresh'
+  after  :finishing,  'sitemap:refresh'
   # after  :finishing,    :restart
 end
 
