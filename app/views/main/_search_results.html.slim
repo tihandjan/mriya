@@ -1,19 +1,19 @@
 .list-group style="position:absolute;top:50px;left:-48px;right:0;z-index:5;max-width:546px;background:#FFF;padding:10px;"
     - if @articles.any?
         - @articles.each do |article|
-            = link_to article_path(article)
+            = link_to article_path(article), style: 'margin-bottom:5px'
                 = image_tag article.image.url(:thumb), class: 'pull-left', style: 'margin-right:10px;width:120px;' 
                 p.list-group-item-text style="font-size:14px"
                     = truncate(article.title, length: 70)
     - if @videos.any?
         - @videos.each do |video|
-            = link_to video_path(video)
+            = link_to video_path(video), style: 'margin-bottom:5px'
                 = image_tag YouTubeRails.extract_video_image(video.video_url, 'high'), class: 'pull-left', style: 'margin-right:10px;width:120px;' 
                 p.list-group-item-text style="font-size:14px"
                     = truncate(video.title, length: 70)
     - if @players.any?
         - @players.each do |player|
-            = link_to team_path(player.team)
+            = link_to team_path(player.team), style: 'margin-bottom:5px'
                 = image_tag player.photo.url(:wide), class: 'pull-left', style: 'margin-right:10px;width:120px;' 
                 p.list-group-item-text style="font-size:14px"
                     = player.name 
