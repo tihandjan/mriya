@@ -53,6 +53,7 @@ gem 'ckeditor'
 # seo tools
 gem 'meta-tags'
 gem 'sitemap_generator'
+gem 'google-analytics-rails'
 
 # other
 gem 'social-share-button'
