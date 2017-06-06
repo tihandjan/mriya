@@ -26,7 +26,7 @@ RailsAdmin.config do |config|
     'Merit', 
     'Player',
     'Team',
-    'LeagueTeam',
+   # 'LeagueTeam',
     'Contact',
     'League',
     'Game',
@@ -197,20 +197,20 @@ RailsAdmin.config do |config|
       field :photo
     end
   end
-  config.model 'LeagueTeam' do
-    list do
-      field :team_name
-      field :league
-    end
-    create do
-      field :team_name
-      field :league
-    end
-    edit do
-      field :team_name
-      field :league
-    end
-  end
+  #config.model 'LeagueTeam' do
+  #  list do
+  #    field :team_name
+  #    field :league
+  #  end
+  #  create do
+  #    field :team_name
+  #    field :league
+  #  end
+  #  edit do
+  #    field :team_name
+  #    field :league
+  #  end
+  #end
   config.model 'League' do
     list do
       field :name
@@ -225,23 +225,23 @@ RailsAdmin.config do |config|
       field :league_teams
     end
   end
-  config.model 'Table' do
-    list do
-      field :points
-      field :team_name
-      field :league
-    end
-    create do
-      field :points
-      field :team_name
-      field :league
-    end
-    edit do
-      field :points
-      field :team_name
-      field :league
-    end
-  end
+  #config.model 'Table' do
+  #  list do
+  #    field :points
+  #    field :team_name
+  #    field :league
+  #  end
+  #  create do
+  #    field :points
+  #    field :team_name
+  #    field :league
+  #  end
+  #  edit do
+  #    field :points
+  #    field :team_name
+  #    field :league
+  #  end
+  #end
   config.model 'Coach' do
     configure :translations, :globalize_tabs
     exclude_fields :name

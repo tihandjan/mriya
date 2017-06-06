@@ -4,26 +4,25 @@
         h4.table-header = t 'fixtures.championship'
         i.sprite.sprite-R#forward
     - set_leagues.each_with_index do |league, i|
-        - if league.name.downcase == 'u-17' || league.name.downcase == 'u-15'
-            .sub-header class="table-#{i}" #{t 'fixtures.first_league'} #{league.name}
-            table.table class="table-#{i}"
-                thead
+        .sub-header class="table-#{i}" #{t 'fixtures.first_league'} #{league.name}
+        table.table class="table-#{i}"
+            thead
+                tr
+                    th
+                        | #
+                    th
+                        = t 'fixtures.team'
+                    th
+                        |о
+            tbody
+                - league.tables.order(points: :desc).each_with_index do |table, index|
                     tr
-                        th
-                            | #
-                        th
-                            = t 'fixtures.team'
-                        th
-                            |о
-                tbody
-                    - league.tables.order(points: :desc).each_with_index do |table, index|
-                        tr
-                            td
-                                = index + 1
-                            td
-                                = table.team_name
-                            td
-                                = table.points
+                        td
+                            = index + 1
+                        td
+                            = table.team_name
+                        td
+                            = table.points
     = link_to (t 'buttons.detailed_table'), duflu_games_path, class: 'btn btn-outline-secondary table-btn'
 .fixtures-header = t 'fixtures.games'
 .prev-next-wrapper.clearfix

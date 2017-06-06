@@ -20,7 +20,7 @@ section.team-top.row
         .title = ((Time.current.year) - 1).to_s + '-' + (Time.current.year.to_s)
 h1.last-news-header = params[:locale] == 'en' ? (t 'fixtures.team') + ' ' + (t 'body.structure') : (t 'body.structure') + ' ' + (t 'footer.teams')
 .row.mr-0
-    .col-lg-8.pl-pr-16
+    .col-xl-8.pl-pr-16
         .row.index-row
             - @team.players.each do |player|
                 .col-md-3.index-col
@@ -47,5 +47,5 @@ h1.last-news-header = params[:locale] == 'en' ? (t 'fixtures.team') + ' ' + (t '
                             ul.merits
                                 - coach.merits.each do |merit|
                                     li = merit.merit
-    .col-lg-4
+    .col-xl-4.right-container
         = render 'shared/fixtures'

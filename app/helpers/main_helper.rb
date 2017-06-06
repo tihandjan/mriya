@@ -4,7 +4,7 @@ module MainHelper
     end
     
     def set_leagues
-        League.all.order(id: :desc)
+        League.where("LOWER(name) = ? OR LOWER(name) = ?", 'u-17', 'u-15').order(name: :desc)
     end
 
     def set_coaches
