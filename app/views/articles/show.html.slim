@@ -7,7 +7,7 @@
 .index-image-wrapper
     = image_tag 'news_show.png'
 .row.show-wrapper.mr-0
-    .col-lg-8
+    .col-xl-8
         article.article-wrapper
             .date = l(@article.created_at, format: "%d %B %Y")
             h1.title = @article.title
@@ -34,7 +34,7 @@
                     i.fa.fa-google-plus[aria-hidden="true"]
             .comments
                 = render 'shared/disqus', object: @article
-    .col-lg-4
+    .col-xl-4.right-container.pl-30
         = render 'shared/fixtures'
 
 

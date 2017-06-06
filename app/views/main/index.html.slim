@@ -58,7 +58,7 @@ section.row.body-row
                     li
                         span.date style="color: #{'#ffd401' if player.birthday.strftime('%d').to_i == Time.current.day}" = l(player.birthday, format: '%d %B %Y')
                         span.name style="color: #{'#ffd401' if player.birthday.strftime('%d').to_i == Time.current.day}" #{t 'body.birthday'} #{player.name}
-    section.col-xl-4
+    section.col-xl-4.right-container
         = render 'shared/fixtures'
 
 
