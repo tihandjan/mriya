@@ -5,7 +5,7 @@ set :repo_url,        'git@github.com:tihandjan/mriya.git'
 set :application,     'fcmriya'
 set :user,            'deployer'
 set :puma_threads,    [4, 16]
-set :puma_workers,    1
+set :puma_workers,    0
 
 # Don't change these unless you know what you're doing
 set :pty,             true
