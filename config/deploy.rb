@@ -41,16 +41,6 @@ namespace :deploy do
         end
       end
     end
-    desc 'running sphinx'
-    task :restart do
-      on roles :web do
-        within release_path do
-          with rails_env: fetch(:rails_env) do
-           execute :rake, "ts:restart"
-          end
-        end
-      end
-    end
   after :publishing, 'deploy:restart'
   after :finishing,  'deploy:cleanup'
   after :finishing,  'sitemap:refresh'
