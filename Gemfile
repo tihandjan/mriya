@@ -63,6 +63,8 @@ gem 'globalize', git: 'https://github.com/globalize/globalize'
 gem 'activemodel-serializers-xml'
 gem 'whenever', :require => false
 gem 'therubyracer'
+# unicorn
+gem 'unicorn'
 
 group :development, :test do
   gem 'byebug', platform: :mri
@@ -87,8 +89,8 @@ group :development do
   gem 'capistrano-rvm',     require: false
   gem 'capistrano-rails',   require: false
   gem 'capistrano-bundler', require: false
-  gem 'capistrano3-puma',   require: false
   gem 'capistrano-rails-console', require: false
+  gem 'capistrano3-unicorn', require: false
 end
 
 group :test do
