@@ -11,7 +11,11 @@ class ApplicationController < ActionController::Base
     end
 
     def set_locale
-      I18n.locale = params[:locale] || I18n.default_locale
+      if [RailsAdmin].include?(self.class.parent)
+        I18n.locale = :ru
+      else
+        I18n.locale = params[:locale] || I18n.default_locale
+      end
     end
     
     def default_url_options
