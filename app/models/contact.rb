@@ -14,10 +14,4 @@ class Contact < ApplicationRecord
     validates :russian, presence: true
     validates :ukrainian, presence: true
     validates :english, presence: true
-    validate  :there_can_only_be_one 
-
-    private
-    def there_can_only_be_one
-        errors[:russian] << 'Вы можете создать только одну запись' if Contact.count > 0
-    end
 end
