@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  scope "(:locale)", locale: /en|ru|uk/ do
+  scope "(:locale)", locale: /en|ru|uk/, defaults: {locale: "uk"} do
     root 'main#index'
     resources :articles, only: [:index, :show] do
       get :more, on: :collection
