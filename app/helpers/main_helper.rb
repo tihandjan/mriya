@@ -10,4 +10,15 @@ module MainHelper
     def set_coaches
         Coach.all
     end
+
+    def list_of_teams
+        h = {}
+        Team.all.each {|team| h[team.name] = [team, team.name.split('-')[1].to_i]}
+        h = h.sort_by{|k, v| v[1]}
+        h.collect do |data|
+            content_tag :li do
+                link_to data[0], data[1][0]
+            end
+        end
+    end
 end
