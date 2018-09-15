@@ -22,5 +22,7 @@ config/secrets.yml
 /public/system
 /public/uploads
 /public/*.gz
+.ruby-version
+.ruby-gemset
 
 coverage

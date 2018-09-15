@@ -18,24 +18,19 @@ Bundler.require(*Rails.groups)
 
 module Mriya
   class Application < Rails::Application
-
     config.generators do |g|
       g.template_engine :slim
     end
-
-    config.i18n.load_path += Dir[Rails.root.join('config/locales/**/*.{rb,yml}').to_s]
-
-    config.i18n.available_locales = [:uk, :ru, :en]
     config.i18n.default_locale = :uk
     config.i18n.fallbacks = true
+    config.i18n.available_locales = [:uk, :ru, :en]
+    config.i18n.load_path += Dir[Rails.root.join('config/locales/**/*.{rb,yml}').to_s]
 
-    config.time_zone = 'Moscow'
+    config.time_zone = 'Europe/Kiev'
     config.active_record.default_timezone = :local
 
     config.assets.precompile += Ckeditor.assets
     config.assets.precompile += %w( ckeditor/* )
     config.autoload_paths += %w(#{config.root}/app/models/ckeditor)
-
-    
   end
 end
