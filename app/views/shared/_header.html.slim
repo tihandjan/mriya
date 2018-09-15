@@ -41,14 +41,11 @@ nav.navbar.navbar-toggleable-md.navbar-light.bg-faded.main-nav
         a.nav-link href='#' data-toggle="modal" data-target="#contactModal"
           = t 'header.contacts'
       li.nav-item.nav-item-locales
-        = link_to url_for(locale: 'ru'), class: 'nav-link'
-          | ru
+        = link_to 'ru', locale: 'ru', class: 'nav-link'
       li.nav-item.nav-item-locales
-        = link_to url_for(locale: 'uk'), class: 'nav-link'
-          | ua
+        = link_to 'uk', locale: 'uk' class: 'nav-link'
       li.nav-item.nav-item-locales
-        = link_to url_for(locale: 'en'), class: 'nav-link'
-          | en
+        = link_to 'en', locale: 'en', class: 'nav-link'
 section.main-section
     .row.main-row.hidden-md-down
         .col.logo-col
