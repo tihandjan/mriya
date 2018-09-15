@@ -2,9 +2,8 @@ Rails.application.routes.draw do
   
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  
-  scope "(:locale)", locale: /#{I18n.available_locales.join("|")}/, defaults: {locale: 'uk'} do
 
+  scope "(:locale)", locale: /en|ru|uk/, defaults: {locale: "uk"} do
     root 'main#index'
 
     resources :articles, only: [:index, :show] do

@@ -14,8 +14,7 @@ class ApplicationController < ActionController::Base
       if [RailsAdmin].include?(self.class.parent)
         I18n.locale = :ru
       else
-        18n.locale = params[:locale] || session[:locale] || I18n.default_locale
-        session[:locale] = I18n.locale
+        I18n.locale = params[:locale] || I18n.default_locale
       end
     end
     
