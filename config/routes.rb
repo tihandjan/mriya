@@ -1,17 +1,23 @@
 Rails.application.routes.draw do
-
-  # scope "(:locale)", locale: /en|ru|uk/, defaults: {locale: "uk"} do
+  
   scope "(:locale)", locale: /#{I18n.available_locales.join("|")}/, defaults: {locale: 'uk'} do
+    devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+    mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+
     root 'main#index'
+
     resources :articles, only: [:index, :show] do
       get :more, on: :collection
     end
+
     resources :videos, only: [:index, :show] do
       get :more, on: :collection
     end
+
     resources :teams, only: [:show]
     resources :schedules, only: [:index]
     resources :albums, only: [:index, :show]
+
     resources :tournaments, only: [:show, :index] do
       collection do
         get :summer
@@ -19,7 +25,9 @@ Rails.application.routes.draw do
         get :spring
       end
     end
+
     resources :achievements, only: [:index, :show]
+
     resources :games, only: [:index, :show] do
       collection do
         get :duflu
@@ -42,19 +50,13 @@ Rails.application.routes.draw do
     end
   end
 
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-
   namespace :users do
     get 'omniauth_callbacks/facebook'
     get 'omniauth_callbacks/google_oauth2'
     get 'omniauth_callbacks/vkontakte'
   end
 
-
   namespace :main, path: '/' do
     get :search
   end
-
-
 end
