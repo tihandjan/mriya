@@ -1,7 +1,7 @@
 class VideosController < ApplicationController
     before_action :set_video, only: [:show]
     def index   
-        @videos = Video.order(created_at: :desc).last(6)
+        @videos = Video.order(created_at: :desc).first(6)
     end
 
     def show
@@ -10,7 +10,7 @@ class VideosController < ApplicationController
     def more
         number = params[:count]
         number = number.to_i + 3
-        @videos = Video.order(created_at: :desc).last(number)
+        @videos = Video.order(created_at: :desc).first(number)
         respond_to do |f|
             f.js {}
         end
