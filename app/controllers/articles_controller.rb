@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
     before_action :set_article, only: [:show]
     def index
-        @articles = Article.order(created_at: :desc).last(6)
+        @articles = Article.order(created_at: :desc).first(6)
     end
 
     def show
@@ -10,7 +10,7 @@ class ArticlesController < ApplicationController
     def more
         number = params[:count]
         number = number.to_i + 3
-        @articles = Article.order(created_at: :desc).last(number)
+        @articles = Article.order(created_at: :desc).first(number)
         respond_to do |f|
             f.js {}
         end
