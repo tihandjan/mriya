@@ -850,7 +850,9 @@ a {
                 color: #005b9e;
                 text-align: center;
                 padding: 7px 0px;
-                width: 110px;
+                max-width: 132px;
+                overflow: hidden;
+                text-overflow: ellipsis;
                 vertical-align: middle;
             }
             .score-td {
