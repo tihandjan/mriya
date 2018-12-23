@@ -12,7 +12,7 @@
             .date = l(@video.created_at, format: "%d %B %Y")
             h1.title = @video.title
             .image-wrapper
-                = raw YouTubeRails.youtube_embed_url(@video.video_url, 420, 315, disable_suggestion: true)
+                = raw YouTubeRails.youtube_embed_url(@video.video_url, 420, 315, disable_suggestion: true, ssl: true)
 
             .share-buttons-bottom
                 a.social-btn.fb[onclick="$('.ssb-facebook').click();"]
