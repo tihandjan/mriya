@@ -29,7 +29,7 @@ gem 'carrierwave', '~> 1.0'
 gem "mini_magick"
 
 # admin
-gem 'rails_admin', '~> 1.1.1'
+gem 'rails_admin', '~> 1.4.3'
 gem 'rails_admin_globalize_field'
 
 # handle video displaying
